@@ -1,12 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layout/RootLayout";
 import HomePage from "../pages/public/HomePage";
-import FeaturesPage from "../pages/public/FeaturesPage";
-import PricingPage from "../pages/public/PricingPage";
-import AboutPage from "../pages/public/AboutPage";
-import TestimonialsPage from "../pages/public/TestimonialsPage";
-import FAQPage from "../pages/public/FAQPage";
-import ContactPage from "../pages/public/ContactPage";
+import ComingSoon from "../pages/public/ComingSoon";
 import NotFound from "../pages/error/NotFound";
 
 export const router = createBrowserRouter([
@@ -20,27 +15,27 @@ export const router = createBrowserRouter([
       },
       {
         path: "features",
-        element: <FeaturesPage />,
+        element: <ComingSoon />,
       },
       {
         path: "pricing",
-        element: <PricingPage />,
+        element: <ComingSoon />,
       },
       {
         path: "about",
-        element: <AboutPage />,
+        element: <ComingSoon />,
       },
       {
         path: "testimonials",
-        element: <TestimonialsPage />,
+        element: <ComingSoon />,
       },
       {
         path: "faq",
-        element: <FAQPage />,
+        element: <ComingSoon />,
       },
       {
         path: "contact",
-        element: <ContactPage />,
+        element: <ComingSoon />,
       },
       {
         path: "*",
