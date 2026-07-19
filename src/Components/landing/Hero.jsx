@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle2, Users, HandCoins, Star, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { CHURCH_LOGIN_URL, MEMBER_LOGIN_URL } from "../../constants/links";
+import { useState, useEffect } from "react";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=900&h=1100";
+const HERO_IMAGES = [
+  "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=900&h=1100",
+  "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=900&h=1100",
+  "https://images.unsplash.com/photo-1516280440502-a7f45778a082?auto=format&fit=crop&q=80&w=900&h=1100",
+  "https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?auto=format&fit=crop&q=80&w=900&h=1100",
+];
 
 const EASE = [0.22, 0.61, 0.36, 1];
 
@@ -17,22 +22,18 @@ const copyItem = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: EASE } },
 };
 
-const FloatCard = ({ className, delay, children }) => (
-  <motion.div
-    initial={{ opacity: 0, scale: 0.7 }}
-    animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
-    transition={{
-      opacity: { duration: 0.5, delay },
-      scale: { duration: 0.5, delay, ease: EASE },
-      y: { duration: 4.8, delay, repeat: Infinity, ease: "easeInOut" },
-    }}
-    className={`absolute bg-white rounded-2xl shadow-lift border border-slate-100 ${className}`}
-  >
-    {children}
-  </motion.div>
-);
+
 
 const Hero = () => {
+  const [currentImg, setCurrentImg] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImg((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 xl:pt-20 xl:pb-0 xl:h-[calc(100svh-8.5rem)] xl:min-h-[40rem] xl:flex xl:items-center bg-cream overflow-hidden">
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -126,46 +127,33 @@ const Hero = () => {
             transition={{ duration: 0.9, delay: 0.4, ease: EASE }}
             className="relative max-w-md mx-auto lg:max-w-none xl:max-w-[24rem] 2xl:max-w-[27rem] w-full"
           >
-            <div className="relative rounded-t-full rounded-b-[2.5rem] overflow-hidden border-8 border-white shadow-[0_32px_80px_-20px_rgb(59_21_60_/_0.35)] aspect-[4/5] bg-slate-200">
-              <img
-                src={HERO_IMAGE}
-                alt="Church administrator using EkklésiasOne"
-                className="w-full h-full object-cover"
-                loading="eager"
-              />
+            {/* Top Left Cross Element */}
+            <div className="absolute top-8 -left-10 z-0 opacity-40 rotate-[-15deg] pointer-events-none">
+              <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-secondary">
+                <path d="M12 2v20M6 8h12" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
 
-            <FloatCard delay={0.9} className="top-16 -right-2 sm:-right-6 px-4 py-3 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-xl bg-emerald-50 flex items-center justify-center">
-                <HandCoins size={19} className="text-emerald-600" />
-              </span>
-              <div>
-                <p className="text-sm font-bold text-ink leading-tight">+$250.00</p>
-                <p className="text-[11px] text-slate-400">New donation received</p>
-              </div>
-            </FloatCard>
+            {/* Top Right Cross Element */}
+            <div className="absolute top-24 -right-12 z-0 opacity-40 rotate-[15deg] pointer-events-none">
+              <svg width="100" height="100" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="text-primary-dark">
+                <path d="M12 2v20M6 8h12" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </div>
 
-            <FloatCard delay={1.05} className="top-1/2 -left-2 sm:-left-8 px-4 py-3 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
-                <Users size={19} className="text-primary" />
-              </span>
-              <div>
-                <p className="text-sm font-bold text-ink leading-tight">412 checked in</p>
-                <p className="text-[11px] text-slate-400">Sunday Service · 9:00 AM</p>
-              </div>
-            </FloatCard>
-
-            <FloatCard delay={1.2} className="-bottom-6 left-1/2 -translate-x-1/2 px-5 py-3.5 flex items-center gap-4">
-              <span className="flex gap-0.5">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="text-amber-400 fill-amber-400" />
-                ))}
-              </span>
-              <div className="flex items-center gap-1.5">
-                <TrendingUp size={15} className="text-emerald-500" />
-                <p className="text-sm font-bold text-ink whitespace-nowrap">4.9/5 from 2,500+ churches</p>
-              </div>
-            </FloatCard>
+            <div className="relative z-10 rounded-t-full rounded-b-[2.5rem] overflow-hidden border-8 border-white shadow-[0_32px_80px_-20px_rgb(59_21_60_/_0.35)] aspect-[4/5] bg-slate-200">
+              {HERO_IMAGES.map((img, index) => (
+                <img
+                  key={img}
+                  src={img}
+                  alt="Church administrator using EkklésiasOne"
+                  className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
+                    index === currentImg ? "opacity-100" : "opacity-0"
+                  }`}
+                  loading="eager"
+                />
+              ))}
+            </div>
           </motion.div>
         </div>
       </div>

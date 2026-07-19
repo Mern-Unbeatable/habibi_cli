@@ -1,5 +1,5 @@
-import { useState, useEffect, useRef } from "react";
-import gsap from "gsap";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   Users,
   CalendarDays,
@@ -187,16 +187,6 @@ const tabs = [
 const Screenshots = () => {
   const [activeTab, setActiveTab] = useState(0);
   const scope = useReveal();
-  const panelRef = useRef(null);
-
-  useEffect(() => {
-    if (!panelRef.current) return;
-    gsap.fromTo(
-      panelRef.current,
-      { opacity: 0, y: 16 },
-      { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" },
-    );
-  }, [activeTab]);
 
   const { icon: Icon, heading, description, highlights, Mock } = tabs[activeTab];
 
@@ -230,7 +220,13 @@ const Screenshots = () => {
         </div>
 
         <div data-reveal className="bg-white rounded-[2rem] border border-slate-200 shadow-lift overflow-hidden">
-          <div ref={panelRef} className="grid lg:grid-cols-2">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.45, ease: [0.22, 0.61, 0.36, 1] }}
+            className="grid lg:grid-cols-2"
+          >
             <div className="p-10 lg:p-14 flex flex-col justify-center order-2 lg:order-1">
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-7">
                 <Icon size={26} className="text-primary" />
@@ -257,7 +253,7 @@ const Screenshots = () => {
                 <Mock />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

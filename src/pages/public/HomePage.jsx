@@ -27,7 +27,7 @@ const HomePage = () => {
       <Pricing />
       <FAQ />
       <Contact />
-      <CTA />
+      {/* <CTA /> */}
     </>
   );
 };
