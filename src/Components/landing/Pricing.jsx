@@ -233,7 +233,7 @@ const Pricing = () => {
                   href={CHURCH_LOGIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 px-4 rounded-full text-sm font-medium text-center text-white bg-[#06b6d4] hover:bg-cyan-600 transition-colors shadow-xs no-underline flex items-center justify-center mt-auto"
+                  className="w-full py-3 px-4 rounded-full text-sm font-medium text-center text-white bg-primary hover:bg-cyan-600 transition-colors shadow-xs no-underline flex items-center justify-center mt-auto"
                 >
                   {buttonText}
                 </a>
