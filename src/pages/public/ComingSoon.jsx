@@ -1,6 +1,6 @@
 const ComingSoon = () => {
   return (
-    <div className="min-h-[60vh] flex flex-col items-center justify-center text-center px-4">
+    <div className="flex-1 flex flex-col items-center justify-center text-center px-4 py-16">
       <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
         <svg
           className="w-8 h-8 text-primary"

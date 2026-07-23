@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { Menu, X, User, Church } from "lucide-react";
 import Logo from "../Components/ui/Logo";
 import { MEMBER_LOGIN_URL, CHURCH_LOGIN_URL } from "../constants/links";
 
@@ -37,22 +37,22 @@ const NavbarLayout = () => {
       <nav
         className={`fixed top-0 inset-x-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 border-b ${
           scrolled
-            ? "bg-white/90 backdrop-blur-xl border-slate-200/80 shadow-[0_4px_20px_rgb(34_26_44_/_0.05)]"
-            : "bg-transparent border-transparent"
+            ? "bg-[#131330]/95 backdrop-blur-xl border-white/10 shadow-lg shadow-black/20"
+            : "bg-[#131330] border-white/10"
         }`}
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
-          <Logo />
+          <Logo useFullLogo />
 
-          <div className="hidden lg:flex items-center gap-1">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map(({ label, href }) => (
               <Link
                 key={href}
                 to={href}
-                className={`relative px-4 py-2 rounded-full text-sm font-semibold no-underline transition-colors ${
+                className={`text-sm font-medium no-underline transition-colors ${
                   pathname === href
-                    ? "text-primary bg-primary/5"
-                    : "text-slate-600 hover:text-primary hover:bg-slate-900/[0.03]"
+                    ? "text-primary font-semibold"
+                    : "text-white/90 hover:text-primary"
                 }`}
               >
                 {label}
@@ -60,29 +60,30 @@ const NavbarLayout = () => {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-3.5">
             <a
               href={MEMBER_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 rounded-full text-sm font-semibold text-slate-700 border border-slate-200 hover:border-primary/40 hover:text-primary bg-white/60 transition-colors no-underline"
+              className="px-5 py-2.5 rounded-full text-sm font-semibold text-primary border border-primary hover:bg-primary/10 transition-all no-underline flex items-center gap-2"
             >
               Member Login
+              <User size={16} className="text-primary" />
             </a>
             <a
               href={CHURCH_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-primary hover:bg-primary-dark shadow-md shadow-primary/25 transition-colors no-underline flex items-center gap-1.5"
+              className="px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-primary hover:opacity-90 shadow-md shadow-primary/30 transition-all no-underline flex items-center gap-2"
             >
               Church Login
-              <ArrowRight size={15} className="transition-transform group-hover:translate-x-0.5" />
+              <Church size={16} className="text-white" />
             </a>
           </div>
 
           <button
             aria-label="Open menu"
-            className="lg:hidden p-2.5 -mr-2 rounded-xl text-slate-700 hover:bg-slate-900/5 cursor-pointer"
+            className="lg:hidden p-2.5 -mr-2 rounded-xl text-white hover:bg-white/10 cursor-pointer"
             onClick={() => setMenuOpen(true)}
           >
             <Menu size={24} />
@@ -91,42 +92,42 @@ const NavbarLayout = () => {
       </nav>
 
       <div
-        className={`fixed inset-0 z-[60] lg:hidden transition-opacity duration-300 ${
+        className={`fixed inset-0 z-60 lg:hidden transition-opacity duration-300 ${
           menuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
       >
         <div
-          className="absolute inset-0 bg-ink/50 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           onClick={() => setMenuOpen(false)}
         />
 
         <div
-          className={`absolute top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
+          className={`absolute top-0 right-0 h-full w-[85%] max-w-sm bg-[#131330] border-l border-white/10 shadow-2xl flex flex-col transition-transform duration-300 ease-out ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between p-5 border-b border-slate-100">
-            <Logo />
+          <div className="flex items-center justify-between p-5 border-b border-white/10">
+            <Logo useFullLogo />
             <button
               aria-label="Close menu"
               onClick={() => setMenuOpen(false)}
-              className="p-2 rounded-full bg-slate-100 text-slate-500 hover:text-slate-900 cursor-pointer"
+              className="p-2 rounded-full bg-white/10 text-white hover:bg-white/20 cursor-pointer"
             >
               <X size={20} />
             </button>
           </div>
 
           <div className="flex-1 overflow-y-auto px-5 py-6 flex flex-col">
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-2">
               {navLinks.map(({ label, href }) => (
                 <Link
                   key={href}
                   to={href}
                   onClick={() => setMenuOpen(false)}
-                  className={`px-4 py-3.5 rounded-xl font-display font-semibold text-lg no-underline transition-colors ${
+                  className={`px-4 py-3 rounded-xl font-medium text-base no-underline transition-colors ${
                     pathname === href
-                      ? "text-primary bg-primary/5"
-                      : "text-slate-800 hover:bg-slate-50"
+                      ? "text-primary bg-primary/10 font-semibold"
+                      : "text-white/90 hover:bg-white/5 hover:text-white"
                   }`}
                 >
                   {label}
@@ -139,17 +140,19 @@ const NavbarLayout = () => {
                 href={MEMBER_LOGIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3.5 text-center font-semibold text-slate-700 border border-slate-200 rounded-xl no-underline"
+                className="py-3 px-4 text-center font-semibold text-primary border border-primary rounded-full no-underline flex items-center justify-center gap-2 hover:bg-primary/10"
               >
                 Member Login
+                <User size={16} className="text-primary" />
               </a>
               <a
                 href={CHURCH_LOGIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="py-3.5 text-center font-semibold text-white bg-primary rounded-xl shadow-md shadow-primary/25 no-underline"
+                className="py-3 px-4 text-center font-semibold text-white bg-primary rounded-full shadow-md shadow-primary/30 no-underline flex items-center justify-center gap-2 hover:opacity-90"
               >
                 Church Login
+                <Church size={16} className="text-white" />
               </a>
             </div>
           </div>

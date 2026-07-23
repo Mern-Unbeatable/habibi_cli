@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #59235b;
+  --color-primary: #06b6d4;
   --color-primary-light: #7a357c;
   --color-primary-dark: #3b153c;
 
-  --color-secondary: #c5622a;
+  --color-secondary: #4d4b73;
   --color-secondary-light: #da7b44;
   --color-secondary-dark: #9f4b1e;
 
@@ -59,6 +59,37 @@ body {
 }
 
 .marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.marquee-row-left {
+  animation: marquee-left var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-row-right {
+  animation: marquee-right var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-row-left:hover,
+.marquee-row-right:hover {
   animation-play-state: paused;
 }
 

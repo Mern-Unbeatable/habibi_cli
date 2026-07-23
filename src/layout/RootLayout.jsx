@@ -8,13 +8,15 @@ const RootLayout = () => {
   return (
     <SmoothScroll>
       <ScrollToTop />
-      <header>
-        <NavbarLayout />
-      </header>
-      <main>
-        <Outlet />
-      </main>
-      <FooterLayout />
+      <div className="min-h-screen flex flex-col">
+        <header>
+          <NavbarLayout />
+        </header>
+        <main className="flex-1 flex flex-col pt-20">
+          <Outlet />
+        </main>
+        <FooterLayout />
+      </div>
     </SmoothScroll>
   );
 };
