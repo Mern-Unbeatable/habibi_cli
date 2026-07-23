@@ -50,14 +50,14 @@ const row2 = [
 ];
 
 const TestimonialCard = ({ quote, name, role, initial }) => (
-  <div className="bg-white rounded-2xl border border-slate-200/80 shadow-[0_4px_20px_rgb(0_0_0_/_0.03)] p-6 sm:p-7 flex flex-col justify-between h-full hover:shadow-md transition-shadow">
+  <div className="bg-white rounded-2xl border border-slate-200/80 p-6 sm:p-7 flex flex-col justify-between h-full hover:shadow-md transition-shadow">
     <div>
       <div className="flex gap-1 mb-4">
         {[...Array(5)].map((_, i) => (
           <Star key={i} size={15} className="text-amber-400 fill-amber-400" />
         ))}
       </div>
-      <p className="text-slate-700 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
+      <p className="text-[#1C1A40BF] text-sm leading-relaxed mb-6 font-normal">
         "{quote}"
       </p>
     </div>
@@ -66,7 +66,7 @@ const TestimonialCard = ({ quote, name, role, initial }) => (
         {initial}
       </div>
       <div className="overflow-hidden">
-        <p className="font-bold text-ink text-sm sm:text-base leading-tight truncate">
+        <p className="font-medium text-ink text-sm sm:text-base leading-tight truncate">
           {name}
         </p>
         <p className="text-xs text-slate-500 truncate mt-0.5">{role}</p>
@@ -81,7 +81,7 @@ const MarqueeRow = ({ items, direction = "left", duration = "40s" }) => {
   return (
     <div className="w-full overflow-hidden py-2">
       <div
-        className={`flex items-stretch gap-6 w-max ${
+        className={`flex items-stretch gap-4 w-max ${
           direction === "right" ? "marquee-row-right" : "marquee-row-left"
         }`}
         style={{ "--marquee-duration": duration }}
@@ -89,7 +89,7 @@ const MarqueeRow = ({ items, direction = "left", duration = "40s" }) => {
         {duplicatedItems.map((item, index) => (
           <div
             key={`${item.name}-${index}`}
-            className="w-[340px] sm:w-[400px] md:w-[440px] shrink-0 flex flex-col"
+            className="w-85 sm:w-100 md:w-110 shrink-0 flex flex-col"
           >
             <TestimonialCard {...item} />
           </div>
@@ -108,16 +108,16 @@ const Testimonials = () => {
       id="testimonials"
       className="py-20 lg:py-24 bg-[#F5F5FA] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 mb-12 lg:mb-16 text-center">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8 mb-12 lg:mb-16 text-center">
         <p
           data-reveal
-          className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-semibold text-primary mb-3"
+          className="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-medium text-primary mb-3"
         >
           <span>☆</span> TESTIMONIALS
         </p>
         <h2
           data-reveal
-          className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-ink leading-tight tracking-tight"
+          className="font-marcellus font-normal text-3xl sm:text-4xl lg:text-5xl text-ink leading-tight tracking-tight"
         >
           Trusted by Church Leaders Across Canada
         </h2>
@@ -125,10 +125,10 @@ const Testimonials = () => {
 
       <div data-reveal className="relative max-w-[100vw]">
         {/* Soft edge fade out gradients */}
-        <div className="absolute inset-y-0 left-0 w-16 sm:w-32 md:w-48 bg-gradient-to-r from-[#F5F5FA] to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-16 sm:w-32 md:w-48 bg-gradient-to-l from-[#F5F5FA] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 left-0 w-16 sm:w-32 md:w-48 bg-linear-to-r from-[#F5F5FA] to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-16 sm:w-32 md:w-48 bg-linear-to-l from-[#F5F5FA] to-transparent z-10 pointer-events-none" />
 
-        <div className="space-y-6">
+        <div className="">
           {/* First row moves left to right */}
           <MarqueeRow items={row1} direction="right" duration="38s" />
 

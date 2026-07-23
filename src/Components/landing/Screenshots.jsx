@@ -13,16 +13,54 @@ import useReveal from "../../hooks/useReveal";
 import SectionHeading from "../ui/SectionHeading";
 
 const people = [
-  { initials: "DM", name: "David Mitchell", detail: "Elder · Mitchell Family", tag: "Leader" },
-  { initials: "ST", name: "Sarah Thompson", detail: "Worship Team · Alto", tag: "Volunteer" },
-  { initials: "JO", name: "James Okafor", detail: "New Member · Family of 4", tag: "New" },
-  { initials: "AL", name: "Ana Lopez", detail: "Youth Ministry", tag: "Volunteer" },
+  {
+    initials: "DM",
+    name: "David Mitchell",
+    detail: "Elder · Mitchell Family",
+    tag: "Leader",
+  },
+  {
+    initials: "ST",
+    name: "Sarah Thompson",
+    detail: "Worship Team · Alto",
+    tag: "Volunteer",
+  },
+  {
+    initials: "JO",
+    name: "James Okafor",
+    detail: "New Member · Family of 4",
+    tag: "New",
+  },
+  {
+    initials: "AL",
+    name: "Ana Lopez",
+    detail: "Youth Ministry",
+    tag: "Volunteer",
+  },
 ];
 
 const events = [
-  { day: "SUN", date: "21", title: "Sunday Worship Service", detail: "9:00 AM · Main Hall", color: "border-primary" },
-  { day: "WED", date: "24", title: "Midweek Bible Study", detail: "7:00 PM · Room 204", color: "border-secondary" },
-  { day: "SAT", date: "27", title: "Community Outreach", detail: "10:00 AM · Downtown", color: "border-emerald-500" },
+  {
+    day: "SUN",
+    date: "21",
+    title: "Sunday Worship Service",
+    detail: "9:00 AM · Main Hall",
+    color: "border-primary",
+  },
+  {
+    day: "WED",
+    date: "24",
+    title: "Midweek Bible Study",
+    detail: "7:00 PM · Room 204",
+    color: "border-secondary",
+  },
+  {
+    day: "SAT",
+    date: "27",
+    title: "Community Outreach",
+    detail: "10:00 AM · Downtown",
+    color: "border-emerald-500",
+  },
 ];
 
 const givingRows = [
@@ -41,7 +79,10 @@ const PeopleMock = () => (
     </div>
     <div className="space-y-3">
       {people.map(({ initials, name, detail, tag }) => (
-        <div key={name} className="flex items-center gap-3 bg-white border border-slate-100 rounded-xl p-3 shadow-sm">
+        <div
+          key={name}
+          className="flex items-center gap-3 bg-white border border-slate-100 rounded-xl p-3 shadow-sm"
+        >
           <span className="w-10 h-10 rounded-full bg-primary/10 text-primary text-xs font-bold flex items-center justify-center shrink-0">
             {initials}
           </span>
@@ -51,7 +92,9 @@ const PeopleMock = () => (
           </div>
           <span
             className={`text-[10px] font-bold px-2.5 py-1 rounded-full ${
-              tag === "New" ? "bg-secondary/10 text-secondary" : "bg-primary/10 text-primary"
+              tag === "New"
+                ? "bg-secondary/10 text-secondary"
+                : "bg-primary/10 text-primary"
             }`}
           >
             {tag}
@@ -66,14 +109,21 @@ const EventsMock = () => (
   <div className="p-6">
     <div className="flex items-center justify-between mb-5">
       <p className="font-display font-bold text-ink">June 2026</p>
-      <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-lg">+ New Event</span>
+      <span className="text-xs font-bold text-primary bg-primary/10 px-3 py-1.5 rounded-lg">
+        + New Event
+      </span>
     </div>
     <div className="space-y-3">
       {events.map(({ day, date, title, detail, color }) => (
-        <div key={title} className={`flex items-center gap-4 bg-white border-l-4 ${color} border-y border-r border-slate-100 rounded-xl p-4 shadow-sm`}>
+        <div
+          key={title}
+          className={`flex items-center gap-4 bg-white border-l-4 ${color} border-y border-r border-slate-100 rounded-xl p-4 shadow-sm`}
+        >
           <div className="text-center shrink-0 w-10">
             <p className="text-[10px] font-bold text-slate-400">{day}</p>
-            <p className="font-display font-bold text-xl text-ink leading-none">{date}</p>
+            <p className="font-display font-bold text-xl text-ink leading-none">
+              {date}
+            </p>
           </div>
           <div className="min-w-0">
             <p className="text-sm font-semibold text-ink truncate">{title}</p>
@@ -102,7 +152,10 @@ const GivingMock = () => (
             <span className="text-slate-500">{amount}</span>
           </div>
           <div className="h-2 bg-slate-100 rounded-full overflow-hidden">
-            <div className="h-full bg-secondary rounded-full" style={{ width: `${pct}%` }} />
+            <div
+              className="h-full bg-secondary rounded-full"
+              style={{ width: `${pct}%` }}
+            />
           </div>
         </div>
       ))}
@@ -117,7 +170,9 @@ const ReportsMock = () => (
         <p className="font-display font-bold text-ink">Attendance Trend</p>
         <p className="text-xs text-slate-400">Last 8 Sundays</p>
       </div>
-      <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-lg">↑ Growing</span>
+      <span className="text-xs font-bold text-emerald-600 bg-emerald-50 px-3 py-1.5 rounded-lg">
+        ↑ Growing
+      </span>
     </div>
     <div className="flex items-end gap-2.5 h-40 mb-2">
       {reportBars.map((height, i) => (
@@ -149,7 +204,11 @@ const tabs = [
     heading: "Know every member personally",
     description:
       "Manage detailed profiles, family connections, and group memberships. Track pastoral care, notes, and milestones — all in one place.",
-    highlights: ["Unlimited member profiles", "Family linking & grouping", "Custom fields & smart tags"],
+    highlights: [
+      "Unlimited member profiles",
+      "Family linking & grouping",
+      "Custom fields & smart tags",
+    ],
     Mock: PeopleMock,
   },
   {
@@ -159,7 +218,11 @@ const tabs = [
     heading: "Plan events that bring people together",
     description:
       "From Sunday services to community outreach, manage every event with RSVPs, volunteer scheduling, and automated reminders.",
-    highlights: ["Drag-and-drop calendar", "Volunteer scheduling", "Room & resource booking"],
+    highlights: [
+      "Drag-and-drop calendar",
+      "Volunteer scheduling",
+      "Room & resource booking",
+    ],
     Mock: EventsMock,
   },
   {
@@ -169,7 +232,11 @@ const tabs = [
     heading: "Make generosity simple and secure",
     description:
       "Enable online, mobile, and text-to-give. Automatically generate statements, track pledges, and watch contributions in real time.",
-    highlights: ["Multiple giving methods", "Recurring donations", "Tax-ready statements"],
+    highlights: [
+      "Multiple giving methods",
+      "Recurring donations",
+      "Tax-ready statements",
+    ],
     Mock: GivingMock,
   },
   {
@@ -179,7 +246,11 @@ const tabs = [
     heading: "Make data-driven ministry decisions",
     description:
       "Beautiful dashboards and custom reports give you deep insight into attendance trends, giving patterns, and member engagement.",
-    highlights: ["Visual dashboards", "Custom report builder", "Growth trend analysis"],
+    highlights: [
+      "Visual dashboards",
+      "Custom report builder",
+      "Growth trend analysis",
+    ],
     Mock: ReportsMock,
   },
 ];
@@ -188,18 +259,27 @@ const Screenshots = () => {
   const [activeTab, setActiveTab] = useState(0);
   const scope = useReveal();
 
-  const { icon: Icon, heading, description, highlights, Mock } = tabs[activeTab];
+  const {
+    icon: Icon,
+    heading,
+    description,
+    highlights,
+    Mock,
+  } = tabs[activeTab];
 
   return (
     <section ref={scope} id="screenshots" className="py-24 lg:py-28 bg-cream">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Product Tour"
           title="See exactly how it works"
           subtitle="A quick look inside the platform. Click through the tabs to explore what your team gets on day one."
         />
 
-        <div data-reveal className="flex flex-wrap justify-center gap-2.5 mb-12">
+        <div
+          data-reveal
+          className="flex flex-wrap justify-center gap-2.5 mb-12"
+        >
           {tabs.map((tab, i) => {
             const TabIcon = tab.icon;
             return (
@@ -219,7 +299,10 @@ const Screenshots = () => {
           })}
         </div>
 
-        <div data-reveal className="bg-white rounded-[2rem] border border-slate-200 shadow-lift overflow-hidden">
+        <div
+          data-reveal
+          className="bg-white rounded-[2rem] border border-slate-200 shadow-lift overflow-hidden"
+        >
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, y: 16 }}
@@ -231,12 +314,19 @@ const Screenshots = () => {
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-7">
                 <Icon size={26} className="text-primary" />
               </div>
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-ink mb-5">{heading}</h3>
-              <p className="text-slate-600 text-lg leading-relaxed mb-8">{description}</p>
+              <h3 className="font-display font-bold text-2xl sm:text-3xl text-ink mb-5">
+                {heading}
+              </h3>
+              <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                {description}
+              </p>
               <ul className="space-y-4">
                 {highlights.map((item) => (
                   <li key={item} className="flex items-center gap-3">
-                    <CheckCircle2 size={20} className="text-secondary shrink-0" />
+                    <CheckCircle2
+                      size={20}
+                      className="text-secondary shrink-0"
+                    />
                     <span className="text-slate-700 font-medium">{item}</span>
                   </li>
                 ))}

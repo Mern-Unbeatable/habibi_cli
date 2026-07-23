@@ -27,16 +27,12 @@ const ChurchArchGraphic = () => (
   >
     <path
       d="M100 10 L100 400 M100 10 L55 90 M100 10 L145 90 M55 90 L55 400 M145 90 L145 400"
-      stroke="#C9A535"
-      strokeWidth="1.2"
-      strokeOpacity="0.18"
+      className="stroke-[#C9A535]/18 stroke-[1.2]"
       strokeLinecap="round"
     />
     <path
       d="M70 400 Q100 370 130 400"
-      stroke="#C9A535"
-      strokeWidth="1.2"
-      strokeOpacity="0.18"
+      className="stroke-[#C9A535]/18 stroke-[1.2]"
       strokeLinecap="round"
     />
   </svg>
@@ -44,18 +40,12 @@ const ChurchArchGraphic = () => (
 
 const Hero = () => {
   return (
-    <section
-      className="relative min-h-screen flex items-center overflow-hidden"
-      style={{ backgroundColor: "#1C1A40" }}
-    >
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#1C1A40]">
       <ChurchArchGraphic />
 
       <div
-        className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 pointer-events-none"
+        className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 pointer-events-none bg-gradient-to-t from-white from-0% via-white/60 via-40% to-transparent"
         aria-hidden="true"
-        style={{
-          background: "linear-gradient(to top, #ffffff 0%, rgba(255,255,255,0.6) 40%, transparent 100%)",
-        }}
       />
 
       <div className="relative w-full max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8 py-16 lg:py-20">
@@ -68,12 +58,7 @@ const Hero = () => {
           >
             <motion.p
               variants={copyItem}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border text-xs sm:text-sm font-semibold tracking-wide mb-7"
-              style={{
-                borderColor: "rgba(201,165,53,0.35)",
-                color: "#C9A535",
-                backgroundColor: "rgba(201,165,53,0.06)",
-              }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-xs sm:text-sm font-semibold tracking-wide mb-7"
             >
               <span aria-hidden="true">✨</span>
               THE INTELLIGENT CHURCH OPERATING SYSTEM
@@ -81,8 +66,7 @@ const Hero = () => {
 
             <motion.h1
               variants={copyItem}
-              className="font-bold text-[2.4rem] leading-[1.1] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] tracking-tight mb-6"
-              style={{ color: "#FFFFFF", fontFamily: '"Playfair Display", Georgia, serif' }}
+              className="font-['Playfair_Display',Georgia,serif] font-bold text-white text-[2.4rem] leading-[1.1] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] tracking-tight mb-6"
             >
               Everything Your Church Needs.
               <br />
@@ -91,8 +75,7 @@ const Hero = () => {
 
             <motion.p
               variants={copyItem}
-              className="text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-7"
-              style={{ color: "rgba(255,255,255,0.82)" }}
+              className="text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-7 text-white/82"
             >
               Run your entire ministry from a single platform — people, giving, accounting,
               communications, volunteers, events, attendance, mobile app, AI automation,
@@ -101,15 +84,11 @@ const Hero = () => {
 
             <motion.ul
               variants={copyItem}
-              className="space-y-2 mb-7 text-sm sm:text-base font-medium"
-              style={{ color: "#C9A535" }}
+              className="space-y-2 mb-7 text-sm sm:text-base font-medium text-[#C9A535]"
             >
               {BULLETS.map((item) => (
                 <li key={item} className="flex items-center gap-2.5 justify-center lg:justify-start">
-                  <span
-                    className="inline-block w-1.5 h-1.5 rounded-full shrink-0"
-                    style={{ backgroundColor: "#C9A535" }}
-                  />
+                  <span className="inline-block w-1.5 h-1.5 rounded-full shrink-0 bg-[#C9A535]" />
                   {item}
                 </li>
               ))}
@@ -117,11 +96,7 @@ const Hero = () => {
 
             <motion.blockquote
               variants={copyItem}
-              className="text-sm sm:text-base italic leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 pl-4 border-l-2"
-              style={{
-                color: "rgba(255,255,255,0.65)",
-                borderColor: "#C9A535",
-              }}
+              className="text-sm sm:text-base italic leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 pl-4 border-l-2 border-[#C9A535] text-white/65"
             >
               Built to help churches spend less time managing software and more time building
               God&apos;s Kingdom.
@@ -135,18 +110,7 @@ const Hero = () => {
                 href={CHURCH_LOGIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 no-underline"
-                style={{
-                  backgroundColor: "#06B6D4",
-                  color: "#FFFFFF",
-                  boxShadow: "0 8px 28px rgba(6,182,212,0.35)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#05a3bd";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#06B6D4";
-                }}
+                className="group w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg bg-primary hover:bg-[#05a3bd] text-white shadow-[0_8px_28px_rgba(6,182,212,0.35)] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 no-underline"
               >
                 Book a Demo
                 <ArrowRight
@@ -158,20 +122,7 @@ const Hero = () => {
                 href={MEMBER_LOGIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg transition-all hover:-translate-y-0.5 flex items-center justify-center gap-1 no-underline"
-                style={{
-                  backgroundColor: "transparent",
-                  color: "#FFFFFF",
-                  border: "1px solid rgba(255,255,255,0.45)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "#C9A535";
-                  e.currentTarget.style.color = "#C9A535";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.45)";
-                  e.currentTarget.style.color = "#FFFFFF";
-                }}
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg bg-transparent text-white border border-white/45 hover:border-[#C9A535] hover:text-[#C9A535] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-1 no-underline"
               >
                 See How It Works
                 <ChevronRight size={16} />
@@ -180,10 +131,9 @@ const Hero = () => {
 
             <motion.p
               variants={copyItem}
-              className="text-xs sm:text-sm flex items-center gap-1.5 justify-center lg:justify-start"
-              style={{ color: "rgba(255,255,255,0.55)" }}
+              className="text-xs sm:text-sm flex items-center gap-1.5 justify-center lg:justify-start text-white/55"
             >
-              <span style={{ color: "#C9A535" }} aria-hidden="true">
+              <span className="text-[#C9A535]" aria-hidden="true">
                 📍
               </span>
               Proudly Canadian. Built for Churches Worldwide.
@@ -199,11 +149,7 @@ const Hero = () => {
             <img
               src={HERO_GROUP_IMAGE}
               alt="Diverse church community standing together"
-              className="relative z-10 w-full max-w-[520px] lg:max-w-none lg:w-[115%] xl:w-[120%] h-auto object-contain object-bottom"
-              style={{
-                maskImage: "linear-gradient(to bottom, black 75%, transparent 100%)",
-                WebkitMaskImage: "linear-gradient(to bottom, black 75%, transparent 100%)",
-              }}
+              className="relative z-10 w-full max-w-[520px] lg:max-w-none lg:w-[115%] xl:w-[120%] h-auto object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
             />
           </motion.div>
         </div>

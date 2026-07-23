@@ -35,13 +35,13 @@ const NavbarLayout = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 inset-x-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 border-b ${
+        className={`fixed top-0 inset-x-0 z-50 transition-[background-color,box-shadow,border-color] duration-300 ${
           scrolled
             ? "bg-[#131330]/95 backdrop-blur-xl border-white/10 shadow-lg shadow-black/20"
             : "bg-[#131330] border-white/10"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
+        <div className="container mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
           <Logo useFullLogo />
 
           <div className="hidden lg:flex items-center gap-6 xl:gap-8">
