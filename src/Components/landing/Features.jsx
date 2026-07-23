@@ -130,11 +130,7 @@ const Features = () => {
 
           <h2
             data-reveal
-            className="font-bold text-[2rem] sm:text-4xl lg:text-[2.75rem] leading-[1.12] tracking-tight mb-4 max-w-3xl mx-auto"
-            style={{
-              color: "#1C1A40",
-              fontFamily: '"Playfair Display", Georgia, serif',
-            }}
+            className="font-marcellus font-normal text-[#1C1A40] text-[2rem] sm:text-4xl lg:text-[2.75rem] leading-[1.12] tracking-tight mb-4 max-w-3xl mx-auto"
           >
             EkklésiaOne vs Typical Church Software
           </h2>

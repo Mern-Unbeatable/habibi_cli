@@ -1,37 +1,31 @@
 import { Smartphone } from "lucide-react";
 import useReveal from "../../hooks/useReveal";
+import ARCH_IMAGE from "../../assets/Arch.png";
+import VECTOR_IMAGE from "../../assets/Vector.png";
 
-const FEATURES = [
-  "Secure Giving",
+const FEATURES = [  "Secure Giving",
   "Daily Devotion",
   "Child Check-In",
   "Events",
   "Groups",
   "Digital Resource Centre",
 ];
-
 const ChurchArchGraphic = () => (
-  <svg
-    className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[280px] sm:w-[340px] lg:w-[420px] h-auto pointer-events-none select-none opacity-30"
-    viewBox="0 0 200 320"
-    fill="none"
-    aria-hidden="true"
-  >
-    <path
-      d="M100 10 L100 300 M100 10 L50 85 M100 10 L150 85 M50 85 L50 300 M150 85 L150 300"
-      stroke="#C9A535"
-      strokeWidth="1.2"
-      strokeLinecap="round"
+  <div className="absolute left-[30%] sm:left-[35%] lg:left-[45%] bottom-0 z-[1] flex items-end pointer-events-none select-none max-h-[90%]">
+    <img
+      src={ARCH_IMAGE}
+      alt=""
+      aria-hidden="true"
+      className="w-[190px] sm:w-[200px] lg:w-[230px] xl:w-[250px] h-auto object-contain object-bottom shrink-0"
     />
-    <path
-      d="M65 300 Q100 270 135 300"
-      stroke="#C9A535"
-      strokeWidth="1.2"
-      strokeLinecap="round"
+    <img
+      src={VECTOR_IMAGE}
+      alt=""
+      aria-hidden="true"
+      className="w-[68px] sm:w-[76px] lg:w-[88px] xl:w-[96px] h-auto object-contain object-bottom shrink-0 -ml-2 sm:-ml-3"
     />
-  </svg>
+  </div>
 );
-
 const AppStoreButton = ({ platform }) => {
   const isApple = platform === "apple";
 
@@ -77,7 +71,7 @@ const Leaders = () => {
   return (
     <section
       ref={scope}
-      className="relative py-20 lg:py-28 overflow-hidden"
+      className="relative py-6 lg:py-10 overflow-hidden"
       style={{ backgroundColor: "#1C1A40" }}
     >
       <ChurchArchGraphic />
@@ -96,11 +90,7 @@ const Leaders = () => {
 
             <h2
               data-reveal
-              className="font-bold text-[2rem] sm:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.12] tracking-tight mb-6"
-              style={{
-                color: "#FFFFFF",
-                fontFamily: '"Playfair Display", Georgia, serif',
-              }}
+              className="font-marcellus font-normal text-white text-[2rem] sm:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.12] tracking-tight mb-6"
             >
               Your Church in Every Pocket
             </h2>

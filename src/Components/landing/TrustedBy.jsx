@@ -1,5 +1,6 @@
 import { CheckCircle2, LayoutGrid } from "lucide-react";
 import useReveal from "../../hooks/useReveal";
+import ONE_PLATFORM_IMAGE from "../../assets/One_Platform.png";
 
 const CHECKLIST = [
   "One login. One database. One source of truth.",
@@ -11,17 +12,17 @@ const TrustedBy = () => {
   const scope = useReveal();
 
   return (
-    <section ref={scope} className="relative py-20 lg:py-28 bg-white overflow-hidden">
-      <div
+    <section ref={scope} className="relative py-20 lg:py-28 bg-white overflow-x-hidden">
+      {/* <div
         className="absolute inset-0 pointer-events-none opacity-[0.35]"
         aria-hidden="true"
         style={{
           backgroundImage: "radial-gradient(#cbd5e1 1px, transparent 1px)",
           backgroundSize: "24px 24px",
         }}
-      />
+      /> */}
 
-      <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="relative container mx-auto px-5 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
           <div className="text-center lg:text-left">
             <p
@@ -35,11 +36,7 @@ const TrustedBy = () => {
 
             <h2
               data-reveal
-              className="font-bold text-[2rem] sm:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.12] tracking-tight mb-6"
-              style={{
-                color: "#1C1A40",
-                fontFamily: '"Playfair Display", Georgia, serif',
-              }}
+              className="font-marcellus font-normal text-[#1C1A40] text-[2rem] sm:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.12] tracking-tight mb-6"
             >
               One Platform.
               <br />
@@ -86,12 +83,16 @@ const TrustedBy = () => {
             </ul>
           </div>
 
-          <div data-reveal data-delay="0.2" className="relative flex justify-center lg:justify-end">
+          <div
+            data-reveal
+            data-delay="0.2"
+            className="relative flex justify-center lg:justify-end overflow-visible"
+          >
             <img
-              src="/platform-overview.png"
-              alt="EkklésiasOne platform ecosystem diagram showing connected modules for people, giving, communication, operations, growth, and mobile experience"
+              src={ONE_PLATFORM_IMAGE}
+              alt="EkklésiasOne platform overview"
               loading="lazy"
-              className="w-full max-w-[640px] lg:max-w-none h-auto object-contain"
+              className="w-full max-w-[920px] sm:max-w-[1000px] lg:max-w-none lg:w-[115%] xl:w-[125%] h-auto object-contain"
             />
           </div>
         </div>
