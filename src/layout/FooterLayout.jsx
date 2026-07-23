@@ -16,8 +16,8 @@ const productLinks = [
 const currentYear = new Date().getFullYear();
 const FooterLayout = () => {
   return (
-    <footer className="bg-[#131330] text-slate-300 border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8 pt-16 pb-8">
+    <footer className="bg-[#131330] text-slate-300">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8 pb-12">
           {/* Column 1: Logo & Description */}
           <div className="lg:col-span-5 pr-0 lg:pr-6">

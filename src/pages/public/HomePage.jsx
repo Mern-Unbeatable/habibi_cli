@@ -5,12 +5,13 @@ import Leaders from "../../Components/landing/Leaders";
 import Features from "../../Components/landing/Features";
 import Screenshots from "../../Components/landing/Screenshots";
 import Support from "../../Components/landing/Support";
+import WhiteGloveSupport from "../../Components/landing/WhiteGloveSupport";
 import Testimonials from "../../Components/landing/Testimonials";
-import Comparison from "../../Components/landing/Comparison";
+import ProudlyCanadian from "../../Components/landing/ProudlyCanadian";
+import CTA from "../../Components/landing/CTA";
 import Pricing from "../../Components/landing/Pricing";
 import FAQ from "../../Components/landing/FAQ";
 import Contact from "../../Components/landing/Contact";
-import CTA from "../../Components/landing/CTA";
 
 const HomePage = () => {
   return (
@@ -21,13 +22,13 @@ const HomePage = () => {
       <Leaders />
       <Features />
       <Screenshots />
-      <Support />
-      <Testimonials />
-      <Comparison />
       <Pricing />
+      <WhiteGloveSupport />
+      <Testimonials />
+      <ProudlyCanadian />
       <FAQ />
       <Contact />
-      {/* <CTA /> */}
+      <CTA />
     </>
   );
 };

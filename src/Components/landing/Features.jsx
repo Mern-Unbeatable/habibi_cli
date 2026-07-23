@@ -59,7 +59,7 @@ const Features = () => {
 
   return (
     <section ref={scope} id="features" className="py-24 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Everything Included"
           title="All your church tools, in one simple app"
@@ -79,7 +79,9 @@ const Features = () => {
               >
                 <Icon size={26} />
               </div>
-              <h3 className="font-display font-bold text-xl text-ink mb-3">{title}</h3>
+              <h3 className="font-display font-bold text-xl text-ink mb-3">
+                {title}
+              </h3>
               <p className="text-slate-600 leading-relaxed">{description}</p>
             </div>
           ))}

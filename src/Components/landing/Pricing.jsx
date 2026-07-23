@@ -1,156 +1,246 @@
-import { useState } from "react";
-import { Check, ArrowRight, Sparkles } from "lucide-react";
+import { Check, X } from "lucide-react";
 import useReveal from "../../hooks/useReveal";
-import SectionHeading from "../ui/SectionHeading";
 import { CHURCH_LOGIN_URL } from "../../constants/links";
 
 const plans = [
   {
-    name: "Starter",
-    description: "For small churches just getting started.",
-    monthly: 29,
-    yearly: 24,
+    name: "Free",
+    titleColor: "text-[#7A357C]",
+    price: "$0",
+    description:
+      "For new or very small congregations just getting started with digital ministry tools.",
     features: [
-      "Up to 150 members",
-      "Event management",
-      "Online giving tools",
-      "Email communication",
-      "Attendance tracking",
-      "Standard support",
+      { text: "Member directory (50)", included: true },
+      { text: "Attendance tracking", included: true },
+      { text: "Basic email messaging", included: true },
+      { text: "Member portal", included: true },
+      { text: "Volunteer scheduling", included: false },
+      { text: "Church accounting", included: false },
+      { text: "GraceConnect check-in", included: false },
     ],
+    buttonText: "Get Started Free",
+    isDark: false,
     popular: false,
   },
   {
-    name: "Growth",
-    description: "For growing churches that need more power.",
-    monthly: 59,
-    yearly: 49,
+    name: "Sprout",
+    titleColor: "text-[#7A357C]",
+    price: "$75",
+    description:
+      "Core platform for active, growing churches managing their full ministry digitally.",
     features: [
-      "Up to 1,000 members",
-      "Advanced event tools",
-      "Full giving platform",
-      "Email & SMS messaging",
-      "Volunteer scheduling",
-      "Priority support",
+      { text: "Everything in Free", included: true },
+      { text: "Unlimited members", included: true },
+      { text: "Volunteer scheduling", included: true },
+      { text: "Grace Connect check-in", included: true },
+      { text: "Church accounting (CAD)", included: true },
+      { text: "Daily devotional", included: true },
+      { text: "HOD requisition portal", included: false },
     ],
+    buttonText: "Start Sprout Trial",
+    isDark: false,
+    popular: false,
+  },
+  {
+    name: "Blossom",
+    titleColor: "text-[#7A357C]",
+    price: "$120",
+    description:
+      "Multi-department churches with advanced workflows, approvals, and communications.",
+    features: [
+      { text: "Everything in Sprout", included: true },
+      { text: "HOD requisition portal", included: true },
+      { text: "Pastorate approval chain", included: true },
+      { text: "Email + SMS + WhatsApp", included: true },
+      { text: "Advanced analytics", included: true },
+      { text: "Resource library", included: true },
+      { text: "15 automation categories", included: true },
+    ],
+    buttonText: "Start Blossom Trial",
+    isDark: false,
+    popular: false,
+  },
+  {
+    name: "Garden",
+    titleColor: "text-amber-400",
+    price: "$175",
+    description:
+      "Large ministries and multi-campus networks needing enterprise-level control and support.",
+    features: [
+      { text: "Everything in Blossom", included: true },
+      { text: "Super admin portal", included: true },
+      { text: "Custom role creation", included: true },
+      { text: "Multi-campus management", included: true },
+      { text: "White-label option", included: true },
+      { text: "Priority support + onboarding", included: true },
+      { text: "Full data import assistance", included: true },
+    ],
+    buttonText: "Get Garden",
+    isDark: true,
     popular: true,
-  },
-  {
-    name: "Enterprise",
-    description: "For large and multi-campus ministries.",
-    monthly: 99,
-    yearly: 82,
-    features: [
-      "Unlimited members",
-      "Multi-campus support",
-      "Advanced workflows",
-      "Custom reports & API",
-      "Dedicated onboarding",
-      "24/7 dedicated support",
-    ],
-    popular: false,
   },
 ];
 
 const Pricing = () => {
-  const [yearly, setYearly] = useState(true);
   const scope = useReveal();
 
   return (
-    <section ref={scope} id="pricing" className="py-24 lg:py-28 bg-cream">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Pricing"
-          title="Simple pricing that grows with you"
-          subtitle="No hidden fees, no per-user charges, no surprises. Every plan starts with a free trial — no credit card required."
-        />
-
-        <div data-reveal className="flex items-center justify-center gap-4 mb-14">
-          <span className={`text-sm font-semibold ${!yearly ? "text-ink" : "text-slate-400"}`}>
-            Monthly
-          </span>
-          <button
-            onClick={() => setYearly(!yearly)}
-            aria-label="Toggle yearly billing"
-            className={`relative w-14 h-8 rounded-full transition-colors cursor-pointer ${
-              yearly ? "bg-primary" : "bg-slate-300"
-            }`}
+    <section
+      ref={scope}
+      id="pricing"
+      className="py-20 bg-white overflow-hidden"
+    >
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
+          <div
+            data-reveal
+            className="inline-flex items-center px-3 py-0.5 rounded-full border border-primary/40 text-primary text-xs sm:text-sm font-normal bg-primary/5 mb-4"
           >
-            <span
-              className={`absolute top-1 w-6 h-6 bg-white rounded-full shadow transition-all ${
-                yearly ? "left-7" : "left-1"
-              }`}
-            />
-          </button>
-          <span className={`text-sm font-semibold ${yearly ? "text-ink" : "text-slate-400"}`}>
-            Yearly
-            <span className="ml-2 text-xs font-bold text-secondary bg-secondary/10 px-2.5 py-1 rounded-full">
-              Save 17%
-            </span>
-          </span>
+            Transparent Kingdom Stewardship Pricing
+          </div>
+          <h2
+            data-reveal
+            className="font-marcellus font-normal text-3xl sm:text-4xl lg:text-5xl text-ink leading-tight tracking-tight mb-3"
+          >
+            Plans for every congregation
+          </h2>
+          <p
+            data-reveal
+            data-delay="0.1"
+            className="text-slate-600 text-sm sm:text-base font-normal"
+          >
+            All modules on every plan. No hidden fees. Always in Canadian
+            dollars.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-6 max-w-5xl mx-auto items-stretch">
-          {plans.map(({ name, description, monthly, yearly: yearlyPrice, features, popular }, i) => (
-            <div
-              key={name}
-              data-reveal
-              data-delay={`${i * 0.12}`}
-              className={`relative rounded-[2rem] p-8 flex flex-col bg-white transition-transform duration-300 hover:-translate-y-1.5 ${
-                popular
-                  ? "border-2 border-primary shadow-lift lg:scale-[1.04] z-10"
-                  : "border border-slate-200 shadow-soft"
-              }`}
-            >
-              {popular && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 bg-secondary text-white text-xs font-bold uppercase tracking-wider py-2 px-5 rounded-full shadow-md whitespace-nowrap">
-                  <Sparkles size={13} /> Most Popular
-                </span>
-              )}
-
-              <div className="mb-7">
-                <h3 className="font-display font-bold text-2xl text-ink mb-2">{name}</h3>
-                <p className="text-slate-500 text-sm">{description}</p>
-              </div>
-
-              <div className="mb-8 flex items-baseline gap-1">
-                <span className="font-display font-bold text-5xl text-ink">
-                  ${yearly ? yearlyPrice : monthly}
-                </span>
-                <span className="text-slate-500 font-medium">/month</span>
-              </div>
-
-              <ul className="space-y-3.5 mb-9 flex-1">
-                {features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <span className="w-5 h-5 rounded-full bg-emerald-50 flex items-center justify-center shrink-0 mt-0.5">
-                      <Check size={12} className="text-emerald-600" />
-                    </span>
-                    <span className="text-slate-700 text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <a
-                href={CHURCH_LOGIN_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group w-full py-4 rounded-2xl font-bold text-center transition-all flex items-center justify-center gap-2 no-underline ${
-                  popular
-                    ? "bg-primary hover:bg-primary-dark text-white shadow-lg shadow-primary/25"
-                    : "bg-slate-100 hover:bg-slate-200 text-ink"
+        {/* 4 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+          {plans.map(
+            (
+              {
+                name,
+                titleColor,
+                price,
+                description,
+                features,
+                buttonText,
+                isDark,
+                popular,
+              },
+              i,
+            ) => (
+              <div
+                key={name}
+                data-reveal
+                data-delay={`${i * 0.1}`}
+                className={`relative rounded-3xl p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 ${
+                  isDark ? "bg-[#003840] text-white shadow-2xl" : "bg-[#FAFAFA]"
                 }`}
               >
-                Start Free Trial
-                <ArrowRight size={17} className="transition-transform group-hover:translate-x-0.5" />
-              </a>
-            </div>
-          ))}
-        </div>
+                {/* Popular Tag */}
+                {popular && (
+                  <div className="absolute top-0 right-0 bg-[#FFC107] text-slate-950 text-xs font-semibold px-4 py-1.5 rounded-bl-xl rounded-tr-3xl shadow-sm">
+                    Most Popular
+                  </div>
+                )}
 
-        <p data-reveal className="text-center text-sm text-slate-500 mt-12">
-          All plans include free data migration, unlimited admin users, and a 30-day money-back guarantee.
-        </p>
+                <div>
+                  {/* Plan Name */}
+                  <h3
+                    className={`font-normal text-base mb-4 ${
+                      isDark ? titleColor : titleColor
+                    }`}
+                  >
+                    {name}
+                  </h3>
+
+                  {/* Price */}
+                  <div className="flex items-baseline mb-4">
+                    <span
+                      className={`font-bold text-3xl sm:text-4xl ${isDark ? "text-white" : "text-ink"}`}
+                    >
+                      {price}
+                    </span>
+                    <span
+                      className={`text-xs ml-1 font-normal ${
+                        isDark ? "text-white/70" : "text-slate-500"
+                      }`}
+                    >
+                      CAD/mon
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p
+                    className={`text-xs sm:text-sm leading-relaxed mb-6 font-normal min-h-11 ${
+                      isDark ? "text-white/80" : "text-[#575757]"
+                    }`}
+                  >
+                    {description}
+                  </p>
+
+                  {/* Benefits Header */}
+                  <p
+                    className={`font-semibold text-xs sm:text-sm mb-4 ${
+                      isDark ? "text-white" : "text-ink"
+                    }`}
+                  >
+                    Benefits
+                  </p>
+
+                  {/* Features List */}
+                  <ul className="space-y-3 mb-8">
+                    {features.map(({ text, included }) => (
+                      <li
+                        key={text}
+                        className="flex items-start gap-2.5 text-xs sm:text-sm"
+                      >
+                        {isDark ? (
+                          <span className="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5">
+                            <Check size={10} className="stroke-3" />
+                          </span>
+                        ) : included ? (
+                          <Check
+                            size={14}
+                            className="text-primary stroke-[2.5] shrink-0 mt-0.5"
+                          />
+                        ) : (
+                          <X
+                            size={14}
+                            className="text-slate-300 stroke-2 shrink-0 mt-0.5"
+                          />
+                        )}
+                        <span
+                          className={`font-normal ${
+                            isDark
+                              ? "text-white/95"
+                              : included
+                                ? "text-slate-700"
+                                : "text-slate-400/80"
+                          }`}
+                        >
+                          {text}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Action Button */}
+                <a
+                  href={CHURCH_LOGIN_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3 px-4 rounded-full text-sm font-medium text-center text-white bg-[#06b6d4] hover:bg-cyan-600 transition-colors shadow-xs no-underline flex items-center justify-center mt-auto"
+                >
+                  {buttonText}
+                </a>
+              </div>
+            ),
+          )}
+        </div>
       </div>
     </section>
   );

@@ -20,7 +20,7 @@ const Leaders = () => {
 
   return (
     <section ref={scope} className="py-24 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Built For Everyone"
           title="Software for every church leader"
