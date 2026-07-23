@@ -212,7 +212,7 @@ const Features = () => {
           <button
             type="button"
             onClick={() => setIsModalOpen(true)}
-            className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-[14px] font-normal text-sm text-white bg-[#06B6D4] shadow-[0_8px_25px_rgba(0,196,212,0.45)] hover:shadow-[0_12px_30px_rgba(0,196,212,0.6)] transition-all duration-300 hover:scale-105 cursor-pointer"
+            className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full font-normal text-sm text-white bg-[#06B6D4] shadow-[0_8px_25px_rgba(0,196,212,0.45)] hover:shadow-[0_12px_30px_rgba(0,196,212,0.6)] transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             See how Easy Migration Is
             <ArrowRight

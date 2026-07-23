@@ -101,7 +101,7 @@ const CTA = () => {
             href={CHURCH_LOGIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-[14px] bg-primary hover:bg-primary/90 text-gray-200 font-normal text-sm inline-flex items-center gap-2 shadow-md shadow-primary/25 transition-all no-underline"
+            className="px-6 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-gray-200 font-normal text-sm inline-flex items-center gap-2 shadow-md shadow-primary/25 transition-all no-underline"
           >
             Book a Demo
             <ArrowRight size={15} />
