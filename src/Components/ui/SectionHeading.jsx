@@ -14,7 +14,7 @@ const SectionHeading = ({ eyebrow, title, subtitle, align = "center" }) => {
       )}
       <h2
         data-reveal
-        className="font-display font-bold text-3xl sm:text-4xl lg:text-[2.75rem] text-ink leading-[1.15] tracking-tight mb-5"
+        className="font-marcellus font-normal text-3xl sm:text-4xl lg:text-[2.75rem] text-ink leading-[1.15] tracking-tight mb-5"
       >
         {title}
       </h2>

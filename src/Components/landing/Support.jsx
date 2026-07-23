@@ -23,9 +23,12 @@ const Support = () => {
 
   return (
     <section ref={scope} className="py-24 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20 items-center">
-          <div data-reveal className="grid grid-cols-2 gap-4 sm:gap-5 max-w-md mx-auto lg:max-w-none w-full">
+          <div
+            data-reveal
+            className="grid grid-cols-2 gap-4 sm:gap-5 max-w-md mx-auto lg:max-w-none w-full"
+          >
             <img
               src={team[0]}
               alt="Support team member"
@@ -66,7 +69,11 @@ const Support = () => {
             >
               Unmatched customer service, from people who get ministry
             </h2>
-            <p data-reveal data-delay="0.1" className="text-lg text-slate-600 leading-relaxed mb-9">
+            <p
+              data-reveal
+              data-delay="0.1"
+              className="text-lg text-slate-600 leading-relaxed mb-9"
+            >
               Our support team is made up of people who have served in real
               churches. When you call, you talk to someone who understands
               Sunday morning — not a script.
