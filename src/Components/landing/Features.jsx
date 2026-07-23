@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { ArrowRight, Bookmark, Check, Star, X } from "lucide-react";
 import useReveal from "../../hooks/useReveal";
+import MigrationModal from "./MigrationModal";
 
 const COMPARISONS = [
   {
@@ -69,7 +71,7 @@ const COMPARISONS = [
 ];
 
 const EkklesiaCell = ({ main, highlight }) => (
-  <div className="rounded-xl border border-[#2DD4BF4D]/35 bg-[#10182B]/85 p-4 h-full flex flex-col justify-center transition-all duration-200 shadow-[#2DD4BF4D]/25 shadow-md">
+  <div className="rounded-xl border border-[#2DD4BF]/30 bg-[#10182B]/85 p-4 h-full flex flex-col justify-center transition-all duration-200 shadow-[#2DD4BF4D]/25 shadow-md">
     <div className="flex items-start gap-2.5 mb-1.5">
       <div className="w-5 h-5 rounded-full bg-[#06B6D4]/20 flex items-center justify-center shrink-0 mt-0.5">
         <Check size={13} strokeWidth={3} className="text-cyan-400" />
@@ -102,6 +104,7 @@ const TypicalCell = ({ text }) => (
 
 const Features = () => {
   const scope = useReveal();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section
@@ -206,17 +209,24 @@ const Features = () => {
           data-delay="0.2"
           className="flex justify-center mt-8 sm:mt-10 lg:mt-12"
         >
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-[14px] font-normal text-sm text-white bg-[#06B6D4] shadow-[0_8px_25px_rgba(0,196,212,0.45)] hover:shadow-[0_12px_30px_rgba(0,196,212,0.6)] transition-all duration-300 hover:scale-105 no-underline"
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-[14px] font-normal text-sm text-white bg-[#06B6D4] shadow-[0_8px_25px_rgba(0,196,212,0.45)] hover:shadow-[0_12px_30px_rgba(0,196,212,0.6)] transition-all duration-300 hover:scale-105 cursor-pointer"
           >
             See how Easy Migration Is
             <ArrowRight
               size={18}
               className="transition-transform group-hover:translate-x-1"
             />
-          </a>
+          </button>
         </div>
+
+        {/* Modal */}
+        <MigrationModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
     </section>
   );
