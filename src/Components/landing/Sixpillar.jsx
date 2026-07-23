@@ -1,6 +1,7 @@
 import {
   BarChart3,
   Calendar,
+  Check,
   CheckCircle2,
   DollarSign,
   LayoutGrid,
@@ -18,9 +19,9 @@ const PILLARS = [
     iconBg: "rgba(6,182,212,0.12)",
     items: [
       { label: "GraceConnect Kids (Child Check-in)", highlight: true },
-      { label: "PeopleHub", highlight: true },
-      { label: "Community", highlight: true },
-      { label: "Presence", highlight: true },
+      { label: "PeopleHub", highlight: false },
+      { label: "Community", highlight: false },
+      { label: "Presence", highlight: false },
     ],
   },
   {
@@ -99,11 +100,7 @@ const VideoShowcase = () => {
 
           <h2
             data-reveal
-            className="font-bold text-[2rem] sm:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.12] tracking-tight max-w-3xl mx-auto"
-            style={{
-              color: "#1C1A40",
-              fontFamily: '"Playfair Display", Georgia, serif',
-            }}
+            className="font-marcellus font-normal text-[2rem] sm:text-4xl lg:text-[2.75rem] xl:text-5xl text-[#1C1A40] leading-[1.12] tracking-tight max-w-3xl mx-auto"
           >
             Six Pillars of Ministry Excellence
           </h2>
@@ -127,10 +124,7 @@ const VideoShowcase = () => {
                   <Icon size={22} style={{ color: pillar.color }} />
                 </div>
 
-                <h3
-                  className="font-bold text-lg sm:text-xl mb-4"
-                  style={{ color: "#1C1A40" }}
-                >
+                <h3 className="font-marcellus font-normal text-lg sm:text-xl text-[#1C1A40] mb-4">
                   {pillar.title}
                 </h3>
 
@@ -143,10 +137,10 @@ const VideoShowcase = () => {
 
                     return (
                       <li key={item.label} className="flex items-start gap-2.5">
-                        <CheckCircle2
+                        <Check
                           size={16}
                           className="shrink-0 mt-0.5"
-                          style={{ color: "#06B6D4" }}
+                          style={{ color: pillar.color }}
                         />
                         <span
                           className="text-sm sm:text-[0.95rem] leading-snug"

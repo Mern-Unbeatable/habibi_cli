@@ -42,7 +42,7 @@ const AboutView = () => {
       <section className="bg-gradient-to-b from-blue-50 to-white py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
+            <h1 className="mb-6 font-display font-normal text-4xl text-gray-900 md:text-5xl">
               About This Boilerplate
             </h1>
             <p className="text-xl leading-relaxed text-gray-600">
@@ -60,7 +60,7 @@ const AboutView = () => {
           <div className="mx-auto max-w-4xl">
             <div className="grid items-center gap-12 md:grid-cols-2">
               <div>
-                <h2 className="mb-6 text-3xl font-bold text-gray-900">Our Mission</h2>
+                <h2 className="mb-6 font-display font-normal text-3xl text-gray-900">Our Mission</h2>
                 <p className="mb-6 text-lg leading-relaxed text-gray-600">
                   To provide developers with a comprehensive, well-documented React boilerplate that
                   follows industry standards and incorporates the latest tools and practices in
@@ -90,7 +90,7 @@ const AboutView = () => {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">Key Features</h2>
+              <h2 className="mb-4 font-display font-normal text-3xl text-gray-900">Key Features</h2>
               <p className="mx-auto max-w-2xl text-gray-600">
                 Built with modern development practices and tools that scale with your project.
               </p>
@@ -117,7 +117,7 @@ const AboutView = () => {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-6xl">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">Technologies Used</h2>
+              <h2 className="mb-4 font-display font-normal text-3xl text-gray-900">Technologies Used</h2>
               <p className="mx-auto max-w-2xl text-gray-600">
                 Carefully selected tools and libraries that work well together.
               </p>
