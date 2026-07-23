@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, ChevronRight, MapPin } from "lucide-react";
+import { ArrowRight, ChevronRight, MapPin, Sparkles } from "lucide-react";
 import { CHURCH_LOGIN_URL, MEMBER_LOGIN_URL } from "../../constants/links";
 import HERO_GROUP_IMAGE from "../../assets/Everything.png";
 import ARCH_IMAGE from "../../assets/Arch.png";
@@ -71,6 +71,7 @@ const Hero = () => {
             variants={copyItem}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-xs sm:text-sm font-semibold tracking-wide mb-7"
           >
+            <Sparkles />
             THE INTELLIGENT CHURCH OPERATING SYSTEM
           </motion.p>
 
@@ -97,7 +98,7 @@ const Hero = () => {
             className="space-y-2 mb-7 text-sm sm:text-base font-medium text-[#C9A535]"
           >
             {BULLETS.map((item) => (
-              <li key={item} className="flex items-center gap-2.5 justify-center lg:justify-start">
+              <li key={item} className="flex items-center gap-2.5 justify-center text-[#FFFFFFE5] lg:justify-start">
                 <span className="inline-block w-1.5 h-1.5 rounded-full shrink-0 bg-[#C9A535]" />
                 {item}
               </li>
@@ -106,7 +107,7 @@ const Hero = () => {
 
           <motion.blockquote
             variants={copyItem}
-            className="text-sm sm:text-base italic leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 pl-4 border-l-2 border-[#C9A535] text-white/65"
+            className="text-sm sm:text-base  leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 pl-4 border-l-2 border-[#C9A535] text-[#FFFFFFE5]"
           >
             Built to help churches spend less time managing software and more time building
             God&apos;s Kingdom.
@@ -141,7 +142,7 @@ const Hero = () => {
 
           <motion.p
             variants={copyItem}
-            className="text-xs sm:text-sm flex items-center gap-1.5 justify-center lg:justify-start text-white/55"
+            className="text-xs sm:text-sm flex items-center gap-1.5 justify-center lg:justify-start text-white"
           >
             <span className="text-[#C9A535]" aria-hidden="true">
               <MapPin size={16} />

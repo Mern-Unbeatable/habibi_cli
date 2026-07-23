@@ -114,7 +114,7 @@ const Features = () => {
     <section
       ref={scope}
       id="features"
-      className="relative py-20 lg:py-28 overflow-hidden"
+      className="relative py-14 lg:py-20 overflow-hidden"
       style={{ backgroundColor: "#F3F4F8" }}
     >
       <div className="relative max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">

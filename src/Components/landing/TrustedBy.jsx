@@ -1,4 +1,4 @@
-import { CheckCircle2, LayoutGrid } from "lucide-react";
+import { Check, CheckCircle2, LayoutGrid } from "lucide-react";
 import useReveal from "../../hooks/useReveal";
 import ONE_PLATFORM_IMAGE from "../../assets/One_Platform.png";
 
@@ -12,7 +12,7 @@ const TrustedBy = () => {
   const scope = useReveal();
 
   return (
-    <section ref={scope} className="relative py-20 lg:py-28 bg-white overflow-x-hidden">
+    <section ref={scope} className="relative py-14 lg:py-20 bg-white overflow-x-hidden">
       {/* <div
         className="absolute inset-0 pointer-events-none opacity-[0.35]"
         aria-hidden="true"
@@ -70,10 +70,10 @@ const TrustedBy = () => {
                   data-delay={`${0.16 + i * 0.08}`}
                   className="flex items-start gap-3 text-left max-w-xl mx-auto lg:mx-0"
                 >
-                  <CheckCircle2
+                  <Check
                     size={20}
                     className="shrink-0 mt-0.5"
-                    style={{ color: "#06B6D4" }}
+                    
                   />
                   <span className="text-sm sm:text-base font-medium" style={{ color: "#1C1A40" }}>
                     {item}
