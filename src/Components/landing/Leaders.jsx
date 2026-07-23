@@ -1,56 +1,163 @@
+import { Smartphone } from "lucide-react";
 import useReveal from "../../hooks/useReveal";
-import SectionHeading from "../ui/SectionHeading";
 
-const photo = (id) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&q=80&w=500&h=600`;
-
-const leaders = [
-  { role: "Senior Pastors", img: photo("photo-1560250097-0b93528c311a") },
-  { role: "Church Admins", img: photo("photo-1573496359142-b8d87734a5a2") },
-  { role: "Treasurers", img: photo("photo-1556157382-97eda2d62296") },
-  { role: "Worship Leaders", img: photo("photo-1511632765486-a01980e01a18") },
-  { role: "Kids Ministry", img: photo("photo-1544776193-352d25ca82cd") },
-  { role: "Group Leaders", img: photo("photo-1522071820081-009f0129c71c") },
-  { role: "Volunteers", img: photo("photo-1531427186611-ecfd6d936c79") },
-  { role: "Members", img: photo("photo-1523803326055-9729b9e8ff2f") },
+const FEATURES = [
+  "Secure Giving",
+  "Daily Devotion",
+  "Child Check-In",
+  "Events",
+  "Groups",
+  "Digital Resource Centre",
 ];
+
+const ChurchArchGraphic = () => (
+  <svg
+    className="absolute right-[8%] top-1/2 -translate-y-1/2 w-[280px] sm:w-[340px] lg:w-[420px] h-auto pointer-events-none select-none opacity-30"
+    viewBox="0 0 200 320"
+    fill="none"
+    aria-hidden="true"
+  >
+    <path
+      d="M100 10 L100 300 M100 10 L50 85 M100 10 L150 85 M50 85 L50 300 M150 85 L150 300"
+      stroke="#C9A535"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+    />
+    <path
+      d="M65 300 Q100 270 135 300"
+      stroke="#C9A535"
+      strokeWidth="1.2"
+      strokeLinecap="round"
+    />
+  </svg>
+);
+
+const AppStoreButton = ({ platform }) => {
+  const isApple = platform === "apple";
+
+  return (
+    <a
+      href="#"
+      className="flex items-center gap-3 px-5 py-3 rounded-xl border transition-all hover:-translate-y-0.5 no-underline"
+      style={{
+        backgroundColor: "rgba(255,255,255,0.06)",
+        borderColor: "rgba(255,255,255,0.2)",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.borderColor = "#C9A535";
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
+      }}
+    >
+      {isApple ? (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#C9A535" aria-hidden="true">
+          <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.06 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+        </svg>
+      ) : (
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="#C9A535" aria-hidden="true">
+          <path d="M3.609 1.814L13.792 12 3.61 22.186a1.96 1.96 0 0 1-.395-1.17V2.984c0-.437.145-.85.395-1.17zm3.296 2.803l9.337 9.337-2.803 2.803-9.337-9.337 2.803-2.803zm11.085 0l2.803 2.803-5.575 5.575-2.803-2.803 5.575-5.575zM6.905 19.197l9.337-9.337 2.803 2.803-9.337 9.337-2.803-2.803z" />
+        </svg>
+      )}
+      <div className="text-left">
+        <p className="text-[10px] leading-none mb-0.5" style={{ color: "rgba(255,255,255,0.6)" }}>
+          {isApple ? "Download on the" : "Get it on"}
+        </p>
+        <p className="text-sm font-semibold leading-none" style={{ color: "#FFFFFF" }}>
+          {isApple ? "App Store" : "Google Play"}
+        </p>
+      </div>
+    </a>
+  );
+};
 
 const Leaders = () => {
   const scope = useReveal();
 
   return (
-    <section ref={scope} className="py-24 lg:py-28 bg-white">
-      <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <SectionHeading
-          eyebrow="Built For Everyone"
-          title="Software for every church leader"
-          subtitle="From the senior pastor to the newest volunteer — everyone gets the tools they need, with permissions that fit their role."
-        />
+    <section
+      ref={scope}
+      className="relative py-20 lg:py-28 overflow-hidden"
+      style={{ backgroundColor: "#1C1A40" }}
+    >
+      <ChurchArchGraphic />
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-          {leaders.map(({ role, img }, i) => (
-            <div
-              key={role}
+      <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-10 xl:gap-16 items-center">
+          <div className="text-center lg:text-left">
+            <p
               data-reveal
-              data-delay={`${(i % 4) * 0.08}`}
-              className="group relative aspect-square rounded-3xl overflow-hidden bg-slate-200 shadow-soft cursor-pointer"
+              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-6"
+              style={{ color: "#C9A535" }}
             >
-              <img
-                src={img}
-                alt={role}
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-300" />
-              <div className="absolute inset-0 bg-linear-to-t from-ink/85 via-ink/10 to-transparent pointer-events-none" />
-              <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-                <p className="text-white font-display font-bold text-base sm:text-lg leading-tight">
-                  {role}
-                </p>
-                <span className="block h-1 w-8 bg-secondary rounded-full mt-2 transition-all duration-300 group-hover:w-14" />
-              </div>
+              <Smartphone size={15} strokeWidth={2.5} />
+              Pocket Church
+            </p>
+
+            <h2
+              data-reveal
+              className="font-bold text-[2rem] sm:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.12] tracking-tight mb-6"
+              style={{
+                color: "#FFFFFF",
+                fontFamily: '"Playfair Display", Georgia, serif',
+              }}
+            >
+              Your Church in Every Pocket
+            </h2>
+
+            <p
+              data-reveal
+              data-delay="0.08"
+              className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+              style={{ color: "rgba(255,255,255,0.75)" }}
+            >
+              The Pocket Church mobile app gives your congregation a beautifully branded home
+              for giving, devotionals, events, groups, and more — all connected to your
+              EkklésiaOne platform in real time.
+            </p>
+
+            <div
+              data-reveal
+              data-delay="0.12"
+              className="flex flex-wrap gap-2.5 justify-center lg:justify-start mb-8"
+            >
+              {FEATURES.map((feature) => (
+                <span
+                  key={feature}
+                  className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium border"
+                  style={{
+                    color: "#FFFFFF",
+                    borderColor: "rgba(255,255,255,0.25)",
+                    backgroundColor: "rgba(255,255,255,0.04)",
+                  }}
+                >
+                  {feature}
+                </span>
+              ))}
             </div>
-          ))}
+
+            <div
+              data-reveal
+              data-delay="0.16"
+              className="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start"
+            >
+              <AppStoreButton platform="apple" />
+              <AppStoreButton platform="google" />
+            </div>
+          </div>
+
+          <div
+            data-reveal
+            data-delay="0.2"
+            className="relative flex justify-center lg:justify-end"
+          >
+            <img
+              src="/pocket-church-phones.png"
+              alt="Pocket Church mobile app showing Give Securely and Daily Devotion screens"
+              loading="lazy"
+              className="relative z-10 w-full max-w-[560px] lg:max-w-none h-auto object-contain"
+            />
+          </div>
         </div>
       </div>
     </section>
