@@ -79,7 +79,7 @@ const ContactView = () => {
       <section className="bg-linear-to-b from-blue-50 to-white py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl text-center">
-            <h1 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl">
+            <h1 className="mb-6 font-display font-normal text-4xl text-gray-900 md:text-5xl">
               Get In Touch
             </h1>
             <p className="text-xl leading-relaxed text-gray-600">
@@ -97,7 +97,7 @@ const ContactView = () => {
             <div className="grid gap-12 lg:grid-cols-2">
               {/* Contact Form */}
               <div>
-                <h2 className="mb-8 text-3xl font-bold text-gray-900">
+                <h2 className="mb-8 font-display font-normal text-3xl text-gray-900">
                   Send us a Message
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
@@ -197,7 +197,7 @@ const ContactView = () => {
 
               {/* Contact Info */}
               <div>
-                <h2 className="mb-8 text-3xl font-bold text-gray-900">
+                <h2 className="mb-8 font-display font-normal text-3xl text-gray-900">
                   Other Ways to Reach Us
                 </h2>
                 <div className="mb-8 space-y-6">
@@ -244,7 +244,7 @@ const ContactView = () => {
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-4xl">
             <div className="mb-12 text-center">
-              <h2 className="mb-4 text-3xl font-bold text-gray-900">
+              <h2 className="mb-4 font-display font-normal text-3xl text-gray-900">
                 Frequently Asked Questions
               </h2>
               <p className="text-gray-600">
