@@ -27,7 +27,7 @@ const CTA = () => {
         }}
         aria-hidden="true"
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.015] via-primary/[0.01] to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-primary/1.5 via-primary/1 to-transparent" />
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[75%] max-w-3xl h-56 bg-primary blur-[120px] opacity-8" />
       </div>
 
@@ -101,7 +101,7 @@ const CTA = () => {
             href={CHURCH_LOGIN_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-2.5 rounded-[14px] bg-primary hover:bg-primary/90 text-gray-200 font-normal text-sm inline-flex items-center gap-2 shadow-md shadow-primary/25 transition-all no-underline"
+            className="px-6 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-gray-200 font-normal text-sm inline-flex items-center gap-2 shadow-md shadow-primary/25 transition-all no-underline"
           >
             Book a Demo
             <ArrowRight size={15} />

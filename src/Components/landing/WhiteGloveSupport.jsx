@@ -29,7 +29,7 @@ const WhiteGloveSupport = () => {
   const scope = useReveal();
 
   return (
-    <section ref={scope} className="py-20 sm:py-24 bg-white overflow-hidden">
+    <section ref={scope} className="py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14 sm:mb-18">
@@ -49,7 +49,7 @@ const WhiteGloveSupport = () => {
         </div>
 
         {/* 3 Column Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 ">
           {features.map(({ icon: Icon, iconBg, title, description }, index) => (
             <div
               key={title}

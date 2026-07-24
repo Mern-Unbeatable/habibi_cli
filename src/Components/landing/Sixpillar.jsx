@@ -87,7 +87,7 @@ const VideoShowcase = () => {
       className="relative py-20 lg:py-28 overflow-hidden"
       style={{ backgroundColor: "#F8F9FD" }}
     >
-      <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="relative max-w-350 mx-auto px-5 sm:px-6 lg:px-8">
         <div className="text-center mb-12 lg:mb-16">
           <p
             data-reveal

@@ -1,9 +1,11 @@
-import { ArrowRight, Check, Lock, Star, X } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight, Bookmark, Check, Star, X } from "lucide-react";
 import useReveal from "../../hooks/useReveal";
+import MigrationModal from "./MigrationModal";
 
 const COMPARISONS = [
   {
-    category: "Architecture",
+    category: "ARCHITECTURE",
     feature: "Unified All-in-One Database",
     ekklesia: {
       main: "Fully Integrated & Included",
@@ -12,16 +14,17 @@ const COMPARISONS = [
     typical: "Patchwork of 4-6 separate apps with sync errors",
   },
   {
-    category: "Finance",
+    category: "FINANCE",
     feature: "Integrated Fund Accounting & CRA Receipts",
     ekklesia: {
       main: "Fully Integrated & Included",
       highlight: "1-Click automated tax receipt dispatch",
     },
-    typical: "Requires extra QuickBooks subscription & manual spreadsheet export",
+    typical:
+      "Requires extra QuickBooks subscription & manual spreadsheet export",
   },
   {
-    category: "Intelligence",
+    category: "INTELLIGENCE",
     feature: "Native AI Ministry Assistant",
     ekklesia: {
       main: "Fully Integrated & Included",
@@ -30,7 +33,7 @@ const COMPARISONS = [
     typical: "Not available or legacy add-on",
   },
   {
-    category: "Mobile",
+    category: "MOBILE",
     feature: "Custom Branded Pocket Church Mobile App",
     ekklesia: {
       main: "Included in all plans",
@@ -39,7 +42,7 @@ const COMPARISONS = [
     typical: "$199/mo extra add-on or generic shared app",
   },
   {
-    category: "Pricing",
+    category: "PRICING",
     feature: "Transparent All-Inclusive Pricing",
     ekklesia: {
       main: "Single predictable tier, zero hidden module fees",
@@ -48,7 +51,7 @@ const COMPARISONS = [
     typical: "Module add-ons per feature (Giving + App + SMS fees)",
   },
   {
-    category: "Security",
+    category: "SECURITY",
     feature: "Canadian Data Sovereignty & PIPEDA Compliance",
     ekklesia: {
       main: "Fully Integrated & Included",
@@ -57,7 +60,7 @@ const COMPARISONS = [
     typical: "US-hosted data with limited local compliance",
   },
   {
-    category: "Onboarding",
+    category: "ONBOARDING",
     feature: "Dedicated White-Glove Data Migration",
     ekklesia: {
       main: "Included for free with dedicated migration engineer",
@@ -68,22 +71,18 @@ const COMPARISONS = [
 ];
 
 const EkklesiaCell = ({ main, highlight }) => (
-  <div
-    className="rounded-xl border p-4 h-full"
-    style={{
-      backgroundColor: "rgba(255,255,255,0.04)",
-      borderColor: "rgba(6,182,212,0.25)",
-    }}
-  >
-    <div className="flex items-start gap-2.5 mb-2">
-      <Check size={16} className="shrink-0 mt-0.5" style={{ color: "#06B6D4" }} />
-      <span className="text-sm font-semibold leading-snug" style={{ color: "#FFFFFF" }}>
+  <div className="rounded-xl border border-[#2DD4BF]/30 bg-[#10182B]/85 p-4 h-full flex flex-col justify-center transition-all duration-200 shadow-[#2DD4BF4D]/25 shadow-md">
+    <div className="flex items-start gap-2.5 mb-1.5">
+      <div className="w-5 h-5 rounded-full bg-[#06B6D4]/20 flex items-center justify-center shrink-0 mt-0.5">
+        <Check size={13} strokeWidth={3} className="text-cyan-400" />
+      </div>
+      <span className="text-sm font-semibold leading-snug text-white">
         {main}
       </span>
     </div>
-    <div className="flex items-start gap-2 pl-6">
-      <Star size={12} className="shrink-0 mt-1" style={{ color: "#C9A535" }} fill="#C9A535" />
-      <span className="text-xs leading-relaxed" style={{ color: "#C9A535" }}>
+    <div className="flex items-center gap-1.5 pl-7">
+      <Star size={12} className="shrink-0 text-[#FACC15] fill-yellow-500" />
+      <span className="text-[11px] sm:text-xs font-normal leading-tight text-[#FACC15]">
         {highlight}
       </span>
     </div>
@@ -91,16 +90,12 @@ const EkklesiaCell = ({ main, highlight }) => (
 );
 
 const TypicalCell = ({ text }) => (
-  <div
-    className="rounded-xl border p-4 h-full"
-    style={{
-      backgroundColor: "rgba(0,0,0,0.2)",
-      borderColor: "rgba(255,255,255,0.06)",
-    }}
-  >
+  <div className="rounded-xl border border-white/[0.07] bg-[#131725]/60 p-4 h-full flex items-center">
     <div className="flex items-start gap-2.5">
-      <X size={16} className="shrink-0 mt-0.5" style={{ color: "#F87171" }} />
-      <span className="text-sm leading-snug" style={{ color: "rgba(255,255,255,0.65)" }}>
+      <div className="w-5 h-5 rounded-full bg-red-500/10 border border-red-500/25 flex items-center justify-center shrink-0 mt-0.5">
+        <X size={12} strokeWidth={2.5} className="text-red-400" />
+      </div>
+      <span className="text-xs sm:text-sm font-normal leading-snug text-[#F4F4F4]">
         {text}
       </span>
     </div>
@@ -109,28 +104,28 @@ const TypicalCell = ({ text }) => (
 
 const Features = () => {
   const scope = useReveal();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <section
       ref={scope}
       id="features"
-      className="relative py-14 lg:py-20 overflow-hidden"
-      style={{ backgroundColor: "#F3F4F8" }}
+      className="relative py-20 overflow-hidden bg-[#F4F6F9]"
     >
-      <div className="relative max-w-[1200px] mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 lg:mb-12">
+      <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-12 lg:mb-14">
           <p
             data-reveal
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-5"
-            style={{ color: "#06B6D4" }}
+            className="inline-flex items-center gap-1.5 text-xs font-normal uppercase tracking-[0.2em] mb-4 text-[#00C4D4]"
           >
-            <Lock size={14} strokeWidth={2.5} />
-            What Makes Us Different
+            <Bookmark size={14} strokeWidth={2.5} className="shrink-0" />
+            WHAT MAKES US DIFFERENT
           </p>
 
           <h2
             data-reveal
-            className="font-marcellus font-normal text-[#1C1A40] text-[2rem] sm:text-4xl lg:text-[2.75rem] leading-[1.12] tracking-tight mb-4 max-w-3xl mx-auto"
+            className="font-serif font-medium text-3xl sm:text-4xl lg:text-[2.65rem] leading-[1.15] tracking-tight mb-4 max-w-3xl mx-auto text-[#0F172A]"
           >
             EkklésiaOne vs Typical Church Software
           </h2>
@@ -138,106 +133,100 @@ const Features = () => {
           <p
             data-reveal
             data-delay="0.08"
-            className="text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
-            style={{ color: "#64748B" }}
+            className="text-sm sm:text-base leading-relaxed max-w-2xl mx-auto text-slate-500"
           >
-            Most church platforms bolt modules together and charge per feature. EkklésiaOne
-            is built as one — no stitching required.
+            Most church platforms bolt modules together and charge per feature.
+            EkklésiaOne is built as one — no stitching required.
           </p>
         </div>
 
+        {/* Main Comparison Card */}
         <div
           data-reveal
           data-delay="0.12"
-          className="rounded-3xl overflow-hidden p-5 sm:p-8 lg:p-10"
-          style={{ backgroundColor: "#1C1A40" }}
+          className="rounded-3xl p-6 sm:p-8 lg:p-12 shadow-2xl relative bg-[#0F172A]"
         >
-          <div className="hidden lg:grid grid-cols-[1.1fr_1fr_1fr] gap-4 mb-5 px-1">
-            <p
-              className="text-[10px] font-bold uppercase tracking-[0.2em]"
-              style={{ color: "rgba(255,255,255,0.4)" }}
-            >
-              Platform Feature / Capability
+          {/* Table Column Headers (Desktop) */}
+          <div className="hidden lg:grid grid-cols-[1.3fr_1fr_1fr] gap-5 mb-6 px-1 items-center">
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+              PLATFORM FEATURE / CAPABILITY
             </p>
-            <p
-              className="text-[10px] font-bold uppercase tracking-[0.2em] text-center"
-              style={{ color: "#06B6D4" }}
-            >
-              EkklésiaOne Standard
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+              EKKLESIAONE STANDARD
             </p>
-            <p
-              className="text-[10px] font-bold uppercase tracking-[0.2em] text-right"
-              style={{ color: "rgba(255,255,255,0.4)" }}
-            >
-              Typical Church Software
+            <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-white">
+              TYPICAL CHURCH SOFTWARE
             </p>
           </div>
 
+          {/* Rows */}
           <div className="space-y-4">
-            {COMPARISONS.map((row, i) => (
+            {COMPARISONS.map((row) => (
               <div
                 key={row.feature}
-                className="grid grid-cols-1 lg:grid-cols-[1.1fr_1fr_1fr] gap-3 lg:gap-4 items-stretch"
+                className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr_1fr] gap-3 lg:gap-5 items-stretch"
               >
-                <div className="flex flex-col justify-center py-2 lg:py-0">
-                  <p className="font-semibold text-sm sm:text-base mb-1" style={{ color: "#FFFFFF" }}>
+                {/* Column 1: Feature Title & Category */}
+                <div className="flex flex-col justify-center py-1 lg:py-0">
+                  <h3 className="font-semibold text-base sm:text-[17px] leading-snug text-white mb-0.5">
                     {row.feature}
-                  </p>
-                  <p
-                    className="text-[10px] font-bold uppercase tracking-[0.18em]"
-                    style={{ color: "rgba(255,255,255,0.35)" }}
-                  >
+                  </h3>
+                  <span className="text-[10px] font-normal uppercase tracking-[0.18em] text-[#98C2FF]">
                     {row.category}
-                  </p>
+                  </span>
                 </div>
 
-                <div className="lg:hidden">
-                  <p
-                    className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2"
-                    style={{ color: "#06B6D4" }}
-                  >
-                    EkklésiaOne Standard
-                  </p>
+                {/* Column 2: EkklésiaOne Standard */}
+                <div>
+                  <div className="lg:hidden mb-1">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#00C4D4]">
+                      EkklésiaOne Standard
+                    </span>
+                  </div>
+                  <EkklesiaCell
+                    main={row.ekklesia.main}
+                    highlight={row.ekklesia.highlight}
+                  />
                 </div>
-                <EkklesiaCell main={row.ekklesia.main} highlight={row.ekklesia.highlight} />
 
-                <div className="lg:hidden">
-                  <p
-                    className="text-[10px] font-bold uppercase tracking-[0.18em] mb-2"
-                    style={{ color: "rgba(255,255,255,0.4)" }}
-                  >
-                    Typical Church Software
-                  </p>
+                {/* Column 3: Typical Church Software */}
+                <div>
+                  <div className="lg:hidden mb-1">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-slate-400">
+                      Typical Church Software
+                    </span>
+                  </div>
+                  <TypicalCell text={row.typical} />
                 </div>
-                <TypicalCell text={row.typical} />
               </div>
             ))}
           </div>
         </div>
 
-        <div data-reveal data-delay="0.2" className="flex justify-center mt-8 lg:mt-10">
-          <a
-            href="#contact"
-            className="group inline-flex items-center gap-2 px-8 py-4 rounded-xl font-semibold text-base sm:text-lg transition-all hover:-translate-y-0.5 no-underline"
-            style={{
-              backgroundColor: "#06B6D4",
-              color: "#FFFFFF",
-              boxShadow: "0 8px 28px rgba(6,182,212,0.35)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = "#05a3bd";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#06B6D4";
-            }}
+        {/* Action Button */}
+        <div
+          data-reveal
+          data-delay="0.2"
+          className="flex justify-center mt-8 sm:mt-10 lg:mt-12"
+        >
+          <button
+            type="button"
+            onClick={() => setIsModalOpen(true)}
+            className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-full font-normal text-sm text-white bg-[#06B6D4] shadow-[0_8px_25px_rgba(0,196,212,0.45)] hover:shadow-[0_12px_30px_rgba(0,196,212,0.6)] transition-all duration-300 hover:scale-105 cursor-pointer"
           >
-            See how Easy Migration is
+            See how Easy Migration Is
             <ArrowRight
               size={18}
               className="transition-transform group-hover:translate-x-1"
             />
-          </a>
+          </button>
         </div>
+
+        {/* Modal */}
+        <MigrationModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+        />
       </div>
     </section>
   );
