@@ -26,7 +26,7 @@ const Contact = () => {
   };
 
   return (
-    <section ref={scope} id="contact" className="py-24 lg:py-28 bg-cream">
+    <section ref={scope} id="contact" className="py-14 lg:py-20 bg-cream">
       <div className="max-w-6xl mx-auto px-5 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Contact"
@@ -35,7 +35,7 @@ const Contact = () => {
         />
 
         <div className="grid lg:grid-cols-5 gap-8 items-stretch">
-          <div data-reveal className="lg:col-span-2 bg-primary rounded-[2rem] p-8 sm:p-10 text-white flex flex-col">
+          <div data-reveal className="lg:col-span-2 bg-primary rounded-[2rem] p-4 md:p-6 lg:p-8 sm:p-10 text-white flex flex-col">
             <h3 className="font-display font-bold text-2xl mb-3">Contact Information</h3>
             <p className="text-white/70 leading-relaxed mb-9">
               Reach out through any channel — our support team is made up of
@@ -57,7 +57,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div data-reveal data-delay="0.15" className="lg:col-span-3 bg-white rounded-[2rem] border border-slate-200 shadow-soft p-8 sm:p-10">
+          <div data-reveal data-delay="0.15" className="lg:col-span-3 bg-white rounded-[2rem] border border-slate-200 shadow-soft p-6  md:p-6 lg:p-8">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>

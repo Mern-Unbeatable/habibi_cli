@@ -1,4 +1,4 @@
-import { Check, CheckCircle2, LayoutGrid } from "lucide-react";
+import { Check, CheckCircle2, Layers, LayoutGrid } from "lucide-react";
 import useReveal from "../../hooks/useReveal";
 import ONE_PLATFORM_IMAGE from "../../assets/One_Platform.png";
 
@@ -30,7 +30,7 @@ const TrustedBy = () => {
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-6"
               style={{ color: "#06B6D4" }}
             >
-              <LayoutGrid size={15} strokeWidth={2.5} />
+              <Layers  size={15} strokeWidth={2.5} />
               Platform Overview
             </p>
 
