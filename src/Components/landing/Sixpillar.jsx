@@ -84,11 +84,11 @@ const VideoShowcase = () => {
   return (
     <section
       ref={scope}
-      className="relative py-20 lg:py-28 overflow-hidden"
+      className="relative py-14 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
       style={{ backgroundColor: "#F8F9FD" }}
     >
-      <div className="relative max-w-350 mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16">
+      <div className="relative container mx-auto ">
+        <div className="text-left md:text-center mb-12 lg:mb-16">
           <p
             data-reveal
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-5"

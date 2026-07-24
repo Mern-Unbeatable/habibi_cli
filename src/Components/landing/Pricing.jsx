@@ -88,7 +88,7 @@ const Pricing = () => {
     <section
       ref={scope}
       id="pricing"
-      className="py-20 bg-white overflow-hidden"
+      className="py-14 md:py-20 bg-white overflow-hidden"
     >
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header */}

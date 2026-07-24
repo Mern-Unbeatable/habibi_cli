@@ -65,7 +65,7 @@ const Hero = () => {
       </motion.div>
 
       {/* Text — inside container only */}
-      <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8 py-16 lg:py-20 w-full">
+      <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8 pb- lg:py-20 w-full">
         <motion.div
           variants={copyContainer}
           initial="hidden"
@@ -74,7 +74,7 @@ const Hero = () => {
         >
           <motion.p
             variants={copyItem}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-sm font-semibold tracking-wide mb-7"
+            className="inline-flex items-center gap-2 px-2 md:px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-sm font-semibold tracking-wide mb-7"
           >
             <Sparkles size={16} aria-hidden="true" />
             <TextType
@@ -166,7 +166,7 @@ const Hero = () => {
 
           <motion.p
             variants={copyItem}
-            className="text-xs sm:text-sm flex items-center gap-1.5 justify-center lg:justify-start text-white"
+            className="text-xs sm:text-sm flex items-center gap-1.5 justify-center lg:justify-start text-white pb-4"
           >
             <span className="text-[#C9A535]" aria-hidden="true">
               <MapPin size={16} />

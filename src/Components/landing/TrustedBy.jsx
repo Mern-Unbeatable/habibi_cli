@@ -12,7 +12,7 @@ const TrustedBy = () => {
   const scope = useReveal();
 
   return (
-    <section ref={scope} className="relative py-14 lg:py-20 bg-white overflow-x-hidden">
+    <section ref={scope} className="relative py-14 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-x-hidden">
       {/* <div
         className="absolute inset-0 pointer-events-none opacity-[0.35]"
         aria-hidden="true"
@@ -22,12 +22,12 @@ const TrustedBy = () => {
         }}
       /> */}
 
-      <div className="relative container mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="relative container mx-auto ">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
-          <div className="text-center lg:text-left">
+          <div className=" text-justify  ">
             <p
               data-reveal
-              className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-6"
+              className="inline-flex items-start md:items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-6"
               style={{ color: "#06B6D4" }}
             >
               <Layers  size={15} strokeWidth={2.5} />

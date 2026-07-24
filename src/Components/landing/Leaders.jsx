@@ -32,7 +32,7 @@ const AppStoreButton = ({ platform }) => {
   return (
     <a
       href="#"
-      className="flex items-center gap-3 px-5 py-3 rounded-xl border transition-all hover:-translate-y-0.5 no-underline"
+      className="flex items-center gap-1 px-3 md:px-5 py-2 md:py-3 rounded-xl border transition-all hover:-translate-y-0.5 no-underline"
       style={{
         backgroundColor: "rgba(255,255,255,0.06)",
         borderColor: "rgba(255,255,255,0.2)",
@@ -71,14 +71,14 @@ const Leaders = () => {
   return (
     <section
       ref={scope}
-      className="relative py-6 lg:py-10 overflow-hidden"
+      className="relative py-14 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
       style={{ backgroundColor: "#1C1A40" }}
     >
       <ChurchArchGraphic />
 
-      <div className="relative max-w-[1400px] mx-auto px-5 sm:px-6 lg:px-8">
+      <div className="relative container mx-auto ">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-10 xl:gap-16 items-center">
-          <div className="text-center lg:text-left">
+          <div className="text-left ">
             <p
               data-reveal
               className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-6"
@@ -98,7 +98,7 @@ const Leaders = () => {
             <p
               data-reveal
               data-delay="0.08"
-              className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+              className="text-base sm:text-lg text-justify leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
               The Pocket Church mobile app gives your congregation a beautifully branded home
@@ -109,12 +109,12 @@ const Leaders = () => {
             <div
               data-reveal
               data-delay="0.12"
-              className="flex flex-wrap gap-2.5 justify-center lg:justify-start mb-8"
+              className="flex flex-wrap gap-2.5 justify-center lg:justify-start mb-4"
             >
               {FEATURES.map((feature) => (
                 <span
                   key={feature}
-                  className="px-4 py-2 rounded-full text-xs sm:text-sm font-medium border"
+                  className="px-2 md:px-4 py-1.5 md:py-3 rounded-full text-xs sm:text-sm font-medium border"
                   style={{
                     color: "#FFFFFF",
                     borderColor: "rgba(255,255,255,0.25)",
@@ -129,7 +129,7 @@ const Leaders = () => {
             <div
               data-reveal
               data-delay="0.16"
-              className="flex flex-col sm:flex-row items-center gap-3 justify-center lg:justify-start"
+              className="flex flex-row items-center gap-3 justify-center lg:justify-start"
             >
               <AppStoreButton platform="apple" />
               <AppStoreButton platform="google" />
