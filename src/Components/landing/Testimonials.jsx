@@ -106,7 +106,7 @@ const Testimonials = () => {
     <section
       ref={scope}
       id="testimonials"
-      className="py-20 lg:py-24 bg-[#F5F5FA] overflow-hidden"
+      className="py-14 md:py-20 bg-[#F5F5FA] overflow-hidden"
     >
       <div className="container mx-auto px-5 sm:px-6 lg:px-8 mb-12 lg:mb-16 text-center">
         <p

@@ -5,7 +5,7 @@ const ProudlyCanadian = () => {
   const scope = useReveal();
 
   return (
-    <section ref={scope} className="py-16 sm:py-20 bg-white overflow-hidden">
+    <section ref={scope} className="py-14 md:py-20 bg-white overflow-hidden">
       <div className="max-w-4xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
         {/* Location Pin Icon */}
         <div

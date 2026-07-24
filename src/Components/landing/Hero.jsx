@@ -4,7 +4,7 @@ import { CHURCH_LOGIN_URL, MEMBER_LOGIN_URL } from "../../constants/links";
 import HERO_GROUP_IMAGE from "../../assets/Everything.png";
 import ARCH_IMAGE from "../../assets/Arch.png";
 import VECTOR_IMAGE from "../../assets/Vector.png";
-
+import TextType from "../ui/TextType";
 const EASE = [0.22, 0.61, 0.36, 1];
 
 const copyContainer = {
@@ -19,6 +19,11 @@ const copyItem = {
 
 const BULLETS = ["One Platform", "One Connected Ecosystem", "One System"];
 
+const HERO_BADGE_TEXT = [
+  "The Intelligent Church Operating System",
+  "The Intelligent Church Operating System",
+  "The Intelligent Church Operating System ",
+];
 const ChurchArchGraphic = () => (
   <div className="absolute left-0 bottom-0 z-[1] flex items-end pointer-events-none select-none max-h-[90%]">
     <img
@@ -60,24 +65,36 @@ const Hero = () => {
       </motion.div>
 
       {/* Text — inside container only */}
-      <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8 py-16 lg:py-20 w-full">
+      <div className="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8 pb- lg:py-20 w-full">
         <motion.div
           variants={copyContainer}
           initial="hidden"
           animate="visible"
-          className="max-w-xl lg:max-w-2xl text-center lg:text-left"
+          className="max-w-xl lg:max-w-2xl text-left lg:text-left"
         >
           <motion.p
             variants={copyItem}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-xs sm:text-sm font-semibold tracking-wide mb-7"
+            className="inline-flex items-center gap-2 px-2 md:px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-sm font-semibold tracking-wide mb-7"
           >
-            <Sparkles />
-            THE INTELLIGENT CHURCH OPERATING SYSTEM
+            <Sparkles size={16} aria-hidden="true" />
+            <TextType
+              as="span"
+              text={HERO_BADGE_TEXT}
+              typingSpeed={45}
+              pauseDuration={1800}
+              deletingSpeed={25}
+              showCursor
+              cursorCharacter="|"
+              cursorClassName="text-[#C9A535]"
+              className="lowercase sm:uppercase"
+              textColors={["#C9A535"]}
+              startOnVisible
+              loop
+            />
           </motion.p>
-
           <motion.h1
             variants={copyItem}
-            className="font-marcellus font-normal text-white text-[2.4rem] leading-[1.1] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] tracking-tight mb-6"
+            className="font-marcellus font-normal text-white text-left text-3xl  leading-[1.5] md:leading-[1.1] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] tracking-tight mb-6"
           >
             Everything Your Church Needs.
             <br />
@@ -86,11 +103,11 @@ const Hero = () => {
 
           <motion.p
             variants={copyItem}
-            className="text-base sm:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 mb-7 text-white/82"
+            className="text-base sm:text-lg leading-relaxed max-w-xl mb-7 text-justify text-white/82"
           >
-            Run your entire ministry from a single platform — people, giving, accounting,
-            communications, volunteers, events, attendance, mobile app, AI automation,
-            reporting, and more.
+            Run your entire ministry from a single platform — people, giving,
+            accounting, communications, volunteers, events, attendance, mobile
+            app, AI automation, reporting, and more.
           </motion.p>
 
           <motion.ul
@@ -98,7 +115,10 @@ const Hero = () => {
             className="space-y-2 mb-7 text-sm sm:text-base font-medium text-[#C9A535]"
           >
             {BULLETS.map((item) => (
-              <li key={item} className="flex items-center gap-2.5 justify-center text-[#FFFFFFE5] lg:justify-start">
+              <li
+                key={item}
+                className="flex items-start md:items-center gap-2.5 justify-start md:justify-center text-[#FFFFFFE5] lg:justify-start"
+              >
                 <span className="inline-block w-1.5 h-1.5 rounded-full shrink-0 bg-[#C9A535]" />
                 {item}
               </li>
@@ -109,8 +129,8 @@ const Hero = () => {
             variants={copyItem}
             className="text-sm sm:text-base  leading-relaxed max-w-xl mx-auto lg:mx-0 mb-8 pl-4 border-l-2 border-[#C9A535] text-[#FFFFFFE5]"
           >
-            Built to help churches spend less time managing software and more time building
-            God&apos;s Kingdom.
+            Built to help churches spend less time managing software and more
+            time building God&apos;s Kingdom.
           </motion.blockquote>
 
           <motion.div
@@ -121,28 +141,32 @@ const Hero = () => {
               href={CHURCH_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="group w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg bg-primary hover:bg-[#05a3bd] text-white shadow-[0_8px_28px_rgba(6,182,212,0.35)] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-2 no-underline"
+              className="animate-pulse-glow animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg bg-primary hover:bg-[#05a3bd] text-white shadow-[0_8px_28px_rgba(6,182,212,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2 no-underline"
             >
-              Book a Demo
+              <span className="relative z-10">Book a Demo</span>
               <ArrowRight
                 size={18}
-                className="transition-transform group-hover:translate-x-1"
+                className="relative z-10 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:scale-110"
               />
             </a>
+
             <a
               href={MEMBER_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg bg-transparent text-white border border-white/45 hover:border-[#C9A535] hover:text-[#C9A535] transition-all hover:-translate-y-0.5 flex items-center justify-center gap-1 no-underline"
+              className="animate-border-gradient animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg text-white hover:text-[#C9A535] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-1 no-underline"
             >
-              See How It Works
-              <ChevronRight size={16} />
+              <span className="relative z-10">See How It Works</span>
+              <ChevronRight
+                size={16}
+                className="relative z-10 transition-transform duration-300 group-hover:translate-x-1.5 group-hover:rotate-12"
+              />
             </a>
           </motion.div>
 
           <motion.p
             variants={copyItem}
-            className="text-xs sm:text-sm flex items-center gap-1.5 justify-center lg:justify-start text-white"
+            className="text-xs sm:text-sm flex items-center gap-1.5 justify-center lg:justify-start text-white pb-4"
           >
             <span className="text-[#C9A535]" aria-hidden="true">
               <MapPin size={16} />

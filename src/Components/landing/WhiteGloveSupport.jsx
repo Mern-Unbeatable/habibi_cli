@@ -29,7 +29,7 @@ const WhiteGloveSupport = () => {
   const scope = useReveal();
 
   return (
-    <section ref={scope} className="py-20 bg-white overflow-hidden">
+    <section ref={scope} className="py-14 md:py-20 bg-white overflow-hidden">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-14 sm:mb-18">
