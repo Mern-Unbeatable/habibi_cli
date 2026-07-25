@@ -1,9 +1,11 @@
 import { Smartphone } from "lucide-react";
+import { FaGooglePlay } from "react-icons/fa";
 import useReveal from "../../hooks/useReveal";
 import ARCH_IMAGE from "../../assets/Arch.png";
 import VECTOR_IMAGE from "../../assets/Vector.png";
 
-const FEATURES = [  "Secure Giving",
+const FEATURES = [
+  "Secure Giving",
   "Daily Devotion",
   "Child Check-In",
   "Events",
@@ -11,18 +13,18 @@ const FEATURES = [  "Secure Giving",
   "Digital Resource Centre",
 ];
 const ChurchArchGraphic = () => (
-  <div className="absolute left-[30%] sm:left-[35%] lg:left-[45%] bottom-0 z-[1] flex items-end pointer-events-none select-none max-h-[90%]">
+  <div className="absolute left-[30%] sm:left-[35%] lg:left-[45%] bottom-0 z-1 flex items-end pointer-events-none select-none max-h-[90%]">
     <img
       src={ARCH_IMAGE}
       alt=""
       aria-hidden="true"
-      className="w-[190px] sm:w-[200px] lg:w-[230px] xl:w-[250px] h-auto object-contain object-bottom shrink-0"
+      className="w-47.5 sm:w-50 lg:w-57.5 xl:w-62.5 h-auto object-contain object-bottom shrink-0"
     />
     <img
       src={VECTOR_IMAGE}
       alt=""
       aria-hidden="true"
-      className="w-[68px] sm:w-[76px] lg:w-[88px] xl:w-[96px] h-auto object-contain object-bottom shrink-0 -ml-2 sm:-ml-3"
+      className="w-17 sm:w-19 lg:w-22 xl:w-24 h-auto object-contain object-bottom shrink-0 -ml-2 sm:-ml-3"
     />
   </div>
 );
@@ -45,19 +47,29 @@ const AppStoreButton = ({ platform }) => {
       }}
     >
       {isApple ? (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#C9A535" aria-hidden="true">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="#C9A535"
+          aria-hidden="true"
+        >
           <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.06 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
         </svg>
       ) : (
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="#C9A535" aria-hidden="true">
-          <path d="M3.609 1.814L13.792 12 3.61 22.186a1.96 1.96 0 0 1-.395-1.17V2.984c0-.437.145-.85.395-1.17zm3.296 2.803l9.337 9.337-2.803 2.803-9.337-9.337 2.803-2.803zm11.085 0l2.803 2.803-5.575 5.575-2.803-2.803 5.575-5.575zM6.905 19.197l9.337-9.337 2.803 2.803-9.337 9.337-2.803-2.803z" />
-        </svg>
+        <FaGooglePlay className="w-5 h-5 text-[#C9A535]" aria-hidden="true" />
       )}
       <div className="text-left">
-        <p className="text-[10px] leading-none mb-0.5" style={{ color: "rgba(255,255,255,0.6)" }}>
+        <p
+          className="text-[10px] leading-none mb-0.5"
+          style={{ color: "rgba(255,255,255,0.6)" }}
+        >
           {isApple ? "Download on the" : "Get it on"}
         </p>
-        <p className="text-sm font-semibold leading-none" style={{ color: "#FFFFFF" }}>
+        <p
+          className="text-sm font-semibold leading-none"
+          style={{ color: "#FFFFFF" }}
+        >
           {isApple ? "App Store" : "Google Play"}
         </p>
       </div>
@@ -101,9 +113,9 @@ const Leaders = () => {
               className="text-base sm:text-lg text-justify leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
               style={{ color: "rgba(255,255,255,0.75)" }}
             >
-              The Pocket Church mobile app gives your congregation a beautifully branded home
-              for giving, devotionals, events, groups, and more — all connected to your
-              EkklésiaOne platform in real time.
+              The Pocket Church mobile app gives your congregation a beautifully
+              branded home for giving, devotionals, events, groups, and more —
+              all connected to your EkklésiaOne platform in real time.
             </p>
 
             <div
@@ -145,7 +157,7 @@ const Leaders = () => {
               src="/pocket-church-phones.png"
               alt="Pocket Church mobile app showing Give Securely and Daily Devotion screens"
               loading="lazy"
-              className="relative z-10 w-full max-w-[560px] lg:max-w-none h-auto object-contain"
+              className="relative z-10 w-full max-w-140 lg:max-w-none h-auto object-contain"
             />
           </div>
         </div>

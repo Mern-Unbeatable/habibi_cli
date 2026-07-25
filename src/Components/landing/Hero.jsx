@@ -25,18 +25,18 @@ const HERO_BADGE_TEXT = [
   "The Intelligent Church Operating System ",
 ];
 const ChurchArchGraphic = () => (
-  <div className="absolute left-0 bottom-0 z-[1] flex items-end pointer-events-none select-none max-h-[90%]">
+  <div className="absolute left-0 bottom-0 z-1 flex items-end pointer-events-none select-none max-h-[90%]">
     <img
       src={ARCH_IMAGE}
       alt=""
       aria-hidden="true"
-      className="w-[200px] sm:w-[240px] lg:w-[280px] xl:w-[300px] h-auto object-contain object-bottom shrink-0"
+      className="w-50 sm:w-60 lg:w-70 xl:w-75 h-auto object-contain object-bottom shrink-0"
     />
     <img
       src={VECTOR_IMAGE}
       alt=""
       aria-hidden="true"
-      className="w-[72px] sm:w-[88px] lg:w-[304px] xl:w-[312px] h-auto object-contain object-bottom shrink-0 -ml-2 sm:-ml-"
+      className="w-18 sm:w-22 lg:w-76 xl:w-78 h-auto object-contain object-bottom shrink-0 -ml-2 sm:-ml-"
     />
   </div>
 );
@@ -47,7 +47,7 @@ const Hero = () => {
       <ChurchArchGraphic />
 
       <div
-        className="absolute bottom-0 left-0 right-0 h-4 sm:h-6 pointer-events-none bg-gradient-to-t from-white from-0% via-white/60 via-40% to-transparent z-20"
+        className="absolute bottom-0 left-0 right-0 h-4 sm:h-6 pointer-events-none bg-linear-to-t from-white from-0% via-white/60 via-40% to-transparent z-20"
         aria-hidden="true"
       />
 
@@ -60,7 +60,7 @@ const Hero = () => {
         <img
           src={HERO_GROUP_IMAGE}
           alt="Diverse church community standing together"
-          className="w-full max-w-[520px] sm:max-w-[600px] lg:max-w-none lg:w-[115%] xl:w-[125%] h-auto object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
+          className="w-full max-w-130 sm:max-w-150 lg:max-w-none lg:w-[115%] xl:w-[125%] h-auto object-contain object-bottom mask-[linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]"
         />
       </motion.div>
 
@@ -94,7 +94,7 @@ const Hero = () => {
           </motion.p>
           <motion.h1
             variants={copyItem}
-            className="font-marcellus font-normal text-white text-left text-3xl  leading-[1.5] md:leading-[1.1] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] tracking-tight mb-6"
+            className="font-marcellus font-normal text-white text-left text-3xl  leading-normal md:leading-[1.1] sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem] tracking-tight mb-6"
           >
             Everything Your Church Needs.
             <br />
@@ -141,7 +141,7 @@ const Hero = () => {
               href={CHURCH_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="animate-pulse-glow animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg bg-primary hover:bg-[#05a3bd] text-white shadow-[0_8px_28px_rgba(6,182,212,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2 no-underline"
+              className="animate-pulse-glow animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-full font-semibold text-base sm:text-lg bg-primary hover:bg-[#05a3bd] text-white shadow-[0_8px_28px_rgba(6,182,212,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2 no-underline"
             >
               <span className="relative z-10">Book a Demo</span>
               <ArrowRight
@@ -151,10 +151,12 @@ const Hero = () => {
             </a>
 
             <a
-              href={MEMBER_LOGIN_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="animate-border-gradient animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg text-white hover:text-[#C9A535] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-1 no-underline"
+              href="#capabilities"
+              onClick={(e) => {
+                e.preventDefault();
+                document.getElementById("capabilities")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="animate-border-gradient animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-full font-semibold text-base sm:text-lg text-white hover:text-[#C9A535] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-1 no-underline cursor-pointer"
             >
               <span className="relative z-10">See How It Works</span>
               <ChevronRight

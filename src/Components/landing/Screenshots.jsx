@@ -301,7 +301,7 @@ const Screenshots = () => {
 
         <div
           data-reveal
-          className="bg-white rounded-[2rem] border border-slate-200 shadow-lift overflow-hidden"
+          className="bg-white rounded-4xl border border-slate-200 shadow-lift overflow-hidden"
         >
           <motion.div
             key={activeTab}
