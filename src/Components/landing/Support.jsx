@@ -33,25 +33,25 @@ const Support = () => {
               src={team[0]}
               alt="Support team member"
               loading="lazy"
-              className="w-full aspect-[4/5] object-cover rounded-3xl shadow-soft"
+              className="w-full aspect-4/5 object-cover rounded-3xl shadow-soft"
             />
             <img
               src={team[1]}
               alt="Support team member"
               loading="lazy"
-              className="w-full aspect-[4/5] object-cover rounded-3xl shadow-soft mt-8"
+              className="w-full aspect-4/5 object-cover rounded-3xl shadow-soft mt-8"
             />
             <img
               src={team[2]}
               alt="Support team member"
               loading="lazy"
-              className="w-full aspect-[4/5] object-cover rounded-3xl shadow-soft -mt-8"
+              className="w-full aspect-4/5 object-cover rounded-3xl shadow-soft -mt-8"
             />
             <img
               src={team[3]}
               alt="Support team member"
               loading="lazy"
-              className="w-full aspect-[4/5] object-cover rounded-3xl shadow-soft"
+              className="w-full aspect-4/5 object-cover rounded-3xl shadow-soft"
             />
           </div>
 

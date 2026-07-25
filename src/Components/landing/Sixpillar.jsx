@@ -84,6 +84,7 @@ const VideoShowcase = () => {
   return (
     <section
       ref={scope}
+      id="capabilities"
       className="relative py-14 lg:py-20 px-4 sm:px-6 lg:px-8 overflow-hidden"
       style={{ backgroundColor: "#F8F9FD" }}
     >
@@ -115,7 +116,7 @@ const VideoShowcase = () => {
                 key={pillar.title}
                 data-reveal
                 data-delay={`${i * 0.06}`}
-                className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 sm:p-7"
+                className="bg-white rounded-2xl border border-[#1C1A4012]/1 shadow p-6 sm:p-7"
               >
                 <div
                   className="w-11 h-11 rounded-xl flex items-center justify-center mb-5"

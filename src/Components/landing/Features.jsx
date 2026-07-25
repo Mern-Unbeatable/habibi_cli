@@ -311,16 +311,26 @@ const EkklesiaCell = ({ main, highlight }) => (
     <div className="flex items-start gap-2 sm:gap-2.5 mb-1 sm:mb-1.5 min-w-0">
       <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-[#06B6D4]/20 flex items-center justify-center shrink-0 mt-0.5">
         <Check size={11} strokeWidth={3} className="text-cyan-400 sm:hidden" />
-        <Check size={13} strokeWidth={3} className="text-cyan-400 hidden sm:block" />
+        <Check
+          size={13}
+          strokeWidth={3}
+          className="text-cyan-400 hidden sm:block"
+        />
       </div>
-      <span className="flex-1 min-w-0 text-[13px] sm:text-sm font-semibold leading-snug text-white break-words">
+      <span className="flex-1 min-w-0 text-[13px] sm:text-sm font-semibold leading-snug text-white wrap-break-word">
         {main}
       </span>
     </div>
     <div className="flex items-start gap-1.5 pl-6 sm:pl-7 min-w-0">
-      <Star size={11} className="shrink-0 mt-0.5 text-[#FACC15] fill-yellow-500 sm:hidden" />
-      <Star size={12} className="shrink-0 mt-0.5 text-[#FACC15] fill-yellow-500 hidden sm:block" />
-      <span className="flex-1 min-w-0 text-[10px] sm:text-xs font-normal leading-tight text-[#FACC15] break-words">
+      <Star
+        size={11}
+        className="shrink-0 mt-0.5 text-[#FACC15] fill-yellow-500 sm:hidden"
+      />
+      <Star
+        size={12}
+        className="shrink-0 mt-0.5 text-[#FACC15] fill-yellow-500 hidden sm:block"
+      />
+      <span className="flex-1 min-w-0 text-[10px] sm:text-xs font-normal leading-tight text-[#FACC15] wrap-break-word">
         {highlight}
       </span>
     </div>
@@ -332,9 +342,13 @@ const TypicalCell = ({ text }) => (
     <div className="flex items-start gap-2 sm:gap-2.5 min-w-0 w-full">
       <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full bg-red-500/10 border border-red-500/25 flex items-center justify-center shrink-0 mt-0.5">
         <X size={10} strokeWidth={2.5} className="text-red-400 sm:hidden" />
-        <X size={12} strokeWidth={2.5} className="text-red-400 hidden sm:block" />
+        <X
+          size={12}
+          strokeWidth={2.5}
+          className="text-red-400 hidden sm:block"
+        />
       </div>
-      <span className="flex-1 min-w-0 text-[11px] sm:text-sm font-normal leading-snug text-[#F4F4F4] break-words">
+      <span className="flex-1 min-w-0 text-[11px] sm:text-sm font-normal leading-snug text-[#F4F4F4] wrap-break-word">
         {text}
       </span>
     </div>
@@ -358,8 +372,16 @@ const Features = () => {
             data-reveal
             className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-normal uppercase tracking-[0.2em] mb-3 sm:mb-4 text-[#00C4D4]"
           >
-            <Bookmark size={12} strokeWidth={2.5} className="shrink-0 sm:hidden" />
-            <Bookmark size={14} strokeWidth={2.5} className="shrink-0 hidden sm:block" />
+            <Bookmark
+              size={12}
+              strokeWidth={2.5}
+              className="shrink-0 sm:hidden"
+            />
+            <Bookmark
+              size={14}
+              strokeWidth={2.5}
+              className="shrink-0 hidden sm:block"
+            />
             WHAT MAKES US DIFFERENT
           </p>
 
@@ -404,11 +426,11 @@ const Features = () => {
             {COMPARISONS.map((row) => (
               <div
                 key={row.feature}
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr] gap-4 sm:gap-3 lg:gap-5 items-stretch rounded-xl sm:rounded-none bg-white/[0.02] sm:bg-transparent p-2.5 sm:p-0 border border-white/5 sm:border-none w-full"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr] gap-4 sm:gap-3 lg:gap-5 items-stretch rounded-xl sm:rounded-none bg-white/2 sm:bg-transparent p-2.5 sm:p-0 border border-white/5 sm:border-none w-full"
               >
                 {/* Column 1: Feature Title & Category (full width on mobile & tablet) */}
                 <div className="min-w-0 flex flex-col justify-center py-0.5 lg:py-0 sm:col-span-2 lg:col-span-1">
-                  <h3 className="font-semibold text-[14px] xs:text-[15px] sm:text-base lg:text-[17px] leading-snug text-white mb-0.5 break-words">
+                  <h3 className="font-semibold text-[14px] xs:text-[15px] sm:text-base lg:text-[17px] leading-snug text-white mb-0.5 wrap-break-word">
                     {row.feature}
                   </h3>
                   <span className="text-[9px] sm:text-[10px] font-normal uppercase tracking-[0.18em] text-[#98C2FF]">
