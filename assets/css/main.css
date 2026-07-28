@@ -3239,3 +3239,38 @@ body {
     }
   }
 }
+
+/* Feature detail pages — mobile: image height follows content (avoid aspect-ratio gap) */
+@media (max-width: 1023px) {
+  .feature-page-image {
+    aspect-ratio: auto;
+  }
+
+  section:has(.feature-page-layout) {
+    min-height: auto;
+  }
+}
+
+/* Feature detail pages — sticky image (CSS fallback; JS handles Lenis) */
+@media (min-width: 1024px) {
+  .feature-page-layout {
+    align-items: stretch;
+  }
+
+  .feature-page-aside {
+    position: relative;
+    align-self: stretch;
+  }
+
+  .feature-page-image.is-sticky-fixed {
+    position: fixed;
+    z-index: 5;
+  }
+
+  .feature-page-image.is-sticky-end {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+  }
+}
