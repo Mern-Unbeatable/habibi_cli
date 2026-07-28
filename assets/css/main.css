@@ -3240,6 +3240,29 @@ body {
   }
 }
 
+/* Feature detail pages — hero background with bottom-left teal glow */
+.feature-page-hero {
+  background-color: #0A0B2E;
+  overflow: hidden;
+}
+
+.feature-page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 95% 80% at -8% 108%, rgba(0, 140, 175, 0.52) 0%, rgba(0, 110, 145, 0.18) 42%, transparent 72%),
+    radial-gradient(ellipse 55% 48% at 0% 100%, rgba(6, 182, 212, 0.24) 0%, transparent 62%);
+}
+
+.feature-page-hero--right::before {
+  background:
+    radial-gradient(ellipse 95% 80% at 108% 108%, rgba(0, 140, 175, 0.52) 0%, rgba(0, 110, 145, 0.18) 42%, transparent 72%),
+    radial-gradient(ellipse 55% 48% at 100% 100%, rgba(6, 182, 212, 0.24) 0%, transparent 62%);
+}
+
 /* Feature detail pages — mobile: image height follows content (avoid aspect-ratio gap) */
 @media (max-width: 1023px) {
   .feature-page-image {
