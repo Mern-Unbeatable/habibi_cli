@@ -193,59 +193,40 @@
 </section>
 
 <!-- CTA -->
-<section class="relative py-20 sm:py-28 bg-[#0A0D24] text-white overflow-hidden">
-  <div class="absolute inset-0 pointer-events-none z-0">
-    <img src="../assets/images/ctabg.png" alt="" class="w-full h-full object-cover object-center opacity-90" />
+<section class="cta-section relative py-28 sm:py-36 overflow-hidden min-h-screen flex items-center justify-center">
+  <div class="cta-bg-base absolute inset-0 pointer-events-none z-0" aria-hidden="true"></div>
+  <div class="cta-bottom-glow absolute inset-0 pointer-events-none z-[1]" aria-hidden="true"></div>
+  <div class="cta-bg-lines absolute z-[2] pointer-events-none" aria-hidden="true">
+    <img src="../assets/images/ctabg.png" alt="" class="cta-bg-image" />
   </div>
-  <div class="absolute inset-x-0 bottom-0 z-1 h-[60%] pointer-events-none" style="mask-image: linear-gradient(to top, black 30%, transparent 100%)" aria-hidden="true">
-    <div class="absolute inset-0 bg-linear-to-t from-primary/1.5 via-primary/1 to-transparent"></div>
-    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[75%] max-w-3xl h-56 bg-primary blur-[120px] opacity-8"></div>
-  </div>
-  <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
-    <div data-reveal class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/4 border border-white/15 text-slate-300 text-xs font-medium mb-6">
-      <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+  <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center w-full">
+    <div data-reveal class="cta-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-medium mb-8">
+      <span class="w-2 h-2 rounded-full cta-badge-dot shrink-0"></span>
       <span>Ready when you are</span>
     </div>
-    <h2 data-reveal class="font-marcellus font-normal text-4xl sm:text-5xl lg:text-6xl text-white text-center leading-[1.15] mb-5 tracking-tight">
-      Bring Your Whole Church
-      <br />
-      <span class="text-[#d4af37]">Into One Place.</span>
+    <h2 data-reveal class="cta-heading font-marcellus font-normal text-[2rem] sm:text-5xl lg:text-[3.25rem] leading-[1.15] mb-5 tracking-tight px-2">
+      Bring Your Whole Church<br />Into One Place.
     </h2>
-    <p data-reveal data-delay="0.1" class="text-white font-inter max-w-xl mx-auto text-center text-sm sm:text-base leading-relaxed mb-12 opacity-90 font-normal">
+    <p data-reveal data-delay="0.1" class="cta-muted font-inter max-w-md mx-auto text-sm sm:text-base leading-relaxed mb-10 px-4">
       See why churches are leaving their patchwork of apps behind for the one platform that does it all.
     </p>
-    <div data-reveal data-delay="0.2" class="relative max-w-xl mx-auto bg-[#12162E]  rounded-2xl sm:rounded-3xl p-7 sm:p-10 text-center shadow-2xl backdrop-blur-md mb-10 overflow-hidden">
-      <p class="text-[#d4af37] font-semibold text-xs uppercase tracking-widest mb-3">LIMITED-TIME OFFER</p>
-      <h3 class="font-marcellus font-normal text-2xl sm:text-3xl text-white mb-3">Start Your Free 30-Day Demo</h3>
-      <p class="text-slate-400 text-xs sm:text-sm mb-7">No credit card required Â· Full platform access Â· White-glove onboarding included</p>
-      <a href="https://ekklesiasone.com/login" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#AA8E3C] hover:brightness-110 text-gray-200 font-normal text-sm sm:text-base transition-all hover:scale-[1.02] active:scale-95 no-underline cursor-pointer">
-        Claim Your 30-Day Demo
-        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+    <div data-reveal data-delay="0.2" class="cta-card relative mx-auto p-8 sm:p-10 text-center mb-10">
+      <p class="cta-offer-label font-medium uppercase mb-4">LIMITED-TIME OFFER</p>
+      <h3 class="font-marcellus font-normal text-2xl sm:text-[1.85rem] cta-heading mb-3 leading-snug">Start Your Free 30-Day Demo</h3>
+      <p class="cta-muted text-xs sm:text-sm mb-8 leading-relaxed">No credit card required · Full platform access · White-glove onboarding included</p>
+      <a href="https://ekklesiasone.com/login" target="_blank" rel="noopener noreferrer" class="cta-btn-white inline-flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base transition-all hover:scale-[1.02] no-underline">
+        Claim Your 30-Day Demo<i data-lucide="arrow-right" class="w-4 h-4"></i>
       </a>
     </div>
-    <div data-reveal data-delay="0.3" class="flex flex-wrap items-center justify-center gap-4 mb-14">
-      <a href="https://ekklesiasone.com/login" target="_blank" rel="noopener noreferrer" class="px-6 py-2.5 rounded-full bg-primary hover:bg-primary/90 text-gray-200 font-normal text-sm inline-flex items-center gap-2 shadow-md shadow-primary/25 transition-all no-underline">
-        Book a Demo
-        <i data-lucide="arrow-right" class="w-[15px] h-[15px]"></i>
-      </a>
-      <a href="../pages/contact.html" class="px-6 py-2.5 rounded-full border border-[#374151] text-gray-200 hover:bg-white/5 font-normal text-sm inline-flex items-center gap-2 transition-all no-underline">
-        Talk to Our Team
-      </a>
+    <div data-reveal data-delay="0.3" class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-0">
+      <a href="https://ekklesiasone.com/login" target="_blank" rel="noopener noreferrer" class="cta-btn-teal px-7 py-2.5 font-medium text-sm inline-flex items-center gap-2 transition-all no-underline">Book a Demo<i data-lucide="arrow-right" class="w-[15px] h-[15px]"></i></a>
+      <a href="../pages/contact.html" class="cta-btn-ghost px-7 py-2.5 font-medium text-sm inline-flex items-center gap-2 transition-all no-underline">Talk to Our Team</a>
     </div>
-    <div class="w-full max-w-2xl mx-auto border-t border-white/10 pt-8">
-      <div data-reveal data-delay="0.4" class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-slate-400 font-normal">
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="check" class="text-primary w-3.5 h-3.5" style="stroke-width: 2.5"></i>
-          One System
-        </span>
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="check" class="text-primary w-3.5 h-3.5" style="stroke-width: 2.5"></i>
-          One Connected Ecosystem
-        </span>
-        <span class="flex items-center gap-1.5">
-          <i data-lucide="check" class="text-primary w-3.5 h-3.5" style="stroke-width: 2.5"></i>
-          One Platform
-        </span>
+    <div class="cta-divider-wrap w-full mx-auto pt-8">
+      <div data-reveal data-delay="0.4" class="cta-trust flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs sm:text-sm">
+        <span class="flex items-center gap-2"><i data-lucide="check" class="cta-check w-3.5 h-3.5 shrink-0" style="stroke-width: 2.5"></i>One System</span>
+        <span class="flex items-center gap-2"><i data-lucide="check" class="cta-check w-3.5 h-3.5 shrink-0" style="stroke-width: 2.5"></i>One Connected Ecosystem</span>
+        <span class="flex items-center gap-2"><i data-lucide="check" class="cta-check w-3.5 h-3.5 shrink-0" style="stroke-width: 2.5"></i>One Platform</span>
       </div>
     </div>
   </div>

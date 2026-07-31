@@ -277,7 +277,7 @@
         aria-hidden="true"></div>
 
       <div class="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8 pb- lg:py-20 w-full">
-        <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-end">
+        <div class="grid lg:grid-cols-2 gap-6  items-end">
           <div class="max-w-xl lg:max-w-2xl text-left lg:text-left">
           <p data-hero-animate
             class="inline-flex items-center gap-2 px-2 md:px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-sm font-semibold tracking-wide mb-7">
@@ -353,10 +353,10 @@
 
           <!-- Image Container & Image Updated Below -->
           <div data-hero-image
-            class="relative flex items-center justify-center pointer-events-none mt-6 lg:mt-0">
-            <img src="../assets/images/Everything.png" alt="Diverse church community standing together"
-              class="w-full max-w-[520px] sm:max-w-[600px] lg:max-w-[130%] xl:max-w-[150%] h-auto object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]" />
-          </div>
+  class="relative flex items-center justify-center pointer-events-none mt-6 lg:mt-0">
+  <img src="../assets/images/Everything.png" alt="Diverse church community standing together"
+    class="w-[110%] sm:w-[130%] lg:w-[170%] xl:w-[200%] h-auto object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]" />
+</div>
         </div>
       </div>
     </section>
@@ -700,7 +700,7 @@
           <div data-reveal data-delay="0.2" class="relative flex justify-center lg:justify-end">
             <img src="../assets/images/pocket-church-phones.png"
               alt="Pocket Church mobile app showing Give Securely and Daily Devotion screens" loading="lazy"
-              class="relative z-10 w-full max-w-[560px] lg:max-w-none h-auto object-contain" />
+              class="relative z-10 w-full max-w-[115%] xl:max-w-[125%] h-auto object-contain" />
           </div>
         </div>
       </div>
@@ -2379,81 +2379,85 @@
     </section>
 
     <!-- CTA -->
-    <!-- CTA -->
-    <!-- CTA -->
-    <section class="relative py-20 sm:py-28 text-white overflow-hidden" style="background-color: #1C1C1C">
-      <div class="absolute inset-0 pointer-events-none z-0">
-        <img src="../assets/images/ctabg.png" alt="" class="w-full h-full object-cover object-center opacity-90" />
+    <section class="cta-section relative py-28 sm:py-36 overflow-hidden min-h-screen flex items-center justify-center">
+      <!-- Layer 1: black base + bottom teal gradient -->
+      <div class="cta-bg-base absolute inset-0 pointer-events-none z-0" aria-hidden="true"></div>
+
+      <!-- Layer 2: bright bottom-center glow rising up -->
+      <div class="cta-bottom-glow absolute inset-0 pointer-events-none z-[1]" aria-hidden="true"></div>
+
+      <!-- Layer 3: ctabg.png arc lines from bottom center -->
+      <div class="cta-bg-lines absolute z-[2] pointer-events-none" aria-hidden="true">
+        <img src="../assets/images/ctabg.png" alt="" class="cta-bg-image" />
       </div>
-      <div class="absolute inset-x-0 bottom-0 z-1 h-[60%] pointer-events-none" style="
-      mask-image: linear-gradient(to top, black 30%, transparent 100%);
-    " aria-hidden="true">
-        <div class="absolute inset-0 bg-linear-to-t from-[#66B2B2]/10 via-[#66B2B2]/5 to-transparent"></div>
-        <div
-          class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[75%] max-w-3xl h-56 bg-[#66B2B2] blur-[120px] opacity-10">
-        </div>
-      </div>
-      <div class="relative z-10 max-w-5xl mx-auto px-5 sm:px-6 lg:px-8 text-center">
+
+      <div class="relative z-10 max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center w-full">
         <div data-reveal
-          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-[#374151] text-[#9CA3AF] text-xs font-medium mb-6">
-          <span class="w-2 h-2 rounded-full bg-[#66B2B2] animate-pulse"></span>
+          class="cta-badge inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-medium mb-8">
+          <span class="w-2 h-2 rounded-full cta-badge-dot shrink-0"></span>
           <span>Ready when you are</span>
         </div>
+
         <h2 data-reveal
-          class="font-marcellus font-normal text-4xl sm:text-5xl lg:text-6xl text-[#FFFFFF] text-center leading-[1.15] mb-5 tracking-tight">
+          class="cta-heading font-marcellus font-normal text-[2rem] sm:text-5xl lg:text-[3.25rem] leading-[1.15] mb-5 tracking-tight px-2">
           Bring Your Whole Church
           <br />
-          <span class="text-[#FFFFFF]">Into One Place.</span>
+          Into One Place.
         </h2>
+
         <p data-reveal data-delay="0.1"
-          class="text-[#9CA3AF] font-inter max-w-xl mx-auto text-center text-sm sm:text-base leading-relaxed mb-12 font-normal">
+          class="cta-muted font-inter max-w-md mx-auto text-sm sm:text-base leading-relaxed mb-10 px-4">
           See why churches are leaving their patchwork of apps behind for the
           one platform that does it all.
         </p>
+
+        <!-- Offer card -->
         <div data-reveal data-delay="0.2"
-          class="relative max-w-xl mx-auto bg-[#1C1C1C] border border-[#374151] rounded-2xl sm:rounded-3xl p-7 sm:p-10 text-center shadow-2xl backdrop-blur-md mb-10 overflow-hidden">
-          <p class="text-[#FFFFFF] font-semibold text-xs uppercase tracking-widest mb-3">
+          class="cta-card relative mx-auto p-8 sm:p-10 text-center mb-10">
+          <p class="cta-offer-label font-medium uppercase mb-4">
             LIMITED-TIME OFFER
           </p>
-          <h3 class="font-marcellus font-normal text-2xl sm:text-3xl text-[#FFFFFF] mb-3">
+          <h3 class="font-marcellus font-normal text-2xl sm:text-[1.85rem] cta-heading mb-3 leading-snug">
             Start Your Free 30-Day Demo
           </h3>
-          <p class="text-[#9CA3AF] text-xs sm:text-sm mb-7">
+          <p class="cta-muted text-xs sm:text-sm mb-8 leading-relaxed">
             No credit card required · Full platform access · White-glove
             onboarding included
           </p>
           <a href="https://ekklesiasone.com/login" target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-[#FFFFFF] hover:bg-[#9CA3AF] text-[#1C1C1C] font-normal text-sm sm:text-base transition-all hover:scale-[1.02] active:scale-95 no-underline cursor-pointer"
-            style="background-color: #FFFFFF; color: #1C1C1C">
+            class="cta-btn-white inline-flex items-center justify-center gap-2 w-full sm:w-auto text-sm sm:text-base transition-all hover:scale-[1.02] no-underline">
             Claim Your 30-Day Demo
             <i data-lucide="arrow-right" class="w-4 h-4"></i>
           </a>
         </div>
-        <div data-reveal data-delay="0.3" class="flex flex-wrap items-center justify-center gap-4 mb-14">
+
+        <!-- Secondary actions -->
+        <div data-reveal data-delay="0.3" class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-0">
           <a href="https://ekklesiasone.com/login" target="_blank" rel="noopener noreferrer"
-            class="px-6 py-2.5 rounded-full bg-[#66B2B2] hover:bg-[#66B2B2]/90 text-[#FFFFFF] font-normal text-sm inline-flex items-center gap-2 shadow-md shadow-[#66B2B2]/25 transition-all no-underline"
-            style="background-color: #66B2B2">
+            class="cta-btn-teal px-7 py-2.5 font-medium text-sm inline-flex items-center gap-2 transition-all no-underline">
             Book a Demo
             <i data-lucide="arrow-right" class="w-[15px] h-[15px]"></i>
           </a>
           <a href="../pages/contact.html"
-            class="px-6 py-2.5 rounded-full border border-[#374151] text-[#FFFFFF] hover:bg-white/5 font-normal text-sm inline-flex items-center gap-2 transition-all no-underline">
+            class="cta-btn-ghost px-7 py-2.5 font-medium text-sm inline-flex items-center gap-2 transition-all no-underline">
             Talk to Our Team
           </a>
         </div>
-        <div class="w-full max-w-2xl mx-auto border-t border-[#374151] pt-8">
+
+        <!-- Trust row -->
+        <div class="cta-divider-wrap w-full mx-auto pt-8">
           <div data-reveal data-delay="0.4"
-            class="flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm text-[#9CA3AF] font-normal">
-            <span class="flex items-center gap-1.5">
-              <i data-lucide="check" class="text-[#66B2B2] w-3.5 h-3.5" style="stroke-width: 2.5"></i>
+            class="cta-trust flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs sm:text-sm">
+            <span class="flex items-center gap-2">
+              <i data-lucide="check" class="cta-check w-3.5 h-3.5 shrink-0" style="stroke-width: 2.5"></i>
               One System
             </span>
-            <span class="flex items-center gap-1.5">
-              <i data-lucide="check" class="text-[#66B2B2] w-3.5 h-3.5" style="stroke-width: 2.5"></i>
+            <span class="flex items-center gap-2">
+              <i data-lucide="check" class="cta-check w-3.5 h-3.5 shrink-0" style="stroke-width: 2.5"></i>
               One Connected Ecosystem
             </span>
-            <span class="flex items-center gap-1.5">
-              <i data-lucide="check" class="text-[#66B2B2] w-3.5 h-3.5" style="stroke-width: 2.5"></i>
+            <span class="flex items-center gap-2">
+              <i data-lucide="check" class="cta-check w-3.5 h-3.5 shrink-0" style="stroke-width: 2.5"></i>
               One Platform
             </span>
           </div>

@@ -381,14 +381,14 @@
       desktopFeaturesPanel.setAttribute("role", "menu");
 
       var submenuInner = document.createElement("div");
-      submenuInner.className = "nav-features-submenu__inner min-w-[17rem] rounded-xl border border-white/10 bg-[#004c4c] p-2 shadow-2xl";
+      submenuInner.className = "nav-features-submenu__inner min-w-[17rem] rounded-xl border border-white/10 p-2 shadow-2xl";
 
       FEATURE_LINKS.forEach(function (item) {
         submenuInner.appendChild(
           createAnchor(
             item.label,
             item.href,
-            "nav-features-submenu__link block rounded-lg px-3.5 py-2.5 text-sm font-medium text-white/90 hover:bg-white/10 hover:text-white transition-colors no-underline whitespace-nowrap"
+            "nav-features-submenu__link block rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors no-underline whitespace-nowrap"
           )
         );
       });
@@ -401,7 +401,7 @@
         createAnchor(
           "View all features",
           HOME_SECTION_LINKS.features,
-          "nav-features-submenu__link block rounded-lg px-3.5 py-2.5 text-sm font-medium text-primary hover:bg-white/10 hover:text-white transition-colors no-underline"
+          "nav-features-submenu__link nav-features-submenu__link--all block rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors no-underline"
         )
       );
 
