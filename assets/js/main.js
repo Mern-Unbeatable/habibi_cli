@@ -238,9 +238,12 @@
     });
     document.body.classList.remove("has-nav-primary-bar");
 
-    nav.style.backgroundColor = "#004c4c";
+    var isHome = document.body.classList.contains("home-page") || window.location.pathname.endsWith("home.html") || window.location.pathname.endsWith("/") || window.location.pathname.endsWith("index.html");
+    var navColor = isHome ? "#004c4c" : "#0A0B2E";
+
+    nav.style.backgroundColor = navColor;
     nav.style.zIndex = "99999";
-    if (panel) panel.style.backgroundColor = "#004c4c";
+    if (panel) panel.style.backgroundColor = navColor;
     if (overlay) overlay.style.zIndex = "999998";
 
     desktopMenu = Array.from(nav.querySelectorAll("div")).find(function (el) {
@@ -382,6 +385,7 @@
 
       var submenuInner = document.createElement("div");
       submenuInner.className = "nav-features-submenu__inner min-w-[17rem] rounded-xl border border-white/10 p-2 shadow-2xl";
+      submenuInner.style.backgroundColor = navColor;
 
       FEATURE_LINKS.forEach(function (item) {
         submenuInner.appendChild(

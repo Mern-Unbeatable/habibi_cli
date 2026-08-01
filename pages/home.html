@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 
-<body class="antialiased min-h-screen flex flex-col">
+<body class="antialiased min-h-screen flex flex-col home-page">
   <nav id="site-nav"
-    class="fixed top-0 inset-x-0 z-[99999] transition-[background-color,box-shadow,border-color] duration-300 bg-[#131330] border-b border-white/10">
+    class="fixed top-0 inset-x-0 z-[99999] transition-[background-color,box-shadow,border-color] duration-300 bg-[#004C4C] border-b border-white/10">
     <div class="container mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
       <a href="../pages/home.html" class="flex items-center gap-2.5 no-underline">
         <img src="../assets/images/favicon.png" alt="EkklésiasOne" class="w-9 h-9 rounded-lg" />
@@ -59,7 +59,7 @@
     class="fixed inset-0 lg:hidden transition-opacity duration-300 opacity-0 pointer-events-none">
     <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
     <div id="mobile-menu-panel"
-      class="absolute top-0 right-0 h-full w-[85%] max-w-sm bg-[#131330] border-l border-white/10 shadow-2xl flex flex-col transition-transform duration-300 ease-out translate-x-full">
+      class="absolute top-0 right-0 h-full w-[85%] max-w-sm bg-[#004C4C] border-l border-white/10 shadow-2xl flex flex-col transition-transform duration-300 ease-out translate-x-full">
       <div class="flex items-center justify-between p-5 border-b border-white/10">
         <a href="../pages/home.html" class="flex items-center gap-2.5 no-underline">
           <img src="../assets/images/favicon.png" alt="EkklésiasOne" class="w-9 h-9 rounded-lg" />
@@ -99,6 +99,7 @@
       right: 0;
       z-index: 99999 !important;
       transform: translateZ(0);
+      background-color: #004C4C;
     }
 
     #mobile-menu-overlay {
@@ -106,7 +107,7 @@
     }
 
     #site-nav.nav-scrolled {
-      background-color: rgb(19 19 48 / 0.95);
+      background-color: rgb(0 76 76 / 0.95);
       backdrop-filter: blur(24px);
       box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
     }
@@ -276,11 +277,11 @@
         class="absolute bottom-0 left-0 right-0 h-4 sm:h-6 pointer-events-none bg-gradient-to-t from-white from-0% via-white/60 via-40% to-transparent z-20"
         aria-hidden="true"></div>
 
-      <div class="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8 pb- lg:py-20 w-full">
+      <div class="container relative z-10 mx-auto px-5 sm:px-6 lg:px-8 pt-4 pb-12 lg:pt-8 lg:pb-16 w-full">
         <div class="grid lg:grid-cols-2 gap-6  items-end">
           <div class="max-w-xl lg:max-w-2xl text-left lg:text-left">
           <p data-hero-animate
-            class="inline-flex mt-7 sm:mt-0 items-center gap-2 px-2 md:px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-sm font-semibold tracking-wide mb-7">
+            class="inline-flex mt-0 items-center gap-2 px-2 md:px-4 py-2 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-sm font-semibold tracking-wide mb-7">
             <i data-lucide="sparkles" class="w-4 h-4" aria-hidden="true"></i>
             <span data-text-type data-texts='["The Intelligent Church Operating System"]' data-typing-speed="45"
               data-pause-duration="1800" data-deleting-speed="25" data-color="#C9A535" data-start-on-visible="true"
@@ -295,7 +296,7 @@
             One Powerful Platform.
           </h1>
 
-          <p data-hero-animate class="text-base sm:text-lg leading-relaxed max-w-xl mb-7 text-justify text-white/82">
+          <p data-hero-animate class="text-base sm:text-lg leading-relaxed max-w-xl mb-7 text-white/82">
             Run your entire ministry from a single platform — people, giving,
             accounting, communications, volunteers, events, attendance, mobile
             app, AI automation, reporting, and more.
@@ -365,7 +366,7 @@
     <section id="overview" class="relative py-14 lg:py-20 px-4 sm:px-6 lg:px-8 bg-white overflow-x-hidden">
       <div class="relative container mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center">
-          <div class="text-justify">
+          <div>
             <p data-reveal
               class="inline-flex items-start md:items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-6"
               style="color: #06b6d4">
@@ -614,7 +615,7 @@
             </h2>
 
             <p data-reveal data-delay="0.08"
-              class="text-base sm:text-lg text-justify leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+              class="text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
               style="color: rgba(255, 255, 255, 0.75)">
               The Pocket Church mobile app gives your congregation a
               beautifully branded home for giving, devotionals, events,
