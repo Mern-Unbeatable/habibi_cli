@@ -3296,7 +3296,7 @@ body {
   }
 }
 
-/* Feature detail pages — sticky image (CSS fallback; JS handles Lenis) */
+/* Feature detail pages — native sticky image layout */
 @media (min-width: 1024px) {
   .feature-page-layout {
     align-items: stretch;
@@ -3305,17 +3305,13 @@ body {
   .feature-page-aside {
     position: relative;
     align-self: stretch;
+    overflow: visible;
   }
 
-  .feature-page-image.is-sticky-fixed {
-    position: fixed;
-    z-index: 5;
-  }
-
-  .feature-page-image.is-sticky-end {
-    position: absolute;
-    left: 0;
-    width: 100%;
+  .feature-page-image {
+    position: sticky;
+    top: 96px;
+    align-self: start;
     z-index: 5;
   }
 }
