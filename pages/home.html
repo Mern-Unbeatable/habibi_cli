@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
 
-<body class="antialiased min-h-screen flex flex-col">
+<body class="antialiased min-h-screen flex flex-col home-page">
   <nav id="site-nav"
-    class="fixed top-0 inset-x-0 z-[99999] transition-[background-color,box-shadow,border-color] duration-300 bg-[#131330] border-b border-white/10">
+    class="fixed top-0 inset-x-0 z-[99999] transition-[background-color,box-shadow,border-color] duration-300 bg-[#004C4C] border-b border-white/10">
     <div class="container mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6">
       <a href="../pages/home.html" class="flex items-center gap-2.5 no-underline">
         <img src="../assets/images/favicon.png" alt="EkklésiasOne" class="w-9 h-9 rounded-lg" />
@@ -59,7 +59,7 @@
     class="fixed inset-0 lg:hidden transition-opacity duration-300 opacity-0 pointer-events-none">
     <div id="mobile-menu-backdrop" class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
     <div id="mobile-menu-panel"
-      class="absolute top-0 right-0 h-full w-[85%] max-w-sm bg-[#131330] border-l border-white/10 shadow-2xl flex flex-col transition-transform duration-300 ease-out translate-x-full">
+      class="absolute top-0 right-0 h-full w-[85%] max-w-sm bg-[#004C4C] border-l border-white/10 shadow-2xl flex flex-col transition-transform duration-300 ease-out translate-x-full">
       <div class="flex items-center justify-between p-5 border-b border-white/10">
         <a href="../pages/home.html" class="flex items-center gap-2.5 no-underline">
           <img src="../assets/images/favicon.png" alt="EkklésiasOne" class="w-9 h-9 rounded-lg" />
@@ -99,6 +99,7 @@
       right: 0;
       z-index: 99999 !important;
       transform: translateZ(0);
+      background-color: #004C4C;
     }
 
     #mobile-menu-overlay {
@@ -106,7 +107,7 @@
     }
 
     #site-nav.nav-scrolled {
-      background-color: rgb(19 19 48 / 0.95);
+      background-color: rgb(0 76 76 / 0.95);
       backdrop-filter: blur(24px);
       box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
     }
