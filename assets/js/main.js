@@ -21,6 +21,18 @@
     { label: "Growth & Insight", href: "../pages/growth-insight.html" },
     { label: "Platform & Experience", href: "../pages/platform-experience.html" },
   ];
+  const PAGE_ACTIVE_LABELS = {
+    "features.html": "Features",
+    "pricing.html": "Pricing",
+    "testimonials.html": "Testimonials",
+    "about.html": "About",
+    "people-and-care.html": "Features",
+    "giving-and-finance.html": "Features",
+    "communication-engagement.html": "Features",
+    "serving-operations.html": "Features",
+    "growth-insight.html": "Features",
+    "platform-experience.html": "Features",
+  };
 
   function getCurrentPageName() {
     return window.location.pathname.split("/").pop() || "home.html";
@@ -566,6 +578,7 @@
     }
 
     var current = getCurrentPageName();
+    var currentPageLabel = PAGE_ACTIVE_LABELS[current] || null;
     document.querySelectorAll("[data-nav-link]").forEach(function (link) {
       var href = link.getAttribute("href");
       if (!href) return;
@@ -573,8 +586,9 @@
       var url = getUrlForHref(href);
       var isCurrentPage = url.pathname.split("/").pop() === current;
       var isCurrentAnchor = isCurrentPage && url.hash && url.hash === window.location.hash;
+      var isCurrentLabel = currentPageLabel && link.textContent.trim() === currentPageLabel;
 
-      if (isCurrentAnchor) {
+      if (isCurrentAnchor || isCurrentLabel) {
         setNavLinkActive(link, true);
       }
     });
@@ -732,6 +746,48 @@
     });
   }
 
+function initBackToTop() {
+  var button = document.querySelector("[data-back-to-top]");
+  if (!button) return;
+
+  var heroSection = document.querySelector("main > section");
+  function getThreshold() {
+    if (heroSection) {
+      return heroSection.offsetHeight - 100;
+    }
+    return 240;
+  }
+
+  function updateVisibility() {
+    var threshold = getThreshold();
+    var show = window.scrollY > threshold;
+    if (show) {
+      button.style.opacity = "1";
+      button.style.pointerEvents = "auto";
+      button.style.transform = "translateY(0)";
+    } else {
+      button.style.opacity = "0";
+      button.style.pointerEvents = "none";
+      button.style.transform = "translateY(12px)";
+    }
+  }
+
+  button.addEventListener("click", function () {
+    if (window.__lenis && typeof window.__lenis.scrollTo === "function") {
+      window.__lenis.scrollTo(0, { offset: 0 });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  });
+
+  updateVisibility();
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  window.addEventListener("resize", updateVisibility);
+  if (window.__lenis && typeof window.__lenis.on === "function") {
+    window.__lenis.on("scroll", updateVisibility);
+  }
+}
+
   function initSmoothScroll(onScroll) {
     if (!window.Lenis) return null;
     var lenis = new window.Lenis({ lerp: 0.12, smoothWheel: true });
@@ -860,6 +916,7 @@
     initContactForm();
     var stickyUpdate = initFeaturePageSticky();
     initSmoothScroll(stickyUpdate);
+    initBackToTop();
     initHashScroll();
 
     if (window.lucide && window.lucide.createIcons) {
