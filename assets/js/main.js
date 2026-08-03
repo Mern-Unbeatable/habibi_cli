@@ -478,13 +478,13 @@
         );
       });
 
-      mobileFeaturesPanel.appendChild(
-        createAnchor(
-          "View all features",
-          HOME_SECTION_LINKS.features,
-          "px-4 py-2.5 rounded-xl font-medium text-sm no-underline text-primary hover:bg-white/5 hover:text-white"
-        )
-      );
+      // mobileFeaturesPanel.appendChild(
+      //   createAnchor(
+      //     "View all features",
+      //     HOME_SECTION_LINKS.features,
+      //     "px-4 py-2.5 rounded-xl font-medium text-sm no-underline text-primary hover:bg-white/5 hover:text-white"
+      //   )
+      // );
 
       mobileFeaturesButton.addEventListener("click", function (event) {
         event.preventDefault();
