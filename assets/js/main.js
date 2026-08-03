@@ -250,9 +250,11 @@
     });
     document.body.classList.remove("has-nav-primary-bar");
 
-    nav.style.backgroundColor = "#004c4c";
+    var navBg = nav.getAttribute("data-nav-bg") || "#004c4c";
+    nav.style.backgroundColor = navBg;
+    if (panel) panel.style.backgroundColor = navBg;
+
     nav.style.zIndex = "99999";
-    if (panel) panel.style.backgroundColor = "#004c4c";
     if (overlay) overlay.style.zIndex = "999998";
 
     desktopMenu = Array.from(nav.querySelectorAll("div")).find(function (el) {
@@ -405,17 +407,17 @@
         );
       });
 
-      var submenuDivider = document.createElement("div");
-      submenuDivider.className = "my-1.5 border-t border-white/10";
-      submenuInner.appendChild(submenuDivider);
+      // var submenuDivider = document.createElement("div");
+      // submenuDivider.className = "my-1.5 border-t border-white/10";
+      // submenuInner.appendChild(submenuDivider);
 
-      submenuInner.appendChild(
-        createAnchor(
-          "View all features",
-          HOME_SECTION_LINKS.features,
-          "nav-features-submenu__link nav-features-submenu__link--all block rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors no-underline"
-        )
-      );
+      // submenuInner.appendChild(
+      //   createAnchor(
+      //     "View all features",
+      //     HOME_SECTION_LINKS.features,
+      //     "nav-features-submenu__link nav-features-submenu__link--all block rounded-lg px-3.5 py-2.5 text-sm font-medium transition-colors no-underline"
+      //   )
+      // );
 
       desktopFeaturesPanel.appendChild(submenuInner);
 
