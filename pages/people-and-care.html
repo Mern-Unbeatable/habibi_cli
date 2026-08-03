@@ -16,11 +16,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+      #site-nav,
+      #mobile-menu-panel {
+        background-color: #060b16 !important;
+      }
+
+      #site-nav.nav-scrolled {
+        background-color: rgb(6 11 22 / 0.95) !important;
+        backdrop-filter: blur(24px);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
+      }
+    </style>
   </head>
   <body class="antialiased min-h-screen flex flex-col">
     <nav
       id="site-nav"
-      class="fixed top-0 inset-x-0 z-[99999] transition-[background-color,box-shadow,border-color] duration-300 bg-[#131330] border-b border-white/10"
+      data-nav-bg="#060B16"
+      class="fixed top-0 inset-x-0 z-[99999] transition-[background-color,box-shadow,border-color] duration-300 border-b border-white/10"
+      style="background-color: #060b16"
     >
       <div
         class="container mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6"
@@ -171,20 +185,15 @@
       </div>
     </div>
 
-    <style>
-      #site-nav.nav-scrolled {
-        background-color: rgb(19 19 48 / 0.95);
-        backdrop-filter: blur(24px);
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
-      }
-    </style>
-
     <main class="flex-1 pt-20">
       <section
         class="relative py-14 lg:py-20 px-4 sm:px-6 lg:px-8 min-h-screen"
-        style="background-color: #0a0b2e"
+        style="background-color: #05080F"
       >
-       
+        <!-- <div class="absolute right-0 bottom-0 z-[1] flex items-end pointer-events-none select-none max-h-[45%]">
+          <img src="../assets/images/Arch.png" alt="" aria-hidden="true" class="w-[140px] sm:w-[180px] lg:w-[220px] h-auto object-contain object-bottom shrink-0 opacity-80" />
+          <img src="../assets/images/Vector.png" alt="" aria-hidden="true" class="w-[50px] sm:w-[64px] lg:w-[80px] h-auto object-contain object-bottom shrink-0 -ml-2 opacity-80" />
+        </div> -->
 
         <div class="relative container mx-auto z-[2]">
           <a

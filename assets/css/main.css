@@ -281,10 +281,6 @@ section[id] {
   scroll-margin-top: 100px;
 }
 
-#site-nav,
-#mobile-menu-panel {
-  background-color: #004c4c !important;
-}
 @layer utilities {
   .pointer-events-none {
     pointer-events: none;
@@ -3703,3 +3699,5 @@ body {
     transform: none;
   }
 }
+
+
