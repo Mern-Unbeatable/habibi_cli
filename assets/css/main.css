@@ -281,9 +281,14 @@ section[id] {
   scroll-margin-top: 100px;
 }
 
+.home-page #site-nav,
+.home-page #mobile-menu-panel {
+  background-color: #004c4c !important;
+}
+
 #site-nav,
 #mobile-menu-panel {
-  background-color: #004c4c !important;
+  background-color: #0A0B2E;
 }
 @layer utilities {
   .pointer-events-none {
@@ -3300,7 +3305,7 @@ body {
   }
 }
 
-/* Feature detail pages — sticky image (CSS fallback; JS handles Lenis) */
+/* Feature detail pages — native sticky image layout */
 @media (min-width: 1024px) {
   .feature-page-layout {
     align-items: stretch;
@@ -3309,17 +3314,13 @@ body {
   .feature-page-aside {
     position: relative;
     align-self: stretch;
+    overflow: visible;
   }
 
-  .feature-page-image.is-sticky-fixed {
-    position: fixed;
-    z-index: 5;
-  }
-
-  .feature-page-image.is-sticky-end {
-    position: absolute;
-    left: 0;
-    width: 100%;
+  .feature-page-image {
+    position: sticky;
+    top: 96px;
+    align-self: start;
     z-index: 5;
   }
 }

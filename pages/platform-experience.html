@@ -20,7 +20,7 @@
   <body class="antialiased min-h-screen flex flex-col">
     <nav
       id="site-nav"
-      class="fixed top-0 inset-x-0 z-[99999] transition-[background-color,box-shadow,border-color] duration-300 bg-[#131330] border-b border-white/10"
+      class="fixed top-0 inset-x-0 transition-[background-color,box-shadow,border-color] duration-300 bg-[#0A0B2E] border-b border-white/10"
     >
       <div
         class="container mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6"
@@ -32,10 +32,13 @@
           <img
             src="../assets/images/favicon.png"
             alt="EkklésiasOne"
-            class="w-17 h-16 rounded-lg"
+            class="w-9 h-9 rounded-lg"
           />
+          <span
+            class="font-marcellus font-normal text-xl tracking-tight text-white"
+            >EkklésiasOne</span
+          >
         </a>
-
         <div class="hidden lg:flex items-center gap-6 xl:gap-8">
           <a
             data-nav-link
@@ -62,7 +65,6 @@
             >About</a
           >
         </div>
-
         <div class="hidden lg:flex items-center gap-3.5">
           <a
             href="https://ekklesiasone.com/member?page=login"
@@ -79,7 +81,6 @@
             >Church Login <i data-lucide="church" class="w-4 h-4 text-white"></i
           ></a>
         </div>
-
         <button
           id="mobile-menu-open"
           aria-label="Open menu"
@@ -89,7 +90,6 @@
         </button>
       </div>
     </nav>
-
     <div
       id="mobile-menu-overlay"
       class="fixed inset-0 lg:hidden transition-opacity duration-300 opacity-0 pointer-events-none"
@@ -100,7 +100,7 @@
       ></div>
       <div
         id="mobile-menu-panel"
-        class="absolute top-0 right-0 h-full w-[85%] max-w-sm bg-[#131330] border-l border-white/10 shadow-2xl flex flex-col transition-transform duration-300 ease-out translate-x-full"
+        class="absolute top-0 right-0 h-full w-[85%] max-w-sm bg-[#0A0B2E] border-l border-white/10 shadow-2xl flex flex-col transition-transform duration-300 ease-out translate-x-full"
       >
         <div
           class="flex items-center justify-between p-5 border-b border-white/10"
@@ -111,7 +111,7 @@
             ><img
               src="../assets/images/favicon.png"
               alt="EkklésiasOne"
-              class="w-10 h-10 rounded-lg"
+              class="w-9 h-9 rounded-lg"
             /><span class="font-marcellus text-white text-lg"
               >EkklésiasOne</span
             ></a
@@ -170,19 +170,17 @@
         </div>
       </div>
     </div>
-
     <style>
       #site-nav.nav-scrolled {
-        background-color: rgb(19 19 48 / 0.95);
+        background-color: rgb(10 11 46/0.95);
         backdrop-filter: blur(24px);
-        box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.2);
+        box-shadow: 0 10px 15px -3px rgb(0 0 0/0.2);
       }
     </style>
 
     <main class="flex-1 pt-20">
       <section
-        class="relative py-14 lg:py-20 px-4 sm:px-6 lg:px-8 min-h-screen"
-        style="background-color: #0a0b2e"
+        class="feature-page-hero feature-page-hero--right relative py-16 lg:py-24 px-4 sm:px-6 lg:px-8 min-h-screen"
       >
         <!-- <div class="absolute right-0 bottom-0 z-[1] flex items-end pointer-events-none select-none max-h-[45%]">
           <img src="../assets/images/Arch.png" alt="" aria-hidden="true" class="w-[140px] sm:w-[180px] lg:w-[220px] h-auto object-contain object-bottom shrink-0 opacity-80" />
@@ -203,15 +201,15 @@
           >
             <div class="feature-page-aside">
               <div
-                class="feature-page-image relative rounded-2xl shadow-2xl aspect-[4/5] lg:aspect-auto"
+                class="feature-page-image relative rounded-2xl shadow-2xl overflow-hidden aspect-[4/5] lg:aspect-auto bg-white/5"
               >
                 <div
                   data-reveal
-                  class="relative overflow-hidden rounded-2xl shadow-2xl flex items-center justify-center "
+                  class="relative overflow-hidden rounded-2xl flex items-start justify-start p-4 sm:p-6"
                 >
                   <img
-                    src="../assets/images/resource lib.png"
-                    alt="resource lib"
+                    src="../assets/images/platform-experience.png"
+                    alt="Platform and Experience — Pocket Church mobile app with community and support"
                     class="w-full h-auto object-contain rounded-xl"
                   />
                 </div>
@@ -389,7 +387,7 @@
           <img src="../assets/images/ctabg.png" alt="" class="cta-bg-image" />
         </div>
         <div
-          class="relative z-10 max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center w-full"
+          class="relative z-10 py-10 max-w-3xl mx-auto px-5 sm:px-6 lg:px-8 text-center w-full"
         >
           <div
             data-reveal
@@ -579,36 +577,22 @@
                 <i
                   data-lucide="mail"
                   class="w-[18px] h-[18px] text-slate-200 shrink-0"
-                ></i>
-                <a
-                  href="mailto:support@ekklesiasone.com"
-                  class="text-slate-300 hover:text-primary transition-colors no-underline"
-                  >support@ekklesiasone.com</a
-                >
+                ></i
+                ><span>support@ekklesiasone.com</span>
               </p>
               <p class="flex items-center gap-3">
                 <i
                   data-lucide="phone"
                   class="w-[18px] h-[18px] text-slate-200 shrink-0"
-                ></i>
-                <a
-                  href="tel:+15551234567"
-                  class="text-slate-300 hover:text-primary transition-colors no-underline"
-                  >+1 (555) 123-4567</a
-                >
+                ></i
+                ><span>+1 (555) 123-4567</span>
               </p>
               <p class="flex items-center gap-3">
                 <i
                   data-lucide="map-pin"
                   class="w-[18px] h-[18px] text-slate-200 shrink-0"
-                ></i>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=123+Ministry+Lane%2C+TX+75001"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-slate-300 hover:text-primary transition-colors no-underline"
-                  >123 Ministry Lane, TX 75001</a
-                >
+                ></i
+                ><span>123 Ministry Lane, TX 75001</span>
               </p>
             </div>
           </div>
