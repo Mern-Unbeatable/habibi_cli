@@ -747,42 +747,64 @@
   }
 
 function initBackToTop() {
+  // Show after ~400px or past the first main section (whichever is larger)
+  var SCROLL_THRESHOLD_PX = 400;
   var button = document.querySelector("[data-back-to-top]");
-  if (!button) return;
 
-  var heroSection = document.querySelector("main > section");
+  // Avoid duplicates — create only if missing
+  if (!button) {
+    button = document.createElement("button");
+    button.type = "button";
+    button.setAttribute("data-back-to-top", "");
+    button.className = "scroll-to-top";
+    button.setAttribute("aria-label", "Scroll to top");
+    button.setAttribute("title", "Scroll to top");
+    button.setAttribute("aria-hidden", "true");
+    button.innerHTML =
+      '<svg class="scroll-to-top__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+      '<path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg>';
+    document.body.appendChild(button);
+  } else {
+    button.classList.add("scroll-to-top");
+    button.removeAttribute("style");
+  }
+
   function getThreshold() {
-    if (heroSection) {
-      return heroSection.offsetHeight - 100;
+    var firstSection = document.querySelector("main section");
+    if (firstSection && firstSection.offsetHeight > SCROLL_THRESHOLD_PX) {
+      return firstSection.offsetHeight - 80;
     }
-    return 240;
+    return SCROLL_THRESHOLD_PX;
   }
 
   function updateVisibility() {
-    var threshold = getThreshold();
-    var show = window.scrollY > threshold;
-    if (show) {
-      button.style.opacity = "1";
-      button.style.pointerEvents = "auto";
-      button.style.transform = "translateY(0)";
-    } else {
-      button.style.opacity = "0";
-      button.style.pointerEvents = "none";
-      button.style.transform = "translateY(12px)";
+    var show = window.scrollY > getThreshold();
+    button.classList.toggle("is-visible", show);
+    button.setAttribute("aria-hidden", show ? "false" : "true");
+  }
+
+  function scrollToTop() {
+    // Lenis smooth scroll (if active)
+    if (window.__lenis && typeof window.__lenis.scrollTo === "function") {
+      window.__lenis.scrollTo(0, { offset: 0 });
+      return;
+    }
+
+    // Native smooth scroll (html { scroll-behavior: smooth } in main.css)
+    try {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err) {
+      // Fallback for older browsers
+      window.scrollTo(0, 0);
     }
   }
 
-  button.addEventListener("click", function () {
-    if (window.__lenis && typeof window.__lenis.scrollTo === "function") {
-      window.__lenis.scrollTo(0, { offset: 0 });
-    } else {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-  });
+  button.addEventListener("click", scrollToTop);
 
   updateVisibility();
   window.addEventListener("scroll", updateVisibility, { passive: true });
   window.addEventListener("resize", updateVisibility);
+
   if (window.__lenis && typeof window.__lenis.on === "function") {
     window.__lenis.on("scroll", updateVisibility);
   }
