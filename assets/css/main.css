@@ -3601,3 +3601,105 @@ body {
     transform: none;
   }
 }
+
+/* Pocket Church — living feature tags */
+.pocket-church-tag {
+  display: inline-block;
+  padding: 0.375rem 0.5rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.25;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background-color: rgba(255, 255, 255, 0.04);
+  cursor: default;
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+  animation:
+    pocketTagFloat 3.6s ease-in-out infinite,
+    pocketTagGlow 2.8s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .pocket-church-tag {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .pocket-church-tag {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Staggered timing so tags feel organic, not synchronized */
+.pocket-church-tag:nth-child(1) {
+  animation-duration: 3.2s, 2.6s;
+  animation-delay: 0s, 0s;
+}
+.pocket-church-tag:nth-child(2) {
+  animation-duration: 3.8s, 3.1s;
+  animation-delay: 0.35s, 0.45s;
+}
+.pocket-church-tag:nth-child(3) {
+  animation-duration: 4.1s, 2.9s;
+  animation-delay: 0.7s, 0.2s;
+}
+.pocket-church-tag:nth-child(4) {
+  animation-duration: 3.5s, 3.4s;
+  animation-delay: 0.15s, 0.65s;
+}
+.pocket-church-tag:nth-child(5) {
+  animation-duration: 4s, 2.7s;
+  animation-delay: 0.55s, 0.35s;
+}
+.pocket-church-tag:nth-child(6) {
+  animation-duration: 3.6s, 3.2s;
+  animation-delay: 0.9s, 0.55s;
+}
+
+.pocket-church-tag:hover {
+  animation-play-state: paused;
+  background-color: rgba(201, 165, 53, 0.12);
+  border-color: rgba(201, 165, 53, 0.55);
+  box-shadow: 0 0 18px rgba(201, 165, 53, 0.22);
+  transform: translateY(-3px) scale(1.04);
+}
+
+@keyframes pocketTagFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes pocketTagGlow {
+  0%,
+  100% {
+    border-color: rgba(255, 255, 255, 0.22);
+    background-color: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 0 0 rgba(201, 165, 53, 0);
+  }
+  50% {
+    border-color: rgba(201, 165, 53, 0.42);
+    background-color: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 0 14px rgba(201, 165, 53, 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pocket-church-tag {
+    animation: none;
+  }
+
+  .pocket-church-tag:hover {
+    transform: none;
+  }
+}

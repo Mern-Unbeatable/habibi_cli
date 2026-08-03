@@ -356,6 +356,94 @@
       .pillar-card:hover .pillar-list-item i {
         transform: scale(1.2);
       }
+
+      /* White-Glove Support cards */
+      @keyframes supportIconFloat {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-6px);
+        }
+      }
+
+      .support-card {
+        position: relative;
+        padding: 1.5rem 1rem;
+        border-radius: 1.25rem;
+        text-decoration: none;
+        cursor: pointer;
+        overflow: hidden;
+        transition:
+          transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .support-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(var(--support-rgb), 0.1),
+          transparent 75%
+        );
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+      }
+
+      .support-card:hover::before {
+        opacity: 1;
+      }
+
+      .support-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 32px -8px rgba(var(--support-rgb), 0.18);
+      }
+
+      .support-icon-box {
+        position: relative;
+        z-index: 1;
+        animation: supportIconFloat 3.2s ease-in-out infinite;
+        transition:
+          transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .support-card:nth-child(2) .support-icon-box {
+        animation-delay: 0.4s;
+      }
+
+      .support-card:nth-child(3) .support-icon-box {
+        animation-delay: 0.8s;
+      }
+
+      .support-card:hover .support-icon-box {
+        animation: none;
+        transform: scale(1.12) rotate(6deg);
+        background-color: rgb(var(--support-rgb)) !important;
+        color: #ffffff !important;
+        box-shadow: 0 8px 20px rgba(var(--support-rgb), 0.35);
+      }
+
+      .support-title {
+        position: relative;
+        z-index: 1;
+        transition: color 0.3s ease;
+      }
+
+      .support-card:hover .support-title {
+        color: rgb(var(--support-rgb));
+      }
+
+      .support-desc {
+        position: relative;
+        z-index: 1;
+      }
     </style>
 
     <main class="flex-1 pt-20">
@@ -587,8 +675,15 @@
                   data-delay="0.16"
                   class="flex items-start gap-3 text-left max-w-xl mx-auto lg:mx-0"
                 >
-                  <i data-lucide="check" class="w-5 h-5 shrink-0 mt-0.5"></i>
-                  <span
+                <span
+                class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5" style="border: 1px solid #004d4d"
+              >
+                <i
+                  data-lucide="check"
+                  class="w-4 h-4"
+                  style="stroke-width: 3"
+                ></i>
+              </span>                  <span
                     class="text-sm sm:text-base font-medium"
                     style="color: #1c1a40"
                     >One login. One database. One source of truth.</span
@@ -599,7 +694,15 @@
                   data-delay="0.24"
                   class="flex items-start gap-3 text-left max-w-xl mx-auto lg:mx-0"
                 >
-                  <i data-lucide="check" class="w-5 h-5 shrink-0 mt-0.5"></i>
+                <span
+                class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5" style="border: 1px solid #004d4d"
+              >
+                <i
+                  data-lucide="check"
+                  class="w-4 h-4"
+                  style="stroke-width: 3"
+                ></i>
+              </span>
                   <span
                     class="text-sm sm:text-base font-medium"
                     style="color: #1c1a40"
@@ -611,13 +714,20 @@
                   data-delay="0.32"
                   class="flex items-start gap-3 text-left max-w-xl mx-auto lg:mx-0"
                 >
-                  <i data-lucide="check" class="w-5 h-5 shrink-0 mt-0.5"></i>
-                  <span
-                    class="text-sm sm:text-base font-medium"
-                    style="color: #1c1a40"
-                    >Ministry-first workflows designed for real churches.</span
-                  >
-                </li>
+                <span
+                class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5" style="border: 1px solid #004d4d"
+              >
+                <i
+                  data-lucide="check"
+                  class="w-4 h-4"
+                  style="stroke-width: 3"
+                ></i>
+              </span>                  <span
+                  class="text-sm sm:text-base font-medium"
+                  style="color: #1c1a40"
+                  >Ministry-first workflows designed for real churches.</span
+                >
+              </li>
               </ul>
             </div>
 
@@ -967,62 +1077,14 @@
               <div
                 data-reveal
                 data-delay="0.12"
-                class="flex flex-wrap gap-2.5 justify-center lg:justify-start mb-4"
+                class="pocket-church-tags flex flex-wrap gap-2.5 justify-center lg:justify-start mb-4"
               >
-                <span
-                  class="px-2 md:px-4 py-1.5 md:py-3 rounded-full text-xs sm:text-sm font-medium border"
-                  style="
-                    color: #ffffff;
-                    border-color: rgba(255, 255, 255, 0.25);
-                    background-color: rgba(255, 255, 255, 0.04);
-                  "
-                  >Secure Giving</span
-                >
-                <span
-                  class="px-2 md:px-4 py-1.5 md:py-3 rounded-full text-xs sm:text-sm font-medium border"
-                  style="
-                    color: #ffffff;
-                    border-color: rgba(255, 255, 255, 0.25);
-                    background-color: rgba(255, 255, 255, 0.04);
-                  "
-                  >Daily Devotion</span
-                >
-                <span
-                  class="px-2 md:px-4 py-1.5 md:py-3 rounded-full text-xs sm:text-sm font-medium border"
-                  style="
-                    color: #ffffff;
-                    border-color: rgba(255, 255, 255, 0.25);
-                    background-color: rgba(255, 255, 255, 0.04);
-                  "
-                  >Child Check-In</span
-                >
-                <span
-                  class="px-2 md:px-4 py-1.5 md:py-3 rounded-full text-xs sm:text-sm font-medium border"
-                  style="
-                    color: #ffffff;
-                    border-color: rgba(255, 255, 255, 0.25);
-                    background-color: rgba(255, 255, 255, 0.04);
-                  "
-                  >Events</span
-                >
-                <span
-                  class="px-2 md:px-4 py-1.5 md:py-3 rounded-full text-xs sm:text-sm font-medium border"
-                  style="
-                    color: #ffffff;
-                    border-color: rgba(255, 255, 255, 0.25);
-                    background-color: rgba(255, 255, 255, 0.04);
-                  "
-                  >Groups</span
-                >
-                <span
-                  class="px-2 md:px-4 py-1.5 md:py-3 rounded-full text-xs sm:text-sm font-medium border"
-                  style="
-                    color: #ffffff;
-                    border-color: rgba(255, 255, 255, 0.25);
-                    background-color: rgba(255, 255, 255, 0.04);
-                  "
-                  >Digital Resource Centre</span
-                >
+                <span class="pocket-church-tag">Secure Giving</span>
+                <span class="pocket-church-tag">Daily Devotion</span>
+                <span class="pocket-church-tag">Child Check-In</span>
+                <span class="pocket-church-tag">Events</span>
+                <span class="pocket-church-tag">Groups</span>
+                <span class="pocket-church-tag">Digital Resource Centre</span>
               </div>
               <div
                 data-reveal
@@ -2392,13 +2454,17 @@
             </h2>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div
+            <a
+              href="https://ekklesiasone.com/home"
+              target="_blank"
+              rel="noopener noreferrer"
               data-reveal
               data-delay="0"
-              class="flex flex-col items-center text-center"
+              class="support-card flex flex-col items-center text-center no-underline"
+              style="--support-rgb: 6, 182, 212"
             >
               <div
-                class="w-12 h-12 rounded-2xl bg-[#06B6D415] text-[#06B6D4] flex items-center justify-center mb-6"
+                class="support-icon-box w-12 h-12 rounded-2xl bg-[#06B6D415] text-[#06B6D4] flex items-center justify-center mb-6"
               >
                 <i
                   data-lucide="user-check"
@@ -2407,24 +2473,28 @@
                 ></i>
               </div>
               <h3
-                class="font-marcellus font-normal text-xl sm:text-2xl text-ink mb-3"
+                class="support-title font-marcellus font-normal text-xl sm:text-2xl text-ink mb-3"
               >
                 Guided Onboarding
               </h3>
               <p
-                class="text-[#6B6B8D] text-sm sm:text-base leading-relaxed max-w-sm font-normal"
+                class="support-desc text-[#6B6B8D] text-sm sm:text-base leading-relaxed max-w-sm font-normal"
               >
                 Our dedicated onboarding team walks you through data migration,
                 staff training, and a custom launch plan — at no extra cost.
               </p>
-            </div>
-            <div
+            </a>
+            <a
+              href="https://ekklesiasone.com/home"
+              target="_blank"
+              rel="noopener noreferrer"
               data-reveal
               data-delay="0.1"
-              class="flex flex-col items-center text-center"
+              class="support-card flex flex-col items-center text-center no-underline"
+              style="--support-rgb: 201, 165, 53"
             >
               <div
-                class="w-12 h-12 rounded-2xl bg-[#C9A53515] text-[#C9A535] flex items-center justify-center mb-6"
+                class="support-icon-box w-12 h-12 rounded-2xl bg-[#C9A53515] text-[#C9A535] flex items-center justify-center mb-6"
               >
                 <i
                   data-lucide="headphones"
@@ -2433,25 +2503,29 @@
                 ></i>
               </div>
               <h3
-                class="font-marcellus font-normal text-xl sm:text-2xl text-ink mb-3"
+                class="support-title font-marcellus font-normal text-xl sm:text-2xl text-ink mb-3"
               >
                 Always-On Help
               </h3>
               <p
-                class="text-[#6B6B8D] text-sm sm:text-base leading-relaxed max-w-sm font-normal"
+                class="support-desc text-[#6B6B8D] text-sm sm:text-base leading-relaxed max-w-sm font-normal"
               >
                 Reach real humans via live chat, email, or phone. Our
                 Canadian-based support team is available when your ministry
                 needs it most.
               </p>
-            </div>
-            <div
+            </a>
+            <a
+              href="https://ekklesiasone.com/home"
+              target="_blank"
+              rel="noopener noreferrer"
               data-reveal
               data-delay="0.2"
-              class="flex flex-col items-center text-center"
+              class="support-card flex flex-col items-center text-center no-underline"
+              style="--support-rgb: 167, 139, 250"
             >
               <div
-                class="w-12 h-12 rounded-2xl bg-[#A78BFA15] text-[#A78BFA] flex items-center justify-center mb-6"
+                class="support-icon-box w-12 h-12 rounded-2xl bg-[#A78BFA15] text-[#A78BFA] flex items-center justify-center mb-6"
               >
                 <i
                   data-lucide="trending-up"
@@ -2460,17 +2534,17 @@
                 ></i>
               </div>
               <h3
-                class="font-marcellus font-normal text-xl sm:text-2xl text-ink mb-3"
+                class="support-title font-marcellus font-normal text-xl sm:text-2xl text-ink mb-3"
               >
                 Grows With You
               </h3>
               <p
-                class="text-[#6B6B8D] text-sm sm:text-base leading-relaxed max-w-sm font-normal"
+                class="support-desc text-[#6B6B8D] text-sm sm:text-base leading-relaxed max-w-sm font-normal"
               >
                 As your congregation grows, EkklésiasOne scales with you.
                 Upgrade plans seamlessly — your data and settings stay intact.
               </p>
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -4442,18 +4516,19 @@
     <script src="https://unpkg.com/lenis@1.3.17/dist/lenis.min.js"></script>
     <script src="../assets/js/main.js"></script>
     <script>
-      // Spotlight Mouse Tracking for Six Pillars cards
+      // Spotlight mouse tracking for interactive cards
       document.addEventListener("DOMContentLoaded", function () {
-        var cards = document.querySelectorAll(".pillar-card");
-        cards.forEach(function (card) {
-          card.addEventListener("mousemove", function (e) {
-            var rect = card.getBoundingClientRect();
-            var x = e.clientX - rect.left;
-            var y = e.clientY - rect.top;
-            card.style.setProperty("--mouse-x", x + "px");
-            card.style.setProperty("--mouse-y", y + "px");
+        document
+          .querySelectorAll(".pillar-card, .support-card")
+          .forEach(function (card) {
+            card.addEventListener("mousemove", function (e) {
+              var rect = card.getBoundingClientRect();
+              var x = e.clientX - rect.left;
+              var y = e.clientY - rect.top;
+              card.style.setProperty("--mouse-x", x + "px");
+              card.style.setProperty("--mouse-y", y + "px");
+            });
           });
-        });
       });
     </script>
   </body>
