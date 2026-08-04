@@ -973,11 +973,11 @@ section[id] {
   .border-\[\#374151\] {
     border-color: #374151;
   }
-  .border-\[\#C9A535\] {
-    border-color: #C9A535;
+  .border-\[\#66B2B2\] {
+    border-color: #66B2B2;
   }
-  .border-\[\#C9A535\]\/35 {
-    border-color: color-mix(in oklab, #C9A535 35%, transparent);
+  .border-\[\#66B2B2\]\/35 {
+    border-color: color-mix(in oklab, #66B2B2 35%, transparent);
   }
   .border-emerald-200 {
     border-color: var(--color-emerald-200);
@@ -1141,14 +1141,14 @@ section[id] {
   .bg-\[\#AA8E3C\] {
     background-color: #AA8E3C;
   }
-  .bg-\[\#C9A535\] {
-    background-color: #C9A535;
+  .bg-\[\#66B2B2\] {
+    background-color: #66B2B2;
   }
-  .bg-\[\#C9A535\]\/6 {
-    background-color: color-mix(in oklab, #C9A535 6%, transparent);
+  .bg-\[\#66B2B2\]\/6 {
+    background-color: color-mix(in oklab, #66B2B2 6%, transparent);
   }
-  .bg-\[\#C9A53515\] {
-    background-color: #C9A53515;
+  .bg-\[\#66B2B215\] {
+    background-color: #66B2B215;
   }
   .bg-\[\#F4F6F9\] {
     background-color: #F4F6F9;
@@ -1759,8 +1759,11 @@ section[id] {
   .text-\[\#A78BFA\] {
     color: #A78BFA;
   }
-  .text-\[\#C9A535\] {
-    color: #C9A535;
+  .text-\[\#66B2B2\] {
+    color: #66B2B2;
+  }
+  .fill-\[\#66B2B2\] {
+    fill: #66B2B2;
   }
   .text-\[\#F4F4F4\] {
     color: #F4F4F4;
@@ -2197,8 +2200,8 @@ section[id] {
         background-color: color-mix(in oklab, var(--color-white) 20%, transparent);
       }
     }
-    .hover\:text-\[\#C9A535\]:hover {
-      color: #C9A535;
+    .hover\:text-\[\#66B2B2\]:hover {
+      color: #66B2B2;
     }
     .hover\:text-primary:hover {
       color: var(--color-primary);
@@ -2881,7 +2884,7 @@ body {
 }
 .animate-border-gradient {
   position: relative;
-  background: linear-gradient(#0b0b0f, #0b0b0f) padding-box, conic-gradient( from var(--angle), #C9A535 0%, #ffffff40 25%, #C9A535 50%, #ffffff40 75%, #C9A535 100% ) border-box;
+  background: linear-gradient(#0b0b0f, #0b0b0f) padding-box, conic-gradient( from var(--angle), #66B2B2 0%, #ffffff40 25%, #66B2B2 50%, #ffffff40 75%, #66B2B2 100% ) border-box;
   border: 1.5px solid transparent;
   animation: borderRotate 4s linear infinite, breathe 3.5s ease-in-out infinite;
 }
@@ -3356,18 +3359,18 @@ body {
 }
 
 .nav-features-submenu__inner {
-  background-color: #131330;
+  background-color: #66b2b2;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
 }
 
 .nav-features-submenu__link {
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .nav-features-submenu__link:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   color: #ffffff;
 }
 
@@ -3427,7 +3430,7 @@ body {
 }
 
 .cta-badge-dot {
-  background-color: #f59e0b;
+  background-color: #66b2b2;
 }
 
 .cta-heading {
@@ -3658,9 +3661,9 @@ body {
 
 .pocket-church-tag:hover {
   animation-play-state: paused;
-  background-color: rgba(201, 165, 53, 0.12);
-  border-color: rgba(201, 165, 53, 0.55);
-  box-shadow: 0 0 18px rgba(201, 165, 53, 0.22);
+  background-color: rgba(102, 178, 178, 0.12);
+  border-color: rgba(102, 178, 178, 0.55);
+  box-shadow: 0 0 18px rgba(102, 178, 178, 0.22);
   transform: translateY(-3px) scale(1.04);
 }
 
@@ -3679,12 +3682,12 @@ body {
   100% {
     border-color: rgba(255, 255, 255, 0.22);
     background-color: rgba(255, 255, 255, 0.04);
-    box-shadow: 0 0 0 rgba(201, 165, 53, 0);
+    box-shadow: 0 0 0 rgba(102, 178, 178, 0);
   }
   50% {
-    border-color: rgba(201, 165, 53, 0.42);
+    border-color: rgba(102, 178, 178, 0.42);
     background-color: rgba(255, 255, 255, 0.07);
-    box-shadow: 0 0 14px rgba(201, 165, 53, 0.12);
+    box-shadow: 0 0 14px rgba(102, 178, 178, 0.12);
   }
 }
 
