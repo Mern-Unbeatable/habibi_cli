@@ -1765,6 +1765,9 @@ section[id] {
   .fill-\[\#66B2B2\] {
     fill: #66B2B2;
   }
+  .bg-\[\#004d4d\] {
+    background-color: #004d4d;
+  }
   .text-\[\#F4F4F4\] {
     color: #F4F4F4;
   }
@@ -3266,7 +3269,11 @@ body {
 /* Feature detail pages — hero background with bottom-left teal glow */
 .feature-page-hero {
   background-color: #0A0B2E;
-  overflow: hidden;
+  overflow: visible;
+}
+
+section:has(.feature-page-layout) {
+  overflow: visible;
 }
 
 .feature-page-hero::before {
@@ -3297,15 +3304,15 @@ body {
   }
 }
 
-/* Feature detail pages — sticky image (CSS fallback; JS handles Lenis) */
+/* Feature detail pages — sticky image (JS + Lenis rAF) */
 @media (min-width: 1024px) {
   .feature-page-layout {
-    align-items: stretch;
+    align-items: start;
   }
 
   .feature-page-aside {
     position: relative;
-    align-self: stretch;
+    align-self: start;
   }
 
   .feature-page-image.is-sticky-fixed {
@@ -3359,7 +3366,7 @@ body {
 }
 
 .nav-features-submenu__inner {
-  background-color: #66b2b2;
+  background-color: #004d4d;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
