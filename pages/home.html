@@ -63,6 +63,14 @@
             class="text-sm font-medium no-underline transition-colors text-white/90 hover:text-primary"
             >About</a
           >
+
+          <a
+          data-nav-link
+          href="../pages/contact.html"
+          class="px-4 py-3 rounded-xl font-medium text-base no-underline text-white/90 hover:bg-white/5"
+          >
+          Contact Us</a
+        >
         </div>
 
         <div class="hidden lg:flex items-center gap-3.5">
@@ -155,6 +163,13 @@
               href="#overview"
               class="px-4 py-3 rounded-xl font-medium text-base no-underline text-white/90 hover:bg-white/5"
               >About</a
+            >
+            <a
+              data-nav-link
+              href="../pages/contact.html"
+              class="px-4 py-3 rounded-xl font-medium text-base no-underline text-white/90 hover:bg-white/5"
+              >
+              Contact Us</a
             >
           </div>
           <div class="mt-auto pt-8 flex flex-col gap-3">
@@ -480,11 +495,11 @@
             <div class="max-w-xl lg:max-w-2xl text-left lg:text-left">
               <p
                 data-hero-animate
-                class="inline-flex items-center gap-2 px-2 md:px-4 py-2 mt-4 rounded-full border border-[#C9A535]/35 bg-[#C9A535]/6 text-[#C9A535] text-sm font-semibold tracking-wide mb-7"
+                class="inline-flex items-center gap-2 px-2 md:px-4 py-2 mt-4 rounded-full border border-[#66B2B2] bg-[#C9A535]/6 text-white text-sm font-semibold tracking-wide mb-7"
               >
                 <i
                   data-lucide="sparkles"
-                  class="w-4 h-4"
+                  class="w-4 h-4 text-white"
                   aria-hidden="true"
                 ></i>
                 <span
@@ -493,12 +508,12 @@
                   data-typing-speed="45"
                   data-pause-duration="1800"
                   data-deleting-speed="25"
-                  data-color="#C9A535"
+                  data-color="#FFFFFF"
                   data-start-on-visible="true"
                   data-loop="true"
                   class="text-type lowercase sm:uppercase"
                   ><span class="text-type__content"></span
-                  ><span class="text-type__cursor text-[#C9A535]">|</span></span
+                  ><span class="text-type__cursor text-white">|</span></span
                 >
               </p>
 
@@ -566,7 +581,8 @@
                   href="https://ekklesiasone.com/login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="animate-pulse-glow animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg bg-primary hover:bg-[#05a3bd] text-white shadow-[0_8px_28px_rgba(6,182,212,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2 no-underline"
+                  class="animate-pulse-glow animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg bg-[#66B2B2] hover:bg-[#5aa3a3] text-white shadow-[0_8px_28px_rgba(102,178,178,0.35)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-2 no-underline"
+                  style="background-color: #66b2b2"
                 >
                   <span class="relative z-10">Book a Demo</span>
                   <i
@@ -579,7 +595,7 @@
                   href="https://ekklesiasone.com/member?page=login"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="animate-border-gradient animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg text-white hover:text-[#C9A535] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-1 no-underline"
+                  class="animate-shimmer group relative w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base sm:text-lg text-white border border-[#FFFFFF] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03] flex items-center justify-center gap-1 no-underline"
                 >
                   <span class="relative z-10">See How It Works</span>
                   <i
@@ -598,6 +614,36 @@
                 </span>
                 Proudly Canadian. Built for Churches Worldwide.
               </p>
+
+              <ul
+                data-hero-animate
+                class="flex flex-wrap items-center gap-3 justify-center lg:justify-start text-xs sm:text-sm font-medium text-white"
+              >
+                <li class="flex items-center gap-3">
+                  <span
+                    class="inline-block w-1.5 h-1.5 rounded-full shrink-0 bg-[#C9A535]"
+                  ></span>
+                  Child Check-In
+                </li>
+                <li class="flex items-center gap-3">
+                  <span
+                    class="inline-block w-1.5 h-1.5 rounded-full shrink-0 bg-[#C9A535]"
+                  ></span>
+                  Reporting &amp; Analytics
+                </li>
+                <li class="flex items-center gap-3">
+                  <span
+                    class="inline-block w-1.5 h-1.5 rounded-full shrink-0 bg-[#C9A535]"
+                  ></span>
+                  Event Registration
+                </li>
+                <li class="flex items-center gap-3">
+                  <span
+                    class="inline-block w-1.5 h-1.5 rounded-full shrink-0 bg-[#C9A535]"
+                  ></span>
+                  Scheduling
+                </li>
+              </ul>
             </div>
 
             <!-- Image Container & Image Updated Below -->
@@ -617,134 +663,139 @@
 
       <!-- TrustedBy -->
       <section
-        id="overview"
-        class="relative py-14 lg:py-20 px-5 sm:px-6 lg:px-8 bg-white overflow-x-hidden"
-      >
-        <div class="relative container mx-auto">
-          <div
-            class="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center"
-          >
-            <div class="text-justify">
-              <p
+      id="overview"
+      class="relative py-14 lg:py-20 px-5 sm:px-6 lg:px-8 bg-white overflow-hidden"
+    >
+      <div class="relative container mx-auto">
+        <div
+          class="grid grid-cols-2 gap-4 sm:gap-8 lg:gap-16 xl:gap-20 items-center"
+        >
+          <div class="min-w-0">
+            <p
+              data-reveal
+              class="inline-flex items-start md:items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-6"
+              style="color: #004C4C"
+            >
+              <i
+                data-lucide="layers"
+                class="w-[15px] h-[15px]"
+                style="stroke-width: 2.5"
+              ></i>
+              Platform Overview
+            </p>
+    
+            <h2
+              data-reveal
+              class="font-marcellus font-normal text-[#1C1A40] text-xl sm:text-2xl lg:text-[2.75rem] xl:text-5xl leading-[1.12] tracking-tight mb-6"
+            >
+              One Platform.
+              <br />
+              Endless Possibilities.
+            </h2>
+    
+            <p
+              data-reveal
+              data-delay="0.08"
+              class="text-sm sm:text-base lg:text-lg leading-relaxed mb-4 max-w-xl text-justify"
+              style="color: #475569"
+            >
+              Managing a ministry shouldn't mean juggling a dozen disconnected
+              tools.
+            </p>
+    
+            <p
+              data-reveal
+              data-delay="0.12"
+              class="text-sm sm:text-base lg:text-lg leading-relaxed mb-8 max-w-xl"
+              style="color: #475569"
+            >
+              With EkklésiasOne, everything—people, giving, events,
+              communications, and more—lives in one unified system designed
+              around how churches actually work.
+            </p>
+    
+            <ul class="space-y-4">
+              <li
                 data-reveal
-                class="inline-flex items-start md:items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-6"
-                style="color: #06b6d4"
+                data-delay="0.16"
+                class="flex items-start gap-3 text-left max-w-xl"
               >
-                <i
-                  data-lucide="layers"
-                  class="w-[15px] h-[15px]"
-                  style="stroke-width: 2.5"
-                ></i>
-                Platform Overview
-              </p>
-
-              <h2
-                data-reveal
-                class="font-marcellus font-normal text-[#1C1A40] text-[2rem] sm:text-4xl lg:text-[2.75rem] xl:text-5xl leading-[1.12] tracking-tight mb-6"
-              >
-                One Platform.
-                <br />
-                Endless Possibilities.
-              </h2>
-
-              <p
-                data-reveal
-                data-delay="0.08"
-                class="text-base sm:text-lg leading-relaxed mb-4 max-w-xl mx-auto lg:mx-0"
-                style="color: #475569"
-              >
-                Managing a ministry shouldn't mean juggling a dozen disconnected
-                tools.
-              </p>
-
-              <p
-                data-reveal
-                data-delay="0.12"
-                class="text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
-                style="color: #475569"
-              >
-                With EkklésiasOne, everything—people, giving, events,
-                communications, and more—lives in one unified system designed
-                around how churches actually work.
-              </p>
-
-              <ul class="space-y-4">
-                <li
-                  data-reveal
-                  data-delay="0.16"
-                  class="flex items-start gap-3 text-left max-w-xl mx-auto lg:mx-0"
-                >
                 <span
-                class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5" style="border: 1px solid #004d4d"
-              >
-                <i
-                  data-lucide="check"
-                  class="w-4 h-4"
-                  style="stroke-width: 3"
-                ></i>
-              </span>                  <span
-                    class="text-sm sm:text-base font-medium"
-                    style="color: #1c1a40"
-                    >One login. One database. One source of truth.</span
-                  >
-                </li>
-                <li
-                  data-reveal
-                  data-delay="0.24"
-                  class="flex items-start gap-3 text-left max-w-xl mx-auto lg:mx-0"
+                  class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5"
+                  style="border: 1px solid #004d4d"
                 >
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4"
+                    style="stroke-width: 3"
+                  ></i>
+                </span>
                 <span
-                class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5" style="border: 1px solid #004d4d"
-              >
-                <i
-                  data-lucide="check"
-                  class="w-4 h-4"
-                  style="stroke-width: 3"
-                ></i>
-              </span>
-                  <span
-                    class="text-sm sm:text-base font-medium"
-                    style="color: #1c1a40"
-                    >Zero integrations to maintain, zero data silos.</span
-                  >
-                </li>
-                <li
-                  data-reveal
-                  data-delay="0.32"
-                  class="flex items-start gap-3 text-left max-w-xl mx-auto lg:mx-0"
+                  class="text-sm sm:text-base font-medium"
+                  style="color: #1c1a40"
+                  >One login. One database. One source of truth.</span
                 >
-                <span
-                class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5" style="border: 1px solid #004d4d"
+              </li>
+              <li
+                data-reveal
+                data-delay="0.24"
+                class="flex items-start gap-3 text-left max-w-xl"
               >
-                <i
-                  data-lucide="check"
-                  class="w-4 h-4"
-                  style="stroke-width: 3"
-                ></i>
-              </span>                  <span
+                <span
+                  class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5"
+                  style="border: 1px solid #004d4d"
+                >
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4"
+                    style="stroke-width: 3"
+                  ></i>
+                </span>
+                <span
+                  class="text-sm sm:text-base font-medium"
+                  style="color: #1c1a40"
+                  >Zero integrations to maintain, zero data silos.</span
+                >
+              </li>
+              <li
+                data-reveal
+                data-delay="0.32"
+                class="flex items-start gap-3 text-left max-w-xl"
+              >
+                <span
+                  class="w-5 h-5 rounded-full bg-white text-[#004d4d] flex items-center justify-center shrink-0 mt-0.5"
+                  style="border: 1px solid #004d4d"
+                >
+                  <i
+                    data-lucide="check"
+                    class="w-4 h-4"
+                    style="stroke-width: 3"
+                  ></i>
+                </span>
+                <span
                   class="text-sm sm:text-base font-medium"
                   style="color: #1c1a40"
                   >Ministry-first workflows designed for real churches.</span
                 >
               </li>
-              </ul>
-            </div>
-
-            <div
-              data-reveal
-              data-delay="0.2"
-              class="relative flex justify-center lg:justify-end overflow-visible"
-            >
-              <img
-                src="../assets/images/One_Platform.png"
-                alt="EkklésiasOne platform overview"
-                loading="lazy"
-                class="w-full max-w-[920px] sm:max-w-[1000px] lg:max-w-none lg:w-[115%] xl:w-[125%] h-auto object-contain"
-              />
-            </div>
+            </ul>
+          </div>
+    
+          <div
+            data-reveal
+            data-delay="0.2"
+            class="relative flex justify-center lg:justify-end min-w-0"
+          >
+            <img
+              src="../assets/images/One_Platform.png"
+              alt="EkklésiasOne platform overview"
+              loading="lazy"
+              class="w-full h-auto object-contain lg:w-[125%]"
+            />
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
       <!-- Sixpillar -->
       <section
@@ -756,7 +807,7 @@
             <p
               data-reveal
               class="inline-flex items-center gap-2 text-xs sm:text-sm font-bold uppercase tracking-[0.18em] mb-5"
-              style="color: #06b6d4"
+              style="color: #004C4C"
             >
               <i
                 data-lucide="layout-grid"
@@ -1064,7 +1115,7 @@
               <p
                 data-reveal
                 data-delay="0.08"
-                class="text-base sm:text-lg text-justify leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+                class="text-base sm:text-lg  leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
                 style="color: rgba(255, 255, 255, 0.75)"
               >
                 The Pocket Church mobile app gives your congregation a
@@ -1145,7 +1196,7 @@
           <div class="text-left md:text-center mb-7 sm:mb-12 lg:mb-14">
             <p
               data-reveal
-              class="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-normal uppercase tracking-[0.2em] mb-3 sm:mb-4 text-[#00C4D4]"
+              class="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-normal uppercase tracking-[0.5em] mb-3 sm:mb-4 text-[#004C4C]"
             >
               <i
                 data-lucide="bookmark"
@@ -1918,7 +1969,8 @@
             <button
               type="button"
               data-open-migration-modal
-              class="group w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 px-5 sm:px-9 py-3.5 sm:py-4 rounded-full font-normal text-[13px] sm:text-sm text-white bg-[#06B6D4] shadow-[0_8px_25px_rgba(0,196,212,0.45)] hover:shadow-[0_12px_30px_rgba(0,196,212,0.6)] transition-all duration-300 hover:scale-105 cursor-pointer text-center"
+              class="group w-full sm:w-auto inline-flex items-center justify-center gap-2 sm:gap-2.5 px-5 sm:px-9 py-3.5 sm:py-4 rounded-full font-normal text-[13px] sm:text-sm text-white shadow-[0_8px_25px_rgba(0,196,212,0.45)] hover:shadow-[0_12px_30px_rgba(0,196,212,0.6)] transition-all duration-300 hover:scale-105 cursor-pointer text-center"
+              style="background-color: #66b2b2"
             >
               See how Easy Migration Is
               <i
@@ -1935,12 +1987,129 @@
       </section>
 
       <!-- Pricing -->
+      <style>
+        /* ============================================================
+           PRICING SECTION — ANIMATIONS
+           ============================================================ */
+      
+        /* Card lift + shadow on hover */
+        #pricing .grid > div[data-reveal] {
+          transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+            box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+          will-change: transform;
+        }
+      
+        #pricing .grid > div[data-reveal]:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 24px 48px -12px rgba(0, 76, 76, 0.18);
+        }
+      
+        #pricing .grid > div[data-reveal]:nth-child(4):hover {
+          box-shadow: 0 24px 55px -10px rgba(0, 76, 76, 0.55);
+        }
+      
+        /* Benefit list items — staggered fade/slide in when the card reveals */
+        #pricing ul.space-y-3 > li {
+          opacity: 0;
+          transform: translateX(-8px);
+          animation: pricingItemIn 0.5s ease forwards;
+        }
+      
+        #pricing div[data-reveal] ul.space-y-3 > li:nth-child(1) { animation-delay: 0.05s; }
+        #pricing div[data-reveal] ul.space-y-3 > li:nth-child(2) { animation-delay: 0.12s; }
+        #pricing div[data-reveal] ul.space-y-3 > li:nth-child(3) { animation-delay: 0.19s; }
+        #pricing div[data-reveal] ul.space-y-3 > li:nth-child(4) { animation-delay: 0.26s; }
+        #pricing div[data-reveal] ul.space-y-3 > li:nth-child(5) { animation-delay: 0.33s; }
+        #pricing div[data-reveal] ul.space-y-3 > li:nth-child(6) { animation-delay: 0.40s; }
+        #pricing div[data-reveal] ul.space-y-3 > li:nth-child(7) { animation-delay: 0.47s; }
+      
+        @keyframes pricingItemIn {
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      
+        /* Check badge — gentle pop on hover of its row */
+        #pricing ul.space-y-3 > li span.rounded-full {
+          transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+      
+        #pricing ul.space-y-3 > li:hover span.rounded-full {
+          transform: scale(1.18);
+          box-shadow: 0 0 0 4px rgba(102, 178, 178, 0.18);
+        }
+      
+        /* Price number — subtle emphasis on card hover */
+        #pricing div[data-reveal] .text-3xl,
+        #pricing div[data-reveal] .text-4xl {
+          transition: transform 0.3s ease;
+          display: inline-block;
+        }
+      
+        #pricing div[data-reveal]:hover .font-bold.text-3xl,
+        #pricing div[data-reveal]:hover .font-bold.text-4xl {
+          transform: scale(1.06);
+        }
+      
+        /* CTA button inside each card — shine sweep on hover */
+        #pricing a.rounded-full {
+          position: relative;
+          overflow: hidden;
+        }
+      
+        #pricing a.rounded-full::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: -60%;
+          width: 40%;
+          height: 100%;
+          background: linear-gradient(115deg, transparent, rgba(255, 255, 255, 0.55), transparent);
+          transform: skewX(-20deg);
+          transition: left 0.6s ease;
+        }
+      
+        #pricing a.rounded-full:hover::after {
+          left: 130%;
+        }
+      
+        /* "Most Popular" badge — breathing pulse to draw the eye */
+        #pricing .bg-\[\#FFC107\] {
+          animation: popularPulse 2.4s ease-in-out infinite;
+        }
+      
+        @keyframes popularPulse {
+          0%, 100% {
+            box-shadow: 0 0 0 0 rgba(255, 193, 7, 0.5);
+          }
+          50% {
+            box-shadow: 0 0 0 8px rgba(255, 193, 7, 0);
+          }
+        }
+      
+        @media (prefers-reduced-motion: reduce) {
+          #pricing .grid > div[data-reveal],
+          #pricing ul.space-y-3 > li,
+          #pricing ul.space-y-3 > li span.rounded-full,
+          #pricing div[data-reveal] .text-3xl,
+          #pricing div[data-reveal] .text-4xl,
+          #pricing a.rounded-full::after,
+          #pricing .bg-\[\#FFC107\] {
+            animation: none !important;
+            transition: none !important;
+            transform: none !important;
+            opacity: 1 !important;
+          }
+        }
+      </style>
+      
       <section id="pricing" class="py-14 md:py-20 bg-white overflow-hidden">
         <div class="container mx-auto px-5 sm:px-6 lg:px-8">
           <div class="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">
             <div
               data-reveal
-              class="inline-flex items-center px-3 py-0.5 rounded-full border border-primary/40 text-primary text-xs sm:text-sm font-normal bg-primary/5 mb-4"
+              class="inline-flex items-center px-3 py-0.5 rounded-full border border-[#004C4C] text-[#66B2B2] text-xs sm:text-sm font-normal bg-[#66B2B2]/5 mb-4"
             >
               Transparent Kingdom Stewardship Pricing
             </div>
@@ -1970,12 +2139,8 @@
               <div>
                 <h3 class="font-normal text-base mb-4 text-[#7A357C]">Free</h3>
                 <div class="flex items-baseline mb-4">
-                  <span class="font-bold text-3xl sm:text-4xl text-ink"
-                    >$0</span
-                  >
-                  <span class="text-xs ml-1 font-normal text-slate-500"
-                    >CAD/mon</span
-                  >
+                  <span class="font-bold text-3xl sm:text-4xl text-ink">$0</span>
+                  <span class="text-xs ml-1 font-normal text-slate-500">CAD/mon</span>
                 </div>
                 <p
                   class="text-xs sm:text-sm leading-relaxed mb-6 font-normal min-h-11 text-[#575757]"
@@ -1988,74 +2153,40 @@
                 </p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Member directory (50)</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Member directory (50)</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Attendance tracking</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Attendance tracking</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Basic email messaging</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Basic email messaging</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Member portal</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Member portal</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="x"
-                      class="text-slate-300 w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2"
-                    ></i>
-                    <span class="font-normal text-slate-400/80"
-                      >Volunteer scheduling</span
-                    >
+                    <i data-lucide="x" class="text-slate-300 w-3.5 h-3.5 shrink-0 mt-0.5" style="stroke-width: 2"></i>
+                    <span class="font-normal text-slate-400/80">Volunteer scheduling</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="x"
-                      class="text-slate-300 w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2"
-                    ></i>
-                    <span class="font-normal text-slate-400/80"
-                      >Church accounting</span
-                    >
+                    <i data-lucide="x" class="text-slate-300 w-3.5 h-3.5 shrink-0 mt-0.5" style="stroke-width: 2"></i>
+                    <span class="font-normal text-slate-400/80">Church accounting</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="x"
-                      class="text-slate-300 w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2"
-                    ></i>
-                    <span class="font-normal text-slate-400/80"
-                      >GraceConnect check-in</span
-                    >
+                    <i data-lucide="x" class="text-slate-300 w-3.5 h-3.5 shrink-0 mt-0.5" style="stroke-width: 2"></i>
+                    <span class="font-normal text-slate-400/80">GraceConnect check-in</span>
                   </li>
                 </ul>
               </div>
@@ -2079,12 +2210,8 @@
                   Sprout
                 </h3>
                 <div class="flex items-baseline mb-4">
-                  <span class="font-bold text-3xl sm:text-4xl text-ink"
-                    >$75</span
-                  >
-                  <span class="text-xs ml-1 font-normal text-slate-500"
-                    >CAD/mon</span
-                  >
+                  <span class="font-bold text-3xl sm:text-4xl text-ink">$75</span>
+                  <span class="text-xs ml-1 font-normal text-slate-500">CAD/mon</span>
                 </div>
                 <p
                   class="text-xs sm:text-sm leading-relaxed mb-6 font-normal min-h-11 text-[#575757]"
@@ -2097,74 +2224,44 @@
                 </p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Everything in Free</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Everything in Free</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Unlimited members</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Unlimited members</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Volunteer scheduling</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Volunteer scheduling</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Grace Connect check-in</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Grace Connect check-in</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Church accounting (CAD)</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Church accounting (CAD)</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Daily devotional</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Daily devotional</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="x"
-                      class="text-slate-300 w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2"
-                    ></i>
-                    <span class="font-normal text-slate-400/80"
-                      >HOD requisition portal</span
-                    >
+                    <i data-lucide="x" class="text-slate-300 w-3.5 h-3.5 shrink-0 mt-0.5" style="stroke-width: 2"></i>
+                    <span class="font-normal text-slate-400/80">HOD requisition portal</span>
                   </li>
                 </ul>
               </div>
@@ -2188,12 +2285,8 @@
                   Blossom
                 </h3>
                 <div class="flex items-baseline mb-4">
-                  <span class="font-bold text-3xl sm:text-4xl text-ink"
-                    >$120</span
-                  >
-                  <span class="text-xs ml-1 font-normal text-slate-500"
-                    >CAD/mon</span
-                  >
+                  <span class="font-bold text-3xl sm:text-4xl text-ink">$120</span>
+                  <span class="text-xs ml-1 font-normal text-slate-500">CAD/mon</span>
                 </div>
                 <p
                   class="text-xs sm:text-sm leading-relaxed mb-6 font-normal min-h-11 text-[#575757]"
@@ -2206,74 +2299,46 @@
                 </p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Everything in Sprout</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Everything in Sprout</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >HOD requisition portal</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">HOD requisition portal</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Pastorate approval chain</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Pastorate approval chain</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Email + SMS + WhatsApp</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Email + SMS + WhatsApp</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Advanced analytics</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Advanced analytics</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >Resource library</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">Resource library</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <i
-                      data-lucide="check"
-                      class="text-primary w-3.5 h-3.5 shrink-0 mt-0.5"
-                      style="stroke-width: 2.5"
-                    ></i>
-                    <span class="font-normal text-slate-700"
-                      >15 automation categories</span
-                    >
+                    <span class="w-5 h-5 rounded-full bg-white text-[#59235B] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-4 h-4" style="stroke-width: 3"></i>
+                    </span>
+                    <span class="font-normal text-slate-700">15 automation categories</span>
                   </li>
                 </ul>
               </div>
@@ -2303,12 +2368,8 @@
                   Garden
                 </h3>
                 <div class="flex items-baseline mb-4">
-                  <span class="font-bold text-3xl sm:text-4xl text-white"
-                    >$175</span
-                  >
-                  <span class="text-xs ml-1 font-normal text-white/70"
-                    >CAD/mon</span
-                  >
+                  <span class="font-bold text-3xl sm:text-4xl text-white">$175</span>
+                  <span class="text-xs ml-1 font-normal text-white/70">CAD/mon</span>
                 </div>
                 <p
                   class="text-xs sm:text-sm leading-relaxed mb-6 font-normal min-h-11 text-white/80"
@@ -2321,102 +2382,46 @@
                 </p>
                 <ul class="space-y-3 mb-8">
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <span
-                      class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <i
-                        data-lucide="check"
-                        class="w-2.5 h-2.5"
-                        style="stroke-width: 3"
-                      ></i>
+                    <span class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-2.5 h-2.5" style="stroke-width: 3"></i>
                     </span>
-                    <span class="font-normal text-white/95"
-                      >Everything in Blossom</span
-                    >
+                    <span class="font-normal text-white/95">Everything in Blossom</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <span
-                      class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <i
-                        data-lucide="check"
-                        class="w-2.5 h-2.5"
-                        style="stroke-width: 3"
-                      ></i>
+                    <span class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-2.5 h-2.5" style="stroke-width: 3"></i>
                     </span>
-                    <span class="font-normal text-white/95"
-                      >Super admin portal</span
-                    >
+                    <span class="font-normal text-white/95">Super admin portal</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <span
-                      class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <i
-                        data-lucide="check"
-                        class="w-2.5 h-2.5"
-                        style="stroke-width: 3"
-                      ></i>
+                    <span class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-2.5 h-2.5" style="stroke-width: 3"></i>
                     </span>
-                    <span class="font-normal text-white/95"
-                      >Custom role creation</span
-                    >
+                    <span class="font-normal text-white/95">Custom role creation</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <span
-                      class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <i
-                        data-lucide="check"
-                        class="w-2.5 h-2.5"
-                        style="stroke-width: 3"
-                      ></i>
+                    <span class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-2.5 h-2.5" style="stroke-width: 3"></i>
                     </span>
-                    <span class="font-normal text-white/95"
-                      >Multi-campus management</span
-                    >
+                    <span class="font-normal text-white/95">Multi-campus management</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <span
-                      class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <i
-                        data-lucide="check"
-                        class="w-2.5 h-2.5"
-                        style="stroke-width: 3"
-                      ></i>
+                    <span class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-2.5 h-2.5" style="stroke-width: 3"></i>
                     </span>
-                    <span class="font-normal text-white/95"
-                      >White-label option</span
-                    >
+                    <span class="font-normal text-white/95">White-label option</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <span
-                      class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <i
-                        data-lucide="check"
-                        class="w-2.5 h-2.5"
-                        style="stroke-width: 3"
-                      ></i>
+                    <span class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-2.5 h-2.5" style="stroke-width: 3"></i>
                     </span>
-                    <span class="font-normal text-white/95"
-                      >Priority support + onboarding</span
-                    >
+                    <span class="font-normal text-white/95">Priority support + onboarding</span>
                   </li>
                   <li class="flex items-start gap-2.5 text-xs sm:text-sm">
-                    <span
-                      class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5"
-                    >
-                      <i
-                        data-lucide="check"
-                        class="w-2.5 h-2.5"
-                        style="stroke-width: 3"
-                      ></i>
+                    <span class="w-4 h-4 rounded-full bg-white text-[#003840] flex items-center justify-center shrink-0 mt-0.5">
+                      <i data-lucide="check" class="w-2.5 h-2.5" style="stroke-width: 3"></i>
                     </span>
-                    <span class="font-normal text-white/95"
-                      >Full data import assistance</span
-                    >
+                    <span class="font-normal text-white/95">Full data import assistance</span>
                   </li>
                 </ul>
               </div>
@@ -2440,9 +2445,9 @@
           <div class="text-center mb-14 sm:mb-18">
             <p
               data-reveal
-              class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-normal text-primary mb-3"
+              class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-normal text-[#004C4C] mb-3"
             >
-              <i data-lucide="award" class="w-3.5 h-3.5 text-primary"></i>
+              <i data-lucide="award" class="w-3.5 h-3.5 text-[#004C4C]"></i>
               WHITE-GLOVE SUPPORT
             </p>
             <h2
@@ -2558,7 +2563,7 @@
         >
           <p
             data-reveal
-            class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-medium text-primary mb-3"
+            class="inline-flex items-center gap-1.5 text-xs uppercase tracking-widest font-medium text-[#004C4C] mb-3"
           >
             <span>☆</span> TESTIMONIALS
           </p>
@@ -4100,14 +4105,14 @@
               href="https://ekklesiasone.com/login"
               target="_blank"
               rel="noopener noreferrer"
-              class="cta-btn-teal px-7 py-2.5 font-medium text-sm inline-flex items-center gap-2 transition-all no-underline"
+              class="cta-btn-teal px-7 py-3.5 font-medium text-sm inline-flex items-center gap-2 transition-all no-underline"
             >
               Book a Demo
               <i data-lucide="arrow-right" class="w-[15px] h-[15px]"></i>
             </a>
             <a
               href="../pages/contact.html"
-              class="cta-btn-ghost px-7 py-2.5 font-medium text-sm inline-flex items-center gap-2 transition-all no-underline"
+              class="cta-btn-ghost px-7 py-3.5 font-medium text-sm inline-flex items-center gap-2 transition-all no-underline"
             >
               Talk to Our Team
             </a>
@@ -4118,7 +4123,7 @@
             <div
               data-reveal
               data-delay="0.4"
-              class="cta-trust flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-xs sm:text-sm"
+              class="cta-trust flex flex-wrap items-center justify-center gap-3 gap-y-3 text-xs sm:text-sm"
             >
               <span class="flex items-center gap-2">
                 <i
@@ -4157,16 +4162,16 @@
           <div class="lg:col-span-5 pr-0 lg:pr-6">
             <a
               href="../pages/home.html"
-              class="flex items-center gap-2.5 no-underline"
+              class="flex items-center  gap-2.5 no-underline"
             >
               <img
                 src="../assets/images/favicon.png"
                 alt="EkklésiasOne"
-                class="w-9 h-9 rounded-lg"
+                class="w14 lg:w-16  h-14 lg:h-16 object-contain rounded-lg"
               />
-              <span class="font-marcellus text-xl text-white"
+              <!-- <span class="font-marcellus text-xl text-white"
                 >EkklésiasOne</span
-              >
+              > -->
             </a>
             <p class="mt-6 text-sm text-slate-300 leading-relaxed max-w-sm">
               The all-in-one church management platform that helps you organize
@@ -4179,7 +4184,7 @@
             <ul class="space-y-3.5 text-sm">
               <li>
                 <a
-                  href="../pages/about.html"
+                  href="#overview"
                   class="text-slate-300 hover:text-primary transition-colors no-underline"
                   >About Us</a
                 >

@@ -105,11 +105,11 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --color-primary: #06b6d4;
+    --color-primary: #66B2B2;
     --color-primary-dark: #3b153c;
     --color-secondary: #4d4b73;
     --color-secondary-light: #da7b44;
-    --color-cream: #faf8f5;
+    --color-cream: #004d4d;
     --color-ink: #221a2c;
     --font-display: "Marcellus", Georgia, serif;
     --font-marcellus: "Marcellus", Georgia, serif;
@@ -1570,9 +1570,7 @@ section[id] {
   .text-center {
     text-align: center;
   }
-  .text-justify {
-    text-align: justify;
-  }
+
   .text-left {
     text-align: left;
   }

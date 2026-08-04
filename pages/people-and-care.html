@@ -19,7 +19,7 @@
     <style>
       #site-nav,
       #mobile-menu-panel {
-        background-color: #060b16 !important;
+        background-color: #05080f !important;
       }
 
       #site-nav.nav-scrolled {
@@ -34,7 +34,7 @@
       id="site-nav"
       data-nav-bg="#060B16"
       class="fixed top-0 inset-x-0 z-[99999] transition-[background-color,box-shadow,border-color] duration-300 border-b border-white/10"
-      style="background-color: #060b16"
+      style="background-color: #05080f"
     >
       <div
         class="container mx-auto px-5 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-6"
@@ -75,6 +75,13 @@
             class="text-sm font-medium no-underline transition-colors text-white/90 hover:text-primary"
             >About</a
           >
+          <a
+            data-nav-link
+            href="../pages/contact.html"
+            class="text-sm font-medium no-underline transition-colors text-white/90 hover:text-primary"
+            >Contact Us</a
+          >
+         
         </div>
 
         <div class="hidden lg:flex items-center gap-3.5">
@@ -164,6 +171,13 @@
               class="px-4 py-3 rounded-xl font-medium text-base no-underline text-white/90 hover:bg-white/5"
               >About</a
             >
+
+            <a
+            data-nav-link
+            href="../pages/contact.html"
+            class="px-4 py-3 rounded-xl font-medium text-base no-underline text-white/90 hover:bg-white/5"
+            >Contact Us</a
+          >
           </div>
           <div class="mt-auto pt-8 flex flex-col gap-3">
             <a
@@ -635,13 +649,14 @@
             <a
               href="../pages/home.html"
               class="flex items-center gap-2.5 no-underline"
-              ><img
-                src="../assets/images/favicon.png"
-                alt="EkklésiasOne"
-                class="w-9 h-9 rounded-lg"
-              /><span class="font-marcellus text-xl text-white"
-                >EkklésiasOne</span
-              ></a
+              >        <img
+              src="../assets/images/favicon.png"
+              alt="EkklésiasOne"
+              class="w14 lg:w-16  h-14 lg:h-16 object-contain rounded-lg"
+            />
+              <!-- <span class="font-marcellus text-xl text-white"
+                >EkklésiasOne</span -->
+              </a
             >
             <p class="mt-6 text-sm text-slate-300 leading-relaxed max-w-sm">
               The all-in-one church management platform that helps you organize
