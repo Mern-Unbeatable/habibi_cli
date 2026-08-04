@@ -687,46 +687,48 @@
   function initFaqAccordion() {
     var items = document.querySelectorAll("[data-faq-item]");
 
+    function setFaqOpen(targetItem, open) {
+      var panel = targetItem.querySelector("[data-faq-panel]");
+      var icon = targetItem.querySelector("[data-faq-icon]");
+      var button = targetItem.querySelector("[data-faq-trigger]");
+
+      targetItem.classList.toggle("border-primary/30", open);
+      targetItem.classList.toggle("bg-cream", open);
+      targetItem.classList.toggle("shadow-soft", open);
+      targetItem.classList.toggle("border-slate-200", !open);
+      targetItem.classList.toggle("bg-white", !open);
+
+      if (panel) {
+        panel.classList.toggle("grid-rows-[1fr]", open);
+        panel.classList.toggle("opacity-100", open);
+        panel.classList.toggle("grid-rows-[0fr]", !open);
+        panel.classList.toggle("opacity-0", !open);
+      }
+
+      if (icon) {
+        icon.classList.toggle("bg-primary", open);
+        icon.classList.toggle("text-white", open);
+        icon.classList.toggle("rotate-180", open);
+        icon.classList.toggle("bg-slate-100", !open);
+        icon.classList.toggle("text-slate-500", !open);
+      }
+
+      if (button) {
+        button.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+    }
+
     items.forEach(function (item, index) {
       var button = item.querySelector("[data-faq-trigger]");
       var panel = item.querySelector("[data-faq-panel]");
-      var icon = item.querySelector("[data-faq-icon]");
 
-      function setOpen(open) {
-        item.classList.toggle("border-primary/30", open);
-        item.classList.toggle("bg-cream", open);
-        item.classList.toggle("shadow-soft", open);
-        item.classList.toggle("border-slate-200", !open);
-        item.classList.toggle("bg-white", !open);
-
-        if (panel) {
-          panel.classList.toggle("grid-rows-[1fr]", open);
-          panel.classList.toggle("opacity-100", open);
-          panel.classList.toggle("grid-rows-[0fr]", !open);
-          panel.classList.toggle("opacity-0", !open);
-        }
-
-        if (icon) {
-          icon.classList.toggle("bg-primary", open);
-          icon.classList.toggle("text-white", open);
-          icon.classList.toggle("rotate-180", open);
-          icon.classList.toggle("bg-slate-100", !open);
-          icon.classList.toggle("text-slate-500", !open);
-        }
-      }
-
-      setOpen(index === 0);
+      setFaqOpen(item, index === 0);
 
       if (button) {
         button.addEventListener("click", function () {
+          var wasOpen = panel && panel.classList.contains("grid-rows-[1fr]");
           items.forEach(function (other) {
-            var otherPanel = other.querySelector("[data-faq-panel]");
-            var wasOpen = otherPanel && otherPanel.classList.contains("grid-rows-[1fr]");
-            if (other === item) {
-              setOpen(!wasOpen);
-            } else {
-              setOpen(false);
-            }
+            setFaqOpen(other, other === item ? !wasOpen : false);
           });
         });
       }
