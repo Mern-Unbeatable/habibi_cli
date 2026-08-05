@@ -2885,6 +2885,12 @@ body {
 .animate-pulse-glow {
   animation: pulseGlow 2.2s ease-in-out infinite, breathe 3s ease-in-out infinite;
 }
+
+.contact-submit-btn:hover,
+.contact-submit-btn:focus-visible {
+  background-color: var(--color-primary);
+  transform: none;
+}
 .animate-border-gradient {
   position: relative;
   background: linear-gradient(#0b0b0f, #0b0b0f) padding-box, conic-gradient( from var(--angle), #66B2B2 0%, #ffffff40 25%, #66B2B2 50%, #ffffff40 75%, #66B2B2 100% ) border-box;
@@ -3531,14 +3537,14 @@ section:has(.feature-page-layout) {
   width: 3rem;
   height: 3rem;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: none;
   border-radius: 50%;
-  background-color: #131330;
+  background-color: #06b6d4;
   color: #ffffff;
   cursor: pointer;
   box-shadow:
-    0 8px 24px rgba(0, 0, 0, 0.28),
-    0 2px 8px rgba(0, 0, 0, 0.16);
+    0 12px 32px rgba(6, 182, 212, 0.35),
+    0 4px 12px rgba(0, 0, 0, 0.2);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -3546,10 +3552,7 @@ section:has(.feature-page-layout) {
   transition:
     opacity 0.35s ease,
     visibility 0.35s ease,
-    transform 0.35s ease,
-    background-color 0.25s ease,
-    box-shadow 0.25s ease,
-    color 0.25s ease;
+    transform 0.35s ease;
 }
 
 @media (min-width: 640px) {
@@ -3568,22 +3571,6 @@ section:has(.feature-page-layout) {
   transform: translateY(0);
 }
 
-.scroll-to-top:hover {
-  background-color: #06b6d4;
-  color: #ffffff;
-  box-shadow:
-    0 12px 32px rgba(6, 182, 212, 0.35),
-    0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.scroll-to-top.is-visible:hover {
-  transform: translateY(-3px);
-}
-
-.scroll-to-top:active {
-  transform: translateY(-1px);
-}
-
 .scroll-to-top:focus-visible {
   outline: 2px solid #06b6d4;
   outline-offset: 3px;
@@ -3598,11 +3585,6 @@ section:has(.feature-page-layout) {
 @media (prefers-reduced-motion: reduce) {
   .scroll-to-top {
     transition: opacity 0.15s ease, visibility 0.15s ease;
-  }
-
-  .scroll-to-top.is-visible:hover,
-  .scroll-to-top:active {
-    transform: none;
   }
 }
 
