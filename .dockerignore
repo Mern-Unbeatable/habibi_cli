@@ -1,8 +1,6 @@
 .git
 .gitignore
 .vscode
-README.md
 node_modules
-*.md
-Dockerfile
-.dockerignore
+README.md
+docker-compose.yml
