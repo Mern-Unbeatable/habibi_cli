@@ -68,10 +68,12 @@ Upload the entire project folder to any static host (Netlify, GitHub Pages, Apac
 
 ### Coolify (Docker)
 
-This repo includes a **`Dockerfile`** (nginx) so deployment does **not** need Node/Nixpacks or `apt-get` during build.
+**Important:** Set **Build Pack → Dockerfile** (not Nixpacks). Nixpacks fails on this repo (invalid/old providers + apt mirror errors).
 
-1. In Coolify → your app → **Build Pack**: choose **Dockerfile** (not Nixpacks).
-2. Push/commit these files and redeploy.
-3. Exposed port: **80**.
+1. Coolify → Application → **Configuration** → **Build Pack**: **Dockerfile**
+2. **Ports Exposes**: `80` (container port)
+3. Commit includes root `Dockerfile` + `nginx.conf`, then **Redeploy**
 
-If build still uses Nixpacks, switch build pack to Dockerfile manually; the previous failure was Ubuntu mirror sync during `apt-get` inside Nixpacks, not your site code.
+Optional: deploy as **Docker Compose** using root `docker-compose.yml` instead.
+
+Do **not** add `nixpacks.toml` with `providers = ["static"]` — Coolify’s Nixpacks version does not include that provider.
