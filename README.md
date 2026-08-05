@@ -65,3 +65,13 @@ Icons: Lucide via CDN.
 ## Deploy
 
 Upload the entire project folder to any static host (Netlify, GitHub Pages, Apache, Nginx, etc.).
+
+### Coolify (Docker)
+
+This repo includes a **`Dockerfile`** (nginx) so deployment does **not** need Node/Nixpacks or `apt-get` during build.
+
+1. In Coolify → your app → **Build Pack**: choose **Dockerfile** (not Nixpacks).
+2. Push/commit these files and redeploy.
+3. Exposed port: **80**.
+
+If build still uses Nixpacks, switch build pack to Dockerfile manually; the previous failure was Ubuntu mirror sync during `apt-get` inside Nixpacks, not your site code.

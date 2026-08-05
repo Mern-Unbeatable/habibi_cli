@@ -1,0 +1,5 @@
+# Force static deploy: do not run Node/Nix apt-get setup (use root Dockerfile on Coolify)
+providers = ["static"]
+
+[staticAssets]
+outputDir = "."
