@@ -3310,30 +3310,6 @@ section:has(.feature-page-layout) {
   }
 }
 
-/* Feature detail pages — sticky image (JS + Lenis rAF) */
-@media (min-width: 1024px) {
-  .feature-page-layout {
-    align-items: start;
-  }
-
-  .feature-page-aside {
-    position: relative;
-    align-self: start;
-  }
-
-  .feature-page-image.is-sticky-fixed {
-    position: fixed;
-    z-index: 5;
-  }
-
-  .feature-page-image.is-sticky-end {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: 5;
-  }
-}
-
 /* Nav — always on top of page content */
 #site-nav {
   position: fixed !important;
