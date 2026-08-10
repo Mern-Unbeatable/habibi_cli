@@ -3432,6 +3432,19 @@ section:has(.feature-page-layout) {
     max-width: 28rem;
     margin-inline: auto;
   }
+
+  #pricing .grid > div[data-reveal] {
+    padding: 1.625rem 1.5rem;
+  }
+
+  #pricing .grid {
+    gap: 2rem;
+  }
+
+  #pricing h2[data-reveal] {
+    font-size: 2.25rem;
+    line-height: 1.28;
+  }
 }
 
 .cta-bg-base {
