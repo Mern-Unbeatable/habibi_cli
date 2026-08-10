@@ -3416,6 +3416,13 @@ section:has(.feature-page-layout) {
     padding-bottom: 2rem;
   }
 
+  main.flex-1 > section.min-h-screen:first-of-type h1[data-hero-animate] {
+    font-size: 2.625rem;
+    line-height: 1.34;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.5rem;
+  }
+
   main.flex-1 > section.min-h-screen:first-of-type [data-hero-image] {
     margin-top: 1.5rem;
   }
