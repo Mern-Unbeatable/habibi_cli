@@ -59,15 +59,6 @@
     history.pushState(null, "", hash);
   }
 
-  function navigateToSection(href) {
-    var url = getUrlForHref(href);
-    if (url.pathname.split("/").pop() === getCurrentPageName() && url.hash) {
-      scrollToSection(url.hash);
-      return;
-    }
-    window.location.href = url.href;
-  }
-
   function setNavLinkActive(link, active) {
     if (!link) return;
     link.classList.toggle("text-primary", active);
@@ -328,6 +319,15 @@
       desktopFeaturesPanel.classList.remove("opacity-100", "pointer-events-auto", "translate-y-0");
     }
 
+    function toggleDesktopFeatures() {
+      if (!desktopFeaturesWrap) return;
+      if (desktopFeaturesWrap.classList.contains("is-open")) {
+        closeDesktopFeatures();
+      } else {
+        openDesktopFeatures();
+      }
+    }
+
     function scheduleCloseDesktopFeatures() {
       if (!desktopFeaturesWrap) return;
       clearTimeout(desktopFeaturesWrap._closeTimer);
@@ -351,11 +351,6 @@
       });
 
       desktopFeaturesWrap.addEventListener("focusin", openDesktopFeatures);
-      desktopFeaturesWrap.addEventListener("focusout", function (event) {
-        if (!desktopFeaturesWrap.contains(event.relatedTarget) && !desktopFeaturesPanel.contains(event.relatedTarget)) {
-          closeDesktopFeatures();
-        }
-      });
     }
 
     function closeMobileFeatures() {
@@ -385,7 +380,7 @@
 
       desktopFeaturesButton = document.createElement("button");
       desktopFeaturesButton.type = "button";
-      desktopFeaturesButton.className = "nav-features-trigger text-sm font-medium no-underline transition-colors text-white/90 hover:text-primary flex items-center gap-1.5 py-2";
+      desktopFeaturesButton.className = "nav-features-trigger cursor-pointer text-sm font-medium no-underline transition-colors text-white/90 hover:text-primary flex items-center gap-1.5 py-2";
       desktopFeaturesButton.setAttribute("aria-expanded", "false");
       desktopFeaturesButton.setAttribute("aria-haspopup", "true");
       desktopFeaturesButton.innerHTML = '<span>Features</span><i data-lucide="chevron-down" class="nav-features-chevron w-4 h-4 transition-transform duration-200"></i>';
@@ -428,10 +423,18 @@
       bindDesktopFeaturesHover();
 
       desktopFeaturesButton.addEventListener("click", function (event) {
-        if (desktopFeaturesPanel && desktopFeaturesPanel.contains(event.target)) return;
         event.preventDefault();
-        closeDropdowns();
-        navigateToSection(isHomePage() ? "#features" : HOME_SECTION_LINKS.features);
+        event.stopPropagation();
+        toggleDesktopFeatures();
+      });
+
+      desktopFeaturesWrap.addEventListener("focusout", function (event) {
+        if (
+          !desktopFeaturesWrap.contains(event.relatedTarget) &&
+          !(desktopFeaturesPanel && desktopFeaturesPanel.contains(event.relatedTarget))
+        ) {
+          closeDesktopFeatures();
+        }
       });
 
       if (secondaryDesktopLinks.length) {
@@ -449,20 +452,13 @@
       var mobileFeaturesWrap = document.createElement("div");
       mobileFeaturesWrap.className = "flex flex-col gap-2";
 
-      mobileFeaturesWrap.appendChild(
-        createAnchor(
-          "Features",
-          isHomePage() ? "#features" : HOME_SECTION_LINKS.features,
-          mobileLinkClass
-        )
-      );
-
       mobileFeaturesButton = document.createElement("button");
       mobileFeaturesButton.type = "button";
       mobileFeaturesButton.id = "mobile-features-toggle";
-      mobileFeaturesButton.className = "px-4 py-3 rounded-xl font-medium text-base text-left no-underline text-white/90 hover:bg-white/5 flex items-center justify-between gap-3";
+      mobileFeaturesButton.className = "cursor-pointer px-4 py-3 rounded-xl font-medium text-base text-left no-underline text-white/90 hover:bg-white/5 flex items-center justify-between gap-3";
       mobileFeaturesButton.setAttribute("aria-expanded", "false");
-      mobileFeaturesButton.innerHTML = '<span>Feature categories</span><i data-lucide="chevron-down" class="mobile-features-chevron w-4 h-4 transition-transform duration-200"></i>';
+      mobileFeaturesButton.setAttribute("aria-haspopup", "true");
+      mobileFeaturesButton.innerHTML = '<span>Features</span><i data-lucide="chevron-down" class="mobile-features-chevron w-4 h-4 transition-transform duration-200"></i>';
 
       mobileFeaturesPanel = document.createElement("div");
       mobileFeaturesPanel.id = "mobile-features-panel";
@@ -494,7 +490,6 @@
         } else {
           openMobileFeatures();
         }
-        mobileFeaturesButton.classList.toggle("is-open", !isOpen);
       });
 
       mobileFeaturesWrap.appendChild(mobileFeaturesButton);
