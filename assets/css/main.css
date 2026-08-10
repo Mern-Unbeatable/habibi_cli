@@ -3343,6 +3343,11 @@ section:has(.feature-page-layout) {
   position: relative;
 }
 
+.nav-features-trigger,
+#mobile-features-toggle {
+  cursor: pointer;
+}
+
 .nav-features-submenu {
   z-index: 999997 !important;
 }
@@ -3375,6 +3380,51 @@ section:has(.feature-page-layout) {
 .cta-section {
   background: #000000;
   color: #ffffff;
+}
+
+/*
+ * iPad / tablet landscape (1024–1279px): Tailwind `lg` kicks in but the viewport
+ * is still tablet-sized — drop full-screen sections and heavy vertical padding.
+ */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .lg\:py-20 {
+    padding-block: 3rem;
+  }
+
+  .lg\:py-28 {
+    padding-block: 3.5rem;
+  }
+
+  main.flex-1 > section.min-h-screen {
+    min-height: auto;
+  }
+
+  main.flex-1 > section.min-h-screen.lg\:flex {
+    align-items: flex-start;
+  }
+
+  section.cta-section {
+    min-height: auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  main.flex-1 > section.min-h-screen:first-of-type .container {
+    padding-top: 2.5rem;
+    padding-bottom: 2rem;
+  }
+
+  main.flex-1 > section.min-h-screen:first-of-type [data-hero-image] {
+    margin-top: 1.5rem;
+  }
+
+  main.flex-1 > section.min-h-screen:first-of-type [data-hero-image] img {
+    width: 125% !important;
+    max-width: 28rem;
+    margin-inline: auto;
+  }
 }
 
 .cta-bg-base {
